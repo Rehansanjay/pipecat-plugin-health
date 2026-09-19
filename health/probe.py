@@ -80,8 +80,16 @@ def installed_modules(dist: md.Distribution) -> tuple[list[str], list[str]]:
         if parts and all(p.isidentifier() for p in parts):
             names.add(".".join(parts))
     names = {n for n in names if not SKIP_SUBMODULES.search(n) and not n.startswith("_virtualenv")}
-    roots = sorted(n for n in names if n.rpartition(".")[0] not in names)
-    return roots, sorted(names - set(roots))
+    roots = set()
+    for name in names:
+        if name.rpartition(".")[0] in names:
+            continue
+        top = name.split(".")[0]
+        # pipecat_bey/transport.py with no pipecat_bey/__init__.py is a namespace package
+        # of the plugin's own: import pipecat_bey as the root, check transport as a submodule.
+        # pipecat's own namespace belongs to the host, so modules installed into it stay roots.
+        roots.add(name if top == "pipecat" else top)
+    return sorted(roots), sorted(names - roots)
 
 
 _LOCAL_PATH = re.compile(r" \((?:[A-Za-z]:\\|/)[^)]*\)")
