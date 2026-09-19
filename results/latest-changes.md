@@ -1,0 +1,2 @@
+- **Beyond Presence**: ok → broken (import pipecat_bey.transport: ModuleNotFoundError: No module named 'daily')
+- **Finchvox**: partial → ok
