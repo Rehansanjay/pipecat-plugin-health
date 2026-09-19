@@ -18,13 +18,12 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.11.0** (2026-09-19): 36 works, 1 partial, 11 broken, 5 needs older pipecat, 3 can't install
-- **pipecat-ai main@b60850bbd** (2026-09-19): 36 works, 1 partial, 11 broken, 5 needs older pipecat, 3 can't install
+- **pipecat-ai 1.11.0** (2026-09-19): 37 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
+- **pipecat-ai main@b60850bbd** (2026-09-19): 37 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
 
 | Plugin | Category | pipecat 1.11.0 | pipecat main@b60850bbd | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
-| [Beyond Presence](https://docs.pipecat.ai/api-reference/server/services/transport/beyond-presence) | Transports | ❌ broken | ❌ broken | import pipecat_bey.transport: ModuleNotFoundError: No module named 'daily' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
 | [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ❌ broken | ❌ broken | import pipecat_gnani: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | ❌ broken | ❌ broken | import pipecat_hecttor: ImportError: Missing module: No module named 'hecttor_sdk' |
@@ -49,6 +48,7 @@ automatically.
 | [Arctan](https://docs.pipecat.ai/api-reference/server/services/audio-filters/arctan) | Audio Filters | ✅ works | ✅ works |  |
 | [Asterisk](https://docs.pipecat.ai/api-reference/server/services/serializers/asterisk) | Serializers | ✅ works | ✅ works |  |
 | [Bandwidth](https://docs.pipecat.ai/api-reference/server/services/serializers/bandwidth) | Serializers | ✅ works | ✅ works |  |
+| [Beyond Presence](https://docs.pipecat.ai/api-reference/server/services/transport/beyond-presence) | Transports | ✅ works | ✅ works |  |
 | [Finchvox](https://docs.pipecat.ai/api-reference/server/services/analytics/finchvox) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Floe](https://docs.pipecat.ai/api-reference/server/services/llm/floe) | Large Language Models, Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [floe-guard](https://docs.pipecat.ai/api-reference/server/services/analytics/floe) | Analytics & Monitoring | ✅ works | ✅ works |  |
