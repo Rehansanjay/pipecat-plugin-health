@@ -1,0 +1,19 @@
+[project]
+name = "pipecat-plugin-health"
+version = "0.1.0"
+description = "Nightly install-and-import check of every community Pipecat plugin"
+requires-python = ">=3.10"
+license = "BSD-2-Clause"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

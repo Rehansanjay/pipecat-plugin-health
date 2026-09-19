@@ -1,0 +1,1607 @@
+{
+  "target": "latest",
+  "pipecat": "1.11.0",
+  "checked_at": "2026-09-19T12:31:39Z",
+  "docs_commit": "8f4347939337921697edd9aa63952b0891c14daa",
+  "python": "3.13.7",
+  "seconds": 1703,
+  "plugins": [
+    {
+      "name": "AwaazAI",
+      "install": "uv add pipecat-awaazai",
+      "categories": [
+        "Serializers"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-awaazai==0.1.1"
+        ],
+        "packages": [
+          "pipecat_awaazai"
+        ],
+        "top_level_errors": [
+          {
+            "module": "pipecat_awaazai",
+            "type": "ImportError",
+            "message": "cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames'"
+          }
+        ],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-awaazai==0.1.1"
+      ],
+      "status": "broken",
+      "reason": "import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames'",
+      "seconds": 87.5
+    },
+    {
+      "name": "FIRE RED VAD",
+      "install": "uv add pipecat-firered-vad",
+      "categories": [
+        "VAD"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-firered-vad==0.1.0"
+        ],
+        "packages": [
+          "pipecat_firered_vad"
+        ],
+        "top_level_errors": [
+          {
+            "module": "pipecat_firered_vad",
+            "type": "ModuleNotFoundError",
+            "message": "FireRedVAD is not installed."
+          }
+        ],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-firered-vad==0.1.0"
+      ],
+      "status": "broken",
+      "reason": "import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed.",
+      "seconds": 245.2
+    },
+    {
+      "name": "Gnani",
+      "install": "uv add pipecat-gnani",
+      "categories": [
+        "Speech-to-Text",
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/gnani",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-gnani==0.5.12"
+        ],
+        "packages": [
+          "pipecat_gnani"
+        ],
+        "top_level_errors": [
+          {
+            "module": "pipecat_gnani",
+            "type": "ImportError",
+            "message": "cannot import name '_NotGiven' from 'pipecat.services.settings'"
+          }
+        ],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-gnani==0.5.12"
+      ],
+      "status": "broken",
+      "reason": "import pipecat_gnani: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
+      "seconds": 174.7
+    },
+    {
+      "name": "Hecttor",
+      "install": "uv add pipecat-hecttor",
+      "categories": [
+        "Audio Filters"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-hecttor==0.3.0"
+        ],
+        "packages": [
+          "pipecat_hecttor"
+        ],
+        "top_level_errors": [
+          {
+            "module": "pipecat_hecttor",
+            "type": "ImportError",
+            "message": "Missing module: No module named 'hecttor_sdk'",
+            "where": "ImportError: Missing module: No module named 'hecttor_sdk'"
+          }
+        ],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-hecttor==0.3.0"
+      ],
+      "status": "broken",
+      "reason": "import pipecat_hecttor: ImportError: Missing module: No module named 'hecttor_sdk'",
+      "seconds": 250.1
+    },
+    {
+      "name": "Moss",
+      "install": "uv add pipecat-moss",
+      "categories": [
+        "Knowledge Retrieval"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/knowledge-retrieval/moss",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-moss==0.0.3"
+        ],
+        "packages": [
+          "pipecat_moss"
+        ],
+        "top_level_errors": [
+          {
+            "module": "pipecat_moss",
+            "type": "ImportError",
+            "message": "cannot import name 'LLMMessagesFrame' from 'pipecat.frames.frames'",
+            "where": "ImportError: cannot import name 'LLMMessagesFrame' from 'pipecat.frames.frames' (E:\\Temp\\pipecat-plugin-health-9uuw_4ud\\plugin-nnk_e366\\Lib\\site-packages\\pipecat\\frames\\frames.py)"
+          }
+        ],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-moss==0.0.3"
+      ],
+      "status": "broken",
+      "reason": "import pipecat_moss: ImportError: cannot import name 'LLMMessagesFrame' from 'pipecat.frames.frames'",
+      "seconds": 180.8
+    },
+    {
+      "name": "Replicate",
+      "install": "uv add pipecat-replicate",
+      "categories": [
+        "Image Generation"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/image-generation/replicate",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-replicate==0.1.0"
+        ],
+        "packages": [
+          "pipecat_replicate"
+        ],
+        "top_level_errors": [
+          {
+            "module": "pipecat_replicate",
+            "type": "ImportError",
+            "message": "cannot import name '_NotGiven' from 'pipecat.services.settings'",
+            "where": "ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' (E:\\Temp\\pipecat-plugin-health-9uuw_4ud\\plugin-fq3846rv\\Lib\\site-packages\\pipecat\\services\\settings.py)"
+          }
+        ],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-replicate==0.1.0"
+      ],
+      "status": "broken",
+      "reason": "import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
+      "seconds": 186.3
+    },
+    {
+      "name": "Respeecher",
+      "install": "uv add pipecat-respeecher",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/respeecher",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-respeecher==1.0.1"
+        ],
+        "packages": [
+          "pipecat_respeecher"
+        ],
+        "top_level_errors": [
+          {
+            "module": "pipecat_respeecher",
+            "type": "ImportError",
+            "message": "cannot import name '_NotGiven' from 'pipecat.services.settings'"
+          }
+        ],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-respeecher==1.0.1"
+      ],
+      "status": "broken",
+      "reason": "import pipecat_respeecher: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
+      "seconds": 218.8
+    },
+    {
+      "name": "Rumik AI",
+      "install": "uv add pipecat-rumik",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/rumik",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-rumik==0.1.4"
+        ],
+        "packages": [
+          "pipecat_rumik"
+        ],
+        "top_level_errors": [
+          {
+            "module": "pipecat_rumik",
+            "type": "ImportError",
+            "message": "cannot import name '_NotGiven' from 'pipecat.services.settings'"
+          }
+        ],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-rumik==0.1.4"
+      ],
+      "status": "broken",
+      "reason": "import pipecat_rumik: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
+      "seconds": 225.3
+    },
+    {
+      "name": "SonexLabs",
+      "install": "uv add pipecat-sonex",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/sonex",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-sonex==0.2.7"
+        ],
+        "packages": [
+          "pipecat_sonex"
+        ],
+        "top_level_errors": [
+          {
+            "module": "pipecat_sonex",
+            "type": "ImportError",
+            "message": "cannot import name '_NotGiven' from 'pipecat.services.settings'"
+          }
+        ],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-sonex==0.2.7"
+      ],
+      "status": "broken",
+      "reason": "import pipecat_sonex: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
+      "seconds": 204.4
+    },
+    {
+      "name": "Supertonic",
+      "install": "uv add pipecat-supertonic",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/supertonic",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-supertonic==0.1.1"
+        ],
+        "packages": [
+          "pipecat_supertonic"
+        ],
+        "top_level_errors": [
+          {
+            "module": "pipecat_supertonic",
+            "type": "ImportError",
+            "message": "cannot import name '_NotGiven' from 'pipecat.services.settings'"
+          }
+        ],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-supertonic==0.1.1"
+      ],
+      "status": "broken",
+      "reason": "import pipecat_supertonic: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
+      "seconds": 173.3
+    },
+    {
+      "name": "Deepdub",
+      "install": "uv add pipecat-deepdub-tts",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/deepdub",
+      "status": "pinned",
+      "reason": "pins pipecat-ai>=0.0.97,<0.1.0",
+      "seconds": 0.4
+    },
+    {
+      "name": "Maya",
+      "install": "uv add \"pipecat-maya @ git+https://github.com/MayaResearch/pipecat-maya.git@v0.1.0\"",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/maya",
+      "status": "pinned",
+      "reason": "pins pipecat-ai==1.8.1",
+      "seconds": 2.2
+    },
+    {
+      "name": "Oruk",
+      "install": "uv add \"pipecat-oruk==0.1.0rc1\"",
+      "categories": [
+        "Speech-to-Text"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/oruk",
+      "status": "pinned",
+      "reason": "pins pipecat-ai>=1.8.1,<1.9",
+      "seconds": 1.6
+    },
+    {
+      "name": "Roark",
+      "install": "uv add pipecat-roark",
+      "categories": [
+        "Analytics & Monitoring"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/roark",
+      "status": "pinned",
+      "reason": "pins pipecat-ai>=0.0.40,<1; pipecat-ai>=0.0.104,<1",
+      "seconds": 1.8
+    },
+    {
+      "name": "Wavix",
+      "install": "uv add pipecat-wavix",
+      "categories": [
+        "Serializers"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/wavix",
+      "status": "pinned",
+      "reason": "pins pipecat-ai[deepgram]==0.0.105",
+      "seconds": 1.6
+    },
+    {
+      "name": "Hakim",
+      "install": "uv pip install git+https://github.com/tryHakimAI/hakim-pipecat.git",
+      "categories": [
+        "Speech-to-Text",
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/hakim",
+      "status": "uninstallable",
+      "reason": "<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory",
+      "seconds": 7.1
+    },
+    {
+      "name": "Simplismart",
+      "install": "uv add pipecat-simplismart",
+      "categories": [
+        "Large Language Models",
+        "Speech-to-Text",
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/llm/simplismart",
+      "status": "uninstallable",
+      "reason": "Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable.",
+      "seconds": 6.0
+    },
+    {
+      "name": "Uplift AI",
+      "install": "uv pip install git+https://github.com/havkerboi123/pipecat-upliftai-stt.git",
+      "categories": [
+        "Speech-to-Text"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/upliftai",
+      "status": "uninstallable",
+      "reason": "<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory",
+      "seconds": 4.6
+    },
+    {
+      "name": "Boson Higgs Realtime",
+      "install": "uv add pipecat-boson",
+      "categories": [
+        "Realtime LLM"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/s2s/boson",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-boson==0.1.3"
+        ],
+        "packages": [
+          "pipecat_boson"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [
+          {
+            "module": "pipecat_boson.realtime.llm",
+            "type": "ImportError",
+            "message": "cannot import name 'assert_given' from 'pipecat.services.settings'"
+          }
+        ],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-boson==0.1.3"
+      ],
+      "status": "partial",
+      "reason": "import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings'",
+      "seconds": 147.3
+    },
+    {
+      "name": "Finchvox",
+      "install": "uv add finchvox",
+      "categories": [
+        "Analytics & Monitoring"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/finchvox",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "finchvox==0.0.1"
+        ],
+        "packages": [
+          "finchvox"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [
+          {
+            "module": "finchvox.audio_recorder",
+            "type": "ModuleNotFoundError",
+            "message": "No module named 'pipecat.utils.tracing.conversation_context_provider'",
+            "where": "ModuleNotFoundError: No module named 'pipecat.utils.tracing.conversation_context_provider'"
+          },
+          {
+            "module": "finchvox.collector.server",
+            "type": "ModuleNotFoundError",
+            "message": "No module named 'finchvox.collector.logs_writer'",
+            "where": "ModuleNotFoundError: No module named 'finchvox.collector.logs_writer'"
+          }
+        ],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "finchvox==0.0.1"
+      ],
+      "status": "partial",
+      "reason": "import finchvox.audio_recorder: ModuleNotFoundError: No module named 'pipecat.utils.tracing.conversation_context_provider'",
+      "seconds": 299.5
+    },
+    {
+      "name": "Acefone",
+      "install": "uv add pipecat-acefone",
+      "categories": [
+        "Serializers"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/acefone",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-acefone==0.1.3"
+        ],
+        "packages": [
+          "pipecat_acefone"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-acefone==0.1.3"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 169.2
+    },
+    {
+      "name": "Anam",
+      "install": "uv add pipecat-anam",
+      "categories": [
+        "Video"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/video/anam",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-anam==0.1.0"
+        ],
+        "packages": [
+          "pipecat_anam"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [
+          {
+            "module": "pipecat_anam.transport",
+            "type": "ModuleNotFoundError",
+            "message": "No module named 'daily'"
+          }
+        ],
+        "services": [
+          "pipecat_anam.video.AnamVideoService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-anam==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 185.9
+    },
+    {
+      "name": "Anannas AI",
+      "install": "uv add pipecat-anannas",
+      "categories": [
+        "Large Language Models"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/llm/anannas",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-anannas==0.1.0"
+        ],
+        "packages": [
+          "pipecat_anannas"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_anannas.llm.AnannasLLMService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-anannas==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 197.4
+    },
+    {
+      "name": "Arctan",
+      "install": "uv add \"arctan-vi[pipecat]\"",
+      "categories": [
+        "Audio Filters"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/audio-filters/arctan",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "arctan-vi==0.8.1",
+          "arctan-vi-pipecat==0.8.1"
+        ],
+        "packages": [
+          "arctan",
+          "arctan"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "arctan-vi==0.8.1",
+        "arctan-vi-pipecat==0.8.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 262.8
+    },
+    {
+      "name": "Asterisk",
+      "install": "uv add pipecat-asterisk",
+      "categories": [
+        "Serializers"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/asterisk",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-asterisk==0.1.4"
+        ],
+        "packages": [
+          "pipecat_asterisk"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_asterisk.transport.transport.AsteriskWebsocketOutputTransport",
+          "pipecat_asterisk.utils.audio_generator.AudioGenerator",
+          "pipecat_asterisk.utils.audio_generator.FileAudioGenerator",
+          "pipecat_asterisk.utils.audio_generator.WhiteNoiseGenerator"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-asterisk==0.1.4"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 118.0
+    },
+    {
+      "name": "Bandwidth",
+      "install": "uv add pipecat-bandwidth",
+      "categories": [
+        "Serializers"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/bandwidth",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-bandwidth==0.1.0"
+        ],
+        "packages": [
+          "pipecat_bandwidth"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-bandwidth==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 171.7
+    },
+    {
+      "name": "Beyond Presence",
+      "install": "uv add pipecat-ai-bey",
+      "categories": [
+        "Transports"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/transport/beyond-presence",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-ai-bey==0.0.1"
+        ],
+        "packages": [
+          "pipecat_bey"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [
+          {
+            "module": "pipecat_bey.transport",
+            "type": "ModuleNotFoundError",
+            "message": "No module named 'daily'"
+          }
+        ],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-ai-bey==0.0.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 258.4
+    },
+    {
+      "name": "Floe",
+      "install": "uv add pipecat-floe",
+      "categories": [
+        "Large Language Models",
+        "Speech-to-Text",
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/llm/floe",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "floe-guard==0.25.0",
+          "pipecat-floe==0.3.0"
+        ],
+        "packages": [
+          "floe_guard",
+          "pipecat_floe"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [
+          {
+            "module": "floe_guard.integrations.livekit",
+            "type": "ModuleNotFoundError",
+            "message": "No module named 'livekit'",
+            "where": "ModuleNotFoundError: No module named 'livekit'"
+          }
+        ],
+        "services": [
+          "floe_guard.integrations.pipecat.FloeBudgetGuardProcessor",
+          "pipecat_floe.llm.FloeLLMService",
+          "pipecat_floe.stt.FloeSTTService",
+          "pipecat_floe.tts.FloeTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "floe-guard==0.25.0",
+        "pipecat-floe==0.3.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 202.2
+    },
+    {
+      "name": "floe-guard",
+      "install": "uv add \"floe-guard[pipecat]\"",
+      "categories": [
+        "Analytics & Monitoring"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/floe",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "floe-guard==0.25.0"
+        ],
+        "packages": [
+          "floe_guard"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [
+          {
+            "module": "floe_guard.integrations.livekit",
+            "type": "ModuleNotFoundError",
+            "message": "No module named 'livekit'",
+            "where": "ModuleNotFoundError: No module named 'livekit'"
+          }
+        ],
+        "services": [
+          "floe_guard.integrations.pipecat.FloeBudgetGuardProcessor"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "floe-guard==0.25.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 265.3
+    },
+    {
+      "name": "Future AGI",
+      "install": "uv add traceAI-pipecat",
+      "categories": [
+        "Analytics & Monitoring"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/future-agi",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "traceAI-pipecat==0.1.1"
+        ],
+        "packages": [
+          "traceai_pipecat"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "traceAI-pipecat==0.1.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 294.9
+    },
+    {
+      "name": "Gandr",
+      "install": "uv add pipecat-gandr",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/gandr",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-gandr==0.1.4"
+        ],
+        "packages": [
+          "pipecat_gandr"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_gandr.tts.GandrTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-gandr==0.1.4"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 133.0
+    },
+    {
+      "name": "Lokutor",
+      "install": "uv add pipecat-lokutor",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/lokutor",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-lokutor==0.2.0"
+        ],
+        "packages": [
+          "pipecat_lokutor"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_lokutor.tts.LokutorTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-lokutor==0.2.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 121.9
+    },
+    {
+      "name": "MCP",
+      "install": "uv add pipecat-mcp-transport",
+      "categories": [
+        "Transports"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/transport/mcp",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-mcp-transport==0.1.1"
+        ],
+        "packages": [
+          "pipecat_mcp_transport"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_mcp_transport.transport.McpInputTransport",
+          "pipecat_mcp_transport.transport.McpOutputTransport"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-mcp-transport==0.1.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 296.5
+    },
+    {
+      "name": "MemorySync",
+      "install": "uv add pipecat-memorysync",
+      "categories": [
+        "Memory"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/memory/memorysync",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-memorysync==1.1.1"
+        ],
+        "packages": [
+          "pipecat_memorysync"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_memorysync.service.MemorySyncMemoryService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-memorysync==1.1.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 126.3
+    },
+    {
+      "name": "MLflow",
+      "install": "uv add \"pipecat-ai[tracing]\" mlflow",
+      "categories": [
+        "Analytics & Monitoring"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/mlflow",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "mlflow==3.16.1"
+        ],
+        "packages": [
+          "mlflow"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "mlflow==3.16.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 184.9
+    },
+    {
+      "name": "Murf AI",
+      "install": "uv add pipecat-murf-tts",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/murf",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-murf-tts==0.2.6"
+        ],
+        "packages": [
+          "pipecat_murf_tts"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_murf_tts.tts.MurfTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-murf-tts==0.2.6"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 212.9
+    },
+    {
+      "name": "Noveum Trace",
+      "install": "uv add \"noveum-trace[pipecat]\"",
+      "categories": [
+        "Analytics & Monitoring"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/noveum-trace",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "noveum-trace==1.5.25"
+        ],
+        "packages": [
+          "noveum_trace"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [
+          {
+            "module": "noveum_trace.integrations.crewai",
+            "type": "ModuleNotFoundError",
+            "message": "No module named 'crewai'",
+            "where": "ModuleNotFoundError: No module named 'crewai'"
+          },
+          {
+            "module": "noveum_trace.integrations.langchain",
+            "type": "ModuleNotFoundError",
+            "message": "No module named 'langchain_core'",
+            "where": "ModuleNotFoundError: No module named 'langchain_core'"
+          },
+          {
+            "module": "noveum_trace.integrations.llamaindex",
+            "type": "ModuleNotFoundError",
+            "message": "No module named 'llama_index'",
+            "where": "ModuleNotFoundError: No module named 'llama_index'"
+          }
+        ],
+        "services": [
+          "noveum_trace.integrations.pipecat.transports._NoveumWebsocketServerInputTransport",
+          "noveum_trace.integrations.pipecat.transports._NoveumWebsocketClientInputTransport"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "noveum-trace==1.5.25"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 311.7
+    },
+    {
+      "name": "OpenInference",
+      "install": "uv add openinference-instrumentation-pipecat",
+      "categories": [
+        "Analytics & Monitoring"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/openinference",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "openinference-instrumentation-pipecat==2.0.6"
+        ],
+        "packages": [
+          "openinference"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "openinference-instrumentation-pipecat==2.0.6"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 273.7
+    },
+    {
+      "name": "Pinch",
+      "install": "uv add pipecat-plugins-pinch",
+      "categories": [
+        "Translation"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/translation/pinch",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-plugins-pinch==0.1.0"
+        ],
+        "packages": [
+          "pipecat.plugins.pinch"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat.plugins.pinch.translator.PinchTranslatorService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-plugins-pinch==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 100.9
+    },
+    {
+      "name": "Pipecat Backchannel",
+      "install": "uv add pipecat-backchannel",
+      "categories": [
+        "Extensions"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/extensions/pipecat-backchannel",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-backchannel==0.3.3"
+        ],
+        "packages": [
+          "pipecat_backchannel"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_backchannel.player.ClipPlayer",
+          "pipecat_backchannel.processor.BackchannelProcessor",
+          "pipecat_backchannel.recorder.ClipRecorder"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-backchannel==0.3.3"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 196.0
+    },
+    {
+      "name": "Pipecat TTS Cache",
+      "install": "uv add pipecat-tts-cache",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/tts-cache",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-tts-cache==1.0.1"
+        ],
+        "packages": [
+          "pipecat_tts_cache"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-tts-cache==1.0.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 222.7
+    },
+    {
+      "name": "pipecat-effects",
+      "install": "uv add pipecat-effects",
+      "categories": [
+        "Audio Filters"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/audio-filters/pipecat-effects",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-effects==0.1.1"
+        ],
+        "packages": [
+          "pipecat_effects"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-effects==0.1.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 358.4
+    },
+    {
+      "name": "Protoface",
+      "install": "uv add pipecat-protoface",
+      "categories": [
+        "Video"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/video/protoface",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-protoface==0.1.0"
+        ],
+        "packages": [
+          "pipecat_protoface"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_protoface.video.ProtofaceVideoService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-protoface==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 180.7
+    },
+    {
+      "name": "Quickdial",
+      "install": "uv add pipecat-quickdial",
+      "categories": [
+        "Speech-to-Text",
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/quickdial",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-quickdial==0.1.0"
+        ],
+        "packages": [
+          "pipecat_quickdial"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_quickdial.stt.QuickdialSTTService",
+          "pipecat_quickdial.tts.QuickdialTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-quickdial==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 158.1
+    },
+    {
+      "name": "Ringg AI",
+      "install": "uv pip install git+https://github.com/Stonkr/pipecat-ringg.git",
+      "categories": [
+        "Speech-to-Text"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/ringg",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-ringg==0.1.0"
+        ],
+        "packages": [
+          "pipecat_ringg"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_ringg.stt.RinggSTTService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-ringg==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 152.3
+    },
+    {
+      "name": "SILMA AI",
+      "install": "uv add pipecat-silma",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/silma",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-silma==0.1.0"
+        ],
+        "packages": [
+          "pipecat_silma"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_silma.tts.SilmaTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-silma==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 211.6
+    },
+    {
+      "name": "SLNG",
+      "install": "uv add pipecat-slng",
+      "categories": [
+        "Speech-to-Text",
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/slng",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-slng==0.5.2"
+        ],
+        "packages": [
+          "pipecat_slng"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_slng.stt.SlngSTTService",
+          "pipecat_slng.tts.SlngTTSService",
+          "pipecat_slng.tts.SlngHttpTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-slng==0.5.2"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 162.8
+    },
+    {
+      "name": "SmolVLM",
+      "install": "uv add pipecat-smolvlm",
+      "categories": [
+        "Vision"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/vision/smolvlm",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-smolvlm==0.1.0"
+        ],
+        "packages": [],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-smolvlm==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 314.7
+    },
+    {
+      "name": "Synap",
+      "install": "uv add maximem-synap-pipecat",
+      "categories": [
+        "Memory"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/memory/synap",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "maximem-synap-pipecat==0.2.0"
+        ],
+        "packages": [
+          "synap_pipecat"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "synap_pipecat.processors.SynapMemoryProcessor",
+          "synap_pipecat.processors.SynapRecorder",
+          "synap_pipecat.short_term.SynapShortTermProcessor"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "maximem-synap-pipecat==0.2.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 155.0
+    },
+    {
+      "name": "TEN VAD",
+      "install": "uv add pipecat-ten-vad",
+      "categories": [
+        "VAD"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/vad/ten-vad",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-ten-vad==0.1.0"
+        ],
+        "packages": [],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-ten-vad==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 165.8
+    },
+    {
+      "name": "ThunderPhone",
+      "install": "uv add pipecat-thunderphone",
+      "categories": [
+        "Realtime LLM"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/s2s/thunderphone",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-thunderphone==0.1.0"
+        ],
+        "packages": [
+          "pipecat_thunderphone"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_thunderphone.service.ThunderPhoneRealtimeLLMService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-thunderphone==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 153.6
+    },
+    {
+      "name": "Typecast",
+      "install": "uv add pipecat-ai-typecast",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/typecast",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-ai-typecast==0.3.1"
+        ],
+        "packages": [
+          "pipecat_typecast"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_typecast.tts.TypecastTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-ai-typecast==0.3.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 183.0
+    },
+    {
+      "name": "Uplift AI",
+      "install": "uv pip install git+https://github.com/havkerboi123/pipecat-upliftai-tts.git",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/upliftai",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-uplift-tts==1.0.0"
+        ],
+        "packages": [
+          "pipecat_upliftai"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_upliftai.tts.UpliftHttpTTSService",
+          "pipecat_upliftai.tts.UpliftStreamingTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-uplift-tts==1.0.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 107.3
+    },
+    {
+      "name": "Vakyam AI",
+      "install": "uv add pipecat-vakyam",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/vakyam",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-vakyam==0.1.0",
+          "vakyamai==0.1.8"
+        ],
+        "packages": [
+          "pipecat_vakyam",
+          "vakyamai"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [
+          {
+            "module": "vakyamai.livekit",
+            "type": "ImportError",
+            "message": "LiveKit support requires the optional dependency. Install with: pip install \"vakyamai[livekit]\""
+          }
+        ],
+        "services": [
+          "pipecat_vakyam.tts.VakyamTTSService",
+          "vakyamai.pipecat.tts.VakyamTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-vakyam==0.1.0",
+        "vakyamai==0.1.8"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 273.7
+    },
+    {
+      "name": "Voice.ai",
+      "install": "uv pip install git+https://github.com/voice-ai/voice-ai-pipecat-tts.git",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/voiceai",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-voice-ai==1.0.0"
+        ],
+        "packages": [
+          "pipecat_voice_ai"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_voice_ai.tts.VoiceAiTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-voice-ai==1.0.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 282.9
+    },
+    {
+      "name": "XTTS-vLLM",
+      "install": "uv add pipecat-xtts-vllm",
+      "categories": [
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/xtts-vllm",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-xtts-vllm==0.1.1"
+        ],
+        "packages": [
+          "pipecat_xtts_vllm"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_xtts_vllm.tts.XTTSVLLMTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-xtts-vllm==0.1.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 274.1
+    }
+  ]
+}
