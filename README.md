@@ -18,8 +18,8 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.11.0** (2026-09-20): 37 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
-- **pipecat-ai main@dbdf21a01** (2026-09-20): 37 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
+- **pipecat-ai 1.11.0** (2026-09-21): 37 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
+- **pipecat-ai main@dbdf21a01** (2026-09-21): 37 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
 
 | Plugin | Category | pipecat 1.11.0 | pipecat main@dbdf21a01 | Why |
 |---|---|---|---|---|
