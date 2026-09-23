@@ -1,10 +1,10 @@
 {
   "target": "latest",
   "pipecat": "1.11.0",
-  "checked_at": "2026-09-22T06:33:04Z",
+  "checked_at": "2026-09-23T06:18:26Z",
   "docs_commit": "8f4347939337921697edd9aa63952b0891c14daa",
   "python": "3.12.14",
-  "seconds": 41,
+  "seconds": 45,
   "plugins": [
     {
       "name": "AwaazAI",
@@ -37,7 +37,7 @@
       ],
       "status": "broken",
       "reason": "import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames'",
-      "seconds": 3.5
+      "seconds": 4.1
     },
     {
       "name": "FIRE RED VAD",
@@ -70,7 +70,7 @@
       ],
       "status": "broken",
       "reason": "import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed.",
-      "seconds": 3.0
+      "seconds": 4.5
     },
     {
       "name": "Gnani",
@@ -104,7 +104,7 @@
       ],
       "status": "broken",
       "reason": "import pipecat_gnani: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 4.0
+      "seconds": 4.2
     },
     {
       "name": "Hecttor",
@@ -137,7 +137,7 @@
       ],
       "status": "broken",
       "reason": "import pipecat_hecttor: ImportError: Missing module: No module named 'hecttor_sdk'",
-      "seconds": 9.6
+      "seconds": 5.0
     },
     {
       "name": "Moss",
@@ -170,7 +170,7 @@
       ],
       "status": "broken",
       "reason": "import pipecat_moss: ImportError: cannot import name 'LLMMessagesFrame' from 'pipecat.frames.frames'",
-      "seconds": 4.3
+      "seconds": 6.5
     },
     {
       "name": "Replicate",
@@ -203,7 +203,7 @@
       ],
       "status": "broken",
       "reason": "import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 3.5
+      "seconds": 4.3
     },
     {
       "name": "Respeecher",
@@ -236,7 +236,7 @@
       ],
       "status": "broken",
       "reason": "import pipecat_respeecher: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 4.5
+      "seconds": 4.6
     },
     {
       "name": "Rumik AI",
@@ -269,7 +269,7 @@
       ],
       "status": "broken",
       "reason": "import pipecat_rumik: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 6.3
+      "seconds": 4.1
     },
     {
       "name": "SonexLabs",
@@ -302,7 +302,7 @@
       ],
       "status": "broken",
       "reason": "import pipecat_sonex: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 4.6
+      "seconds": 5.0
     },
     {
       "name": "Supertonic",
@@ -335,7 +335,7 @@
       ],
       "status": "broken",
       "reason": "import pipecat_supertonic: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 4.3
+      "seconds": 4.7
     },
     {
       "name": "Deepdub",
@@ -346,7 +346,7 @@
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/deepdub",
       "status": "pinned",
       "reason": "pins pipecat-ai>=0.0.97,<0.1.0",
-      "seconds": 0.5
+      "seconds": 0.6
     },
     {
       "name": "Maya",
@@ -368,18 +368,7 @@
       "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/oruk",
       "status": "pinned",
       "reason": "pins pipecat-ai>=1.8.1,<1.9",
-      "seconds": 0.6
-    },
-    {
-      "name": "Roark",
-      "install": "uv add pipecat-roark",
-      "categories": [
-        "Analytics & Monitoring"
-      ],
-      "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/roark",
-      "status": "pinned",
-      "reason": "pins pipecat-ai>=0.0.40,<1; pipecat-ai>=0.0.104,<1; pipecat-ai>=0.0.40,<1.",
-      "seconds": 1.2
+      "seconds": 0.5
     },
     {
       "name": "Wavix",
@@ -390,7 +379,7 @@
       "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/wavix",
       "status": "pinned",
       "reason": "pins pipecat-ai[deepgram]==0.0.105; pipecat-ai==0.0.105.",
-      "seconds": 0.4
+      "seconds": 0.5
     },
     {
       "name": "Hakim",
@@ -402,7 +391,7 @@
       "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/hakim",
       "status": "uninstallable",
       "reason": "<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory",
-      "seconds": 0.9
+      "seconds": 0.7
     },
     {
       "name": "Simplismart",
@@ -415,7 +404,7 @@
       "docs": "https://docs.pipecat.ai/api-reference/server/services/llm/simplismart",
       "status": "uninstallable",
       "reason": "Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable.",
-      "seconds": 0.3
+      "seconds": 0.6
     },
     {
       "name": "Uplift AI",
@@ -426,7 +415,7 @@
       "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/upliftai",
       "status": "uninstallable",
       "reason": "<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory",
-      "seconds": 1.2
+      "seconds": 0.6
     },
     {
       "name": "Boson Higgs Realtime",
@@ -459,7 +448,7 @@
       ],
       "status": "partial",
       "reason": "import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings'",
-      "seconds": 5.2
+      "seconds": 6.2
     },
     {
       "name": "Acefone",
@@ -486,7 +475,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.5
+      "seconds": 4.6
     },
     {
       "name": "Anam",
@@ -521,7 +510,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.9
+      "seconds": 5.0
     },
     {
       "name": "Anannas AI",
@@ -550,7 +539,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.9
+      "seconds": 9.3
     },
     {
       "name": "Arctan",
@@ -580,7 +569,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 10.0
+      "seconds": 6.9
     },
     {
       "name": "Asterisk",
@@ -612,7 +601,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.6
+      "seconds": 6.0
     },
     {
       "name": "Bandwidth",
@@ -639,7 +628,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.9
+      "seconds": 4.8
     },
     {
       "name": "Beyond Presence",
@@ -672,7 +661,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.6
+      "seconds": 4.5
     },
     {
       "name": "Finchvox",
@@ -707,7 +696,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 13.9
+      "seconds": 10.1
     },
     {
       "name": "Floe",
@@ -750,7 +739,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.3
+      "seconds": 10.1
     },
     {
       "name": "floe-guard",
@@ -785,7 +774,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 10.6
+      "seconds": 7.6
     },
     {
       "name": "Future AGI",
@@ -812,7 +801,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 11.8
+      "seconds": 8.7
     },
     {
       "name": "Gandr",
@@ -841,7 +830,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 2.9
+      "seconds": 4.9
     },
     {
       "name": "Lokutor",
@@ -870,7 +859,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.3
+      "seconds": 5.0
     },
     {
       "name": "MCP",
@@ -900,7 +889,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.6
+      "seconds": 6.8
     },
     {
       "name": "MemorySync",
@@ -929,7 +918,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.3
+      "seconds": 4.6
     },
     {
       "name": "MLflow",
@@ -985,7 +974,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.3
+      "seconds": 4.2
     },
     {
       "name": "Noveum Trace",
@@ -1141,7 +1130,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 14.6
+      "seconds": 12.2
     },
     {
       "name": "OpenInference",
@@ -1168,7 +1157,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 11.4
+      "seconds": 9.4
     },
     {
       "name": "Pinch",
@@ -1228,7 +1217,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.3
+      "seconds": 5.5
     },
     {
       "name": "Pipecat TTS Cache",
@@ -1255,7 +1244,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.0
+      "seconds": 4.6
     },
     {
       "name": "pipecat-effects",
@@ -1282,7 +1271,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 9.0
+      "seconds": 13.2
     },
     {
       "name": "Protoface",
@@ -1311,7 +1300,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 2.8
+      "seconds": 4.4
     },
     {
       "name": "Quickdial",
@@ -1342,7 +1331,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.6
+      "seconds": 5.0
     },
     {
       "name": "Ringg AI",
@@ -1371,7 +1360,34 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.4
+      "seconds": 5.4
+    },
+    {
+      "name": "Roark",
+      "install": "uv add pipecat-roark",
+      "categories": [
+        "Analytics & Monitoring"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/roark",
+      "probe": {
+        "pipecat": "1.11.0",
+        "distributions": [
+          "pipecat-roark==0.2.1"
+        ],
+        "packages": [
+          "pipecat_roark"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-roark==0.2.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 7.1
     },
     {
       "name": "SILMA AI",
@@ -1400,7 +1416,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.5
+      "seconds": 4.0
     },
     {
       "name": "SLNG",
@@ -1432,7 +1448,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.9
+      "seconds": 6.5
     },
     {
       "name": "SmolVLM",
@@ -1457,7 +1473,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.9
+      "seconds": 5.9
     },
     {
       "name": "Synap",
@@ -1513,7 +1529,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.1
+      "seconds": 4.2
     },
     {
       "name": "ThunderPhone",
@@ -1542,7 +1558,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.3
+      "seconds": 5.5
     },
     {
       "name": "Typecast",
@@ -1571,7 +1587,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.0
+      "seconds": 6.7
     },
     {
       "name": "Uplift AI",
@@ -1601,7 +1617,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.5
+      "seconds": 5.4
     },
     {
       "name": "Vakyam AI",
@@ -1645,7 +1661,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.8
+      "seconds": 5.9
     },
     {
       "name": "Voice.ai",
@@ -1674,7 +1690,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.9
+      "seconds": 4.2
     },
     {
       "name": "XTTS-vLLM",
@@ -1703,7 +1719,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.6
+      "seconds": 5.4
     }
   ]
 }

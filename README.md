@@ -18,10 +18,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.11.0** (2026-09-22): 37 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
-- **pipecat-ai main@06cc27c07** (2026-09-22): 37 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
+- **pipecat-ai 1.11.0** (2026-09-23): 38 works, 1 partial, 10 broken, 4 needs older pipecat, 3 can't install
+- **pipecat-ai main@5a6693369** (2026-09-23): 38 works, 1 partial, 10 broken, 4 needs older pipecat, 3 can't install
 
-| Plugin | Category | pipecat 1.11.0 | pipecat main@06cc27c07 | Why |
+| Plugin | Category | pipecat 1.11.0 | pipecat main@5a6693369 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -36,7 +36,6 @@ automatically.
 | [Deepdub](https://docs.pipecat.ai/api-reference/server/services/tts/deepdub) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=0.0.97,<0.1.0 |
 | [Maya](https://docs.pipecat.ai/api-reference/server/services/tts/maya) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai==1.8.1; pipecat-ai==1.8.1. |
 | [Oruk](https://docs.pipecat.ai/api-reference/server/services/stt/oruk) | Speech-to-Text | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.8.1,<1.9 |
-| [Roark](https://docs.pipecat.ai/api-reference/server/services/analytics/roark) | Analytics & Monitoring | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=0.0.40,<1; pipecat-ai>=0.0.104,<1; pipecat-ai>=0.0.40,<1. |
 | [Wavix](https://docs.pipecat.ai/api-reference/server/services/serializers/wavix) | Serializers | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai[deepgram]==0.0.105; pipecat-ai==0.0.105. |
 | [Hakim](https://docs.pipecat.ai/api-reference/server/services/stt/hakim) | Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | <checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
 | [Simplismart](https://docs.pipecat.ai/api-reference/server/services/llm/simplismart) | Large Language Models, Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable. |
@@ -68,6 +67,7 @@ automatically.
 | [Protoface](https://docs.pipecat.ai/api-reference/server/services/video/protoface) | Video | ✅ works | ✅ works |  |
 | [Quickdial](https://docs.pipecat.ai/api-reference/server/services/stt/quickdial) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [Ringg AI](https://docs.pipecat.ai/api-reference/server/services/stt/ringg) | Speech-to-Text | ✅ works | ✅ works |  |
+| [Roark](https://docs.pipecat.ai/api-reference/server/services/analytics/roark) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [SILMA AI](https://docs.pipecat.ai/api-reference/server/services/tts/silma) | Text-to-Speech | ✅ works | ✅ works |  |
 | [SLNG](https://docs.pipecat.ai/api-reference/server/services/stt/slng) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [SmolVLM](https://docs.pipecat.ai/api-reference/server/services/vision/smolvlm) | Vision | ✅ works | ✅ works |  |
