@@ -16,6 +16,10 @@ pins), not problems talking to a provider's servers.
 The plugin list is read from the docs on every run, so new plugins are picked up
 automatically.
 
+A write-up of what the runs so far have found, and why the failures cluster the way they
+do: [I installed all 56 Pipecat community plugins. 18 of them don't
+work.](reports/2026-09-24-fifty-six-plugins.md)
+
 ## Status
 
 - **pipecat-ai 1.11.0** (2026-09-24): 38 works, 1 partial, 10 broken, 4 needs older pipecat, 3 can't install
