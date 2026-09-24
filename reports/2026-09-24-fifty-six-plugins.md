@@ -33,7 +33,7 @@ The numbers are identical against `main`, which means nothing currently in fligh
 
 ## The failures cluster, and that's the interesting part
 
-**Six plugins died on the same line.** In pipecat 1.8, `_NotGiven` moved out of the OpenAI namespace into `pipecat.services.settings`. Six community plugins still import the old name, so they raise `ImportError` before doing anything else:
+**Six plugins died on the same line.** In pipecat 1.8, the settings sentinel `_NotGiven` was removed from `pipecat.services.settings` — it is `NotGiven` in `pipecat.utils.types` now. Six plugins that still install at all import the old name, so they raise `ImportError` before doing anything else:
 
 ```
 ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'
