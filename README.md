@@ -16,16 +16,12 @@ pins), not problems talking to a provider's servers.
 The plugin list is read from the docs on every run, so new plugins are picked up
 automatically.
 
-A write-up of what the runs so far have found, and why the failures cluster the way they
-do: [I installed all 56 Pipecat community plugins. 18 of them don't
-work.](reports/2026-09-24-fifty-six-plugins.md)
-
 ## Status
 
-- **pipecat-ai 1.11.0** (2026-09-24): 38 works, 1 partial, 10 broken, 4 needs older pipecat, 3 can't install
-- **pipecat-ai main@9d4c5087a** (2026-09-24): 38 works, 1 partial, 10 broken, 4 needs older pipecat, 3 can't install
+- **pipecat-ai 1.11.0** (2026-09-25): 38 works, 1 partial, 10 broken, 4 needs older pipecat, 3 can't install
+- **pipecat-ai main@291ad5ed5** (2026-09-25): 38 works, 1 partial, 10 broken, 4 needs older pipecat, 3 can't install
 
-| Plugin | Category | pipecat 1.11.0 | pipecat main@9d4c5087a | Why |
+| Plugin | Category | pipecat 1.11.0 | pipecat main@291ad5ed5 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
