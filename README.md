@@ -18,10 +18,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.11.0** (2026-09-25): 38 works, 1 partial, 10 broken, 4 needs older pipecat, 3 can't install
-- **pipecat-ai main@291ad5ed5** (2026-09-25): 38 works, 1 partial, 10 broken, 4 needs older pipecat, 3 can't install
+- **pipecat-ai 1.12.0** (2026-09-26): 38 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
+- **pipecat-ai main@1559a684b** (2026-09-26): 38 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
 
-| Plugin | Category | pipecat 1.11.0 | pipecat main@291ad5ed5 | Why |
+| Plugin | Category | pipecat 1.12.0 | pipecat main@1559a684b | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -35,6 +35,7 @@ automatically.
 | [Supertonic](https://docs.pipecat.ai/api-reference/server/services/tts/supertonic) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_supertonic: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Deepdub](https://docs.pipecat.ai/api-reference/server/services/tts/deepdub) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=0.0.97,<0.1.0 |
 | [Maya](https://docs.pipecat.ai/api-reference/server/services/tts/maya) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai==1.8.1; pipecat-ai==1.8.1. |
+| [Memcode](https://docs.pipecat.ai/api-reference/server/services/memory/memcode) | Memory | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.10,<1.11 |
 | [Oruk](https://docs.pipecat.ai/api-reference/server/services/stt/oruk) | Speech-to-Text | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.8.1,<1.9 |
 | [Wavix](https://docs.pipecat.ai/api-reference/server/services/serializers/wavix) | Serializers | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai[deepgram]==0.0.105; pipecat-ai==0.0.105. |
 | [Hakim](https://docs.pipecat.ai/api-reference/server/services/stt/hakim) | Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | <checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
