@@ -1,0 +1,1 @@
+- **bitHuman** is new in the docs: ok

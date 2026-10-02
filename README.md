@@ -18,10 +18,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.12.0** (2026-10-01): 38 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
-- **pipecat-ai main@6396f9771** (2026-10-01): 38 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
+- **pipecat-ai 1.12.0** (2026-10-02): 39 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
+- **pipecat-ai main@d4cdef9f6** (2026-10-02): 39 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
 
-| Plugin | Category | pipecat 1.12.0 | pipecat main@6396f9771 | Why |
+| Plugin | Category | pipecat 1.12.0 | pipecat main@d4cdef9f6 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -38,9 +38,9 @@ automatically.
 | [Memcode](https://docs.pipecat.ai/api-reference/server/services/memory/memcode) | Memory | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.10,<1.11 |
 | [Oruk](https://docs.pipecat.ai/api-reference/server/services/stt/oruk) | Speech-to-Text | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.8.1,<1.9 |
 | [Wavix](https://docs.pipecat.ai/api-reference/server/services/serializers/wavix) | Serializers | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai[deepgram]==0.0.105; pipecat-ai==0.0.105. |
-| [Hakim](https://docs.pipecat.ai/api-reference/server/services/stt/hakim) | Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | <checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
+| [Hakim](https://docs.pipecat.ai/api-reference/server/services/stt/hakim) | Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
 | [Simplismart](https://docs.pipecat.ai/api-reference/server/services/llm/simplismart) | Large Language Models, Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable. |
-| [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | <checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
+| [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
 | [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 🟡 partial | 🟡 partial | import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings' |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |
 | [Anam](https://docs.pipecat.ai/api-reference/server/services/video/anam) | Video | ✅ works | ✅ works |  |
@@ -49,6 +49,7 @@ automatically.
 | [Asterisk](https://docs.pipecat.ai/api-reference/server/services/serializers/asterisk) | Serializers | ✅ works | ✅ works |  |
 | [Bandwidth](https://docs.pipecat.ai/api-reference/server/services/serializers/bandwidth) | Serializers | ✅ works | ✅ works |  |
 | [Beyond Presence](https://docs.pipecat.ai/api-reference/server/services/transport/beyond-presence) | Transports | ✅ works | ✅ works |  |
+| [bitHuman](https://docs.pipecat.ai/api-reference/server/services/video/bithuman) | Video | ✅ works | ✅ works |  |
 | [Finchvox](https://docs.pipecat.ai/api-reference/server/services/analytics/finchvox) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Floe](https://docs.pipecat.ai/api-reference/server/services/llm/floe) | Large Language Models, Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [floe-guard](https://docs.pipecat.ai/api-reference/server/services/analytics/floe) | Analytics & Monitoring | ✅ works | ✅ works |  |
