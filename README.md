@@ -18,10 +18,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.12.0** (2026-10-03): 39 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
-- **pipecat-ai main@cae1f51a4** (2026-10-03): 39 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
+- **pipecat-ai 1.12.0** (2026-10-04): 40 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
+- **pipecat-ai main@c02794312** (2026-10-04): 40 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
 
-| Plugin | Category | pipecat 1.12.0 | pipecat main@cae1f51a4 | Why |
+| Plugin | Category | pipecat 1.12.0 | pipecat main@c02794312 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -58,6 +58,7 @@ automatically.
 | [Lokutor](https://docs.pipecat.ai/api-reference/server/services/tts/lokutor) | Text-to-Speech | ✅ works | ✅ works |  |
 | [MCP](https://docs.pipecat.ai/api-reference/server/services/transport/mcp) | Transports | ✅ works | ✅ works |  |
 | [MemorySync](https://docs.pipecat.ai/api-reference/server/services/memory/memorysync) | Memory | ✅ works | ✅ works |  |
+| [Mirai](https://docs.pipecat.ai/api-reference/server/services/tts/mirai) | Text-to-Speech | ✅ works | ✅ works |  |
 | [MLflow](https://docs.pipecat.ai/api-reference/server/services/analytics/mlflow) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Murf AI](https://docs.pipecat.ai/api-reference/server/services/tts/murf) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Noveum Trace](https://docs.pipecat.ai/api-reference/server/services/analytics/noveum-trace) | Analytics & Monitoring | ✅ works | ✅ works |  |
