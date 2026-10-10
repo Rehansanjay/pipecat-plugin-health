@@ -32,6 +32,11 @@ jobs:
       - uses: astral-sh/setup-uv@v6
 
       - name: Check every community plugin
+        # The docs lookup reads the GitHub API. Unauthenticated that is sixty
+        # requests an hour per runner IP, shared with every other job on the
+        # pool, which failed this workflow on 2026-10-06 and 2026-10-10.
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: python -m health.run --target ${{ matrix.target }} --workers 8
 
       - uses: actions/upload-artifact@v4
