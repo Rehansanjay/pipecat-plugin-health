@@ -69,6 +69,26 @@ This is an independent project, not affiliated with Daily or the Pipecat team.
 """
 
 
+def _reports() -> str:
+    """List everything in reports/, newest first.
+
+    Discovered rather than hard-coded: a write-up is a file you drop in the
+    directory, and nothing else needs editing for it to be linked.
+    """
+    files = sorted((ROOT / "reports").glob("*.md"), reverse=True)
+    if not files:
+        return ""
+    lines = ["## Write-ups", ""]
+    for path in files:
+        title = path.stem
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.startswith("# "):
+                title = line[2:].strip()
+                break
+        lines.append(f"- [{title}](reports/{path.name})")
+    return "\n".join(lines) + "\n"
+
+
 def _load(target: str) -> dict | None:
     path = RESULTS / f"{target}.json"
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
@@ -125,7 +145,7 @@ def render() -> str:
 
     status = "## Status\n\n" + "\n".join(f"- {_summary(r)}" for r in runs)
     table = "\n".join([header, rule, *rows])
-    return "\n".join([ABOUT, status, "", table, "", LEGEND, FOOTER])
+    return "\n".join([ABOUT, status, "", table, "", LEGEND, _reports(), FOOTER])
 
 
 if __name__ == "__main__":

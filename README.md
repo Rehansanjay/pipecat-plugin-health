@@ -95,6 +95,11 @@ automatically.
 | 📌 needs older pipecat | Its version pin rules out that Pipecat version, so it can't be installed alongside it |
 | ⛔ can't install | The published install command fails (e.g. the package isn't on PyPI) |
 
+## Write-ups
+
+- [I sent the fixes. Three weeks later, none of them have merged.](reports/2026-10-10-what-happened-to-the-fixes.md)
+- [I installed all 56 Pipecat community plugins. 18 of them don't work.](reports/2026-09-24-fifty-six-plugins.md)
+
 ## Run it yourself
 
 ```bash
