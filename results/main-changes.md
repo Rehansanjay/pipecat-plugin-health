@@ -1,0 +1,2 @@
+- **Giggy** is new in the docs: pinned
+- **didlogic** is new in the docs: ok
