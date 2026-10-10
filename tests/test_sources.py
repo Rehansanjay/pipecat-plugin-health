@@ -1,4 +1,4 @@
-from health.sources import install_specs, parse
+from health.sources import github_api, install_specs, parse
 
 PAGE = """\
 ## Speech-to-Text
@@ -32,3 +32,36 @@ def test_install_commands_become_pip_specs():
     assert install_specs('uv add "pipecat-maya @ git+https://x/y.git@v0.1.0"') == [
         "pipecat-maya @ git+https://x/y.git@v0.1.0"
     ]
+
+
+def test_the_docs_lookup_authenticates_when_a_token_is_present(monkeypatch):
+    """Unauthenticated GitHub API calls are metered per runner IP, so the
+    nightly has to send a token when CI gives it one."""
+    seen = {}
+
+    class FakeResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            return False
+
+        def read(self):
+            return b"[]"
+
+    def fake_urlopen(request, timeout=None):
+        seen["headers"] = dict(request.headers)
+        return FakeResponse()
+
+    monkeypatch.setattr("health.sources.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("health.sources.json.load", lambda resp: [])
+
+    monkeypatch.delenv("GH_TOKEN", raising=False)
+    monkeypatch.setenv("GITHUB_TOKEN", "t-1")
+    github_api("https://api.github.com/anything")
+    assert seen["headers"]["Authorization"] == "Bearer t-1"
+    assert seen["headers"]["User-agent"] == "pipecat-plugin-health"
+
+    monkeypatch.delenv("GITHUB_TOKEN")
+    github_api("https://api.github.com/anything")
+    assert "Authorization" not in seen["headers"]

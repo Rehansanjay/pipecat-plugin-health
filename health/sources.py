@@ -8,13 +8,16 @@ with the install command its maintainers published.
 from __future__ import annotations
 
 import json
+import os
 import re
 import shlex
 import urllib.request
 from dataclasses import dataclass, field
+from typing import Any
 
 DOCS_REPO = "pipecat-ai/docs"
 DOCS_PATH = "api-reference/server/services/supported-services.mdx"
+_USER_AGENT = "pipecat-plugin-health"
 
 _ROW = re.compile(
     r"^\|\s*\[(?P<name>[^\]]+)\]\((?P<link>[^)]+)\)\s*\|\s*`(?P<cmd>[^`]+)`\s*\|\s*(?P<owner>\w+)\s*\|\s*$"
@@ -35,11 +38,30 @@ class Plugin:
         return " ".join(self.specs)
 
 
+def github_api(url: str) -> Any:
+    """Read one GitHub API endpoint, authenticated whenever a token is around.
+
+    Unauthenticated callers get sixty requests an hour *per IP*, and Actions
+    runners share outbound addresses with every other job on the pool. So the
+    nightly fails whenever somebody else has spent that budget first -- not
+    every night, just often enough to look random (2026-10-06, 2026-10-10).
+    A token raises the ceiling to a thousand an hour for the repository, which
+    two calls a night will never come near.
+    """
+    request = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if token:
+        request.add_header("Authorization", f"Bearer {token}")
+    with urllib.request.urlopen(request, timeout=30) as resp:
+        return json.load(resp)
+
+
 def fetch_docs() -> tuple[str, str]:
     """Return (commit sha, file text) for the supported-services page on main."""
     api = f"https://api.github.com/repos/{DOCS_REPO}/commits?path={DOCS_PATH}&per_page=1"
-    with urllib.request.urlopen(api, timeout=30) as resp:
-        sha = json.load(resp)[0]["sha"]
+    sha = github_api(api)[0]["sha"]
+    # raw.githubusercontent.com is a CDN rather than the API, and is not
+    # metered the same way, so this one stays as it is.
     raw = f"https://raw.githubusercontent.com/{DOCS_REPO}/{sha}/{DOCS_PATH}"
     with urllib.request.urlopen(raw, timeout=30) as resp:
         return sha, resp.read().decode("utf-8")
