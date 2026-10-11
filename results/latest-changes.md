@@ -1,2 +1,0 @@
-- **didlogic** is new in the docs: ok
-- **Giggy** is new in the docs: ok
