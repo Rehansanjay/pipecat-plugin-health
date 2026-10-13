@@ -18,10 +18,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.12.0** (2026-10-12): 42 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
-- **pipecat-ai main@19fca83d2** (2026-10-12): 41 works, 1 partial, 10 broken, 6 needs older pipecat, 3 can't install
+- **pipecat-ai 1.12.0** (2026-10-13): 48 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
+- **pipecat-ai main@24007373e** (2026-10-13): 46 works, 1 partial, 10 broken, 7 needs older pipecat, 3 can't install
 
-| Plugin | Category | pipecat 1.12.0 | pipecat main@19fca83d2 | Why |
+| Plugin | Category | pipecat 1.12.0 | pipecat main@24007373e | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -34,6 +34,7 @@ automatically.
 | [SonexLabs](https://docs.pipecat.ai/api-reference/server/services/tts/sonex) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_sonex: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Supertonic](https://docs.pipecat.ai/api-reference/server/services/tts/supertonic) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_supertonic: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Deepdub](https://docs.pipecat.ai/api-reference/server/services/tts/deepdub) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=0.0.97,<0.1.0 |
+| [Giggy](https://docs.pipecat.ai/api-reference/server/services/stt/giggy) | Speech-to-Text | ✅ works | 📌 needs older pipecat | pins pipecat-ai==1.12.0 |
 | [Giggy](https://docs.pipecat.ai/api-reference/server/services/tts/giggy) | Text-to-Speech | ✅ works | 📌 needs older pipecat | pins pipecat-ai==1.12.0 |
 | [Maya](https://docs.pipecat.ai/api-reference/server/services/tts/maya) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai==1.8.1; pipecat-ai==1.8.1. |
 | [Memcode](https://docs.pipecat.ai/api-reference/server/services/memory/memcode) | Memory | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.10,<1.11 |
@@ -43,6 +44,7 @@ automatically.
 | [Simplismart](https://docs.pipecat.ai/api-reference/server/services/llm/simplismart) | Large Language Models, Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable. |
 | [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
 | [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 🟡 partial | 🟡 partial | import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings' |
+| [.wave](https://docs.pipecat.ai/api-reference/server/services/stt/dotwave) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |
 | [Anam](https://docs.pipecat.ai/api-reference/server/services/video/anam) | Video | ✅ works | ✅ works |  |
 | [Anannas AI](https://docs.pipecat.ai/api-reference/server/services/llm/anannas) | Large Language Models | ✅ works | ✅ works |  |
@@ -52,6 +54,7 @@ automatically.
 | [Beyond Presence](https://docs.pipecat.ai/api-reference/server/services/transport/beyond-presence) | Transports | ✅ works | ✅ works |  |
 | [bitHuman](https://docs.pipecat.ai/api-reference/server/services/video/bithuman) | Video | ✅ works | ✅ works |  |
 | [didlogic](https://docs.pipecat.ai/api-reference/server/services/serializers/didlogic) | Serializers | ✅ works | ✅ works |  |
+| [DuplexJev Turn Analyzer](https://docs.pipecat.ai/api-reference/server/extensions/pipecat-duplexjev) | Extensions | ✅ works | ✅ works |  |
 | [Finchvox](https://docs.pipecat.ai/api-reference/server/services/analytics/finchvox) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Floe](https://docs.pipecat.ai/api-reference/server/services/llm/floe) | Large Language Models, Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [floe-guard](https://docs.pipecat.ai/api-reference/server/services/analytics/floe) | Analytics & Monitoring | ✅ works | ✅ works |  |
@@ -71,6 +74,7 @@ automatically.
 | [pipecat-effects](https://docs.pipecat.ai/api-reference/server/services/audio-filters/pipecat-effects) | Audio Filters | ✅ works | ✅ works |  |
 | [Protoface](https://docs.pipecat.ai/api-reference/server/services/video/protoface) | Video | ✅ works | ✅ works |  |
 | [Quickdial](https://docs.pipecat.ai/api-reference/server/services/stt/quickdial) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
+| [ReadAloud](https://docs.pipecat.ai/api-reference/server/services/tts/readaloud) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Ringg AI](https://docs.pipecat.ai/api-reference/server/services/stt/ringg) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Roark](https://docs.pipecat.ai/api-reference/server/services/analytics/roark) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [SILMA AI](https://docs.pipecat.ai/api-reference/server/services/tts/silma) | Text-to-Speech | ✅ works | ✅ works |  |
@@ -79,10 +83,12 @@ automatically.
 | [Synap](https://docs.pipecat.ai/api-reference/server/services/memory/synap) | Memory | ✅ works | ✅ works |  |
 | [TEN VAD](https://docs.pipecat.ai/api-reference/server/services/vad/ten-vad) | VAD | ✅ works | ✅ works |  |
 | [ThunderPhone](https://docs.pipecat.ai/api-reference/server/services/s2s/thunderphone) | Realtime LLM | ✅ works | ✅ works |  |
+| [turn-1-mini](https://docs.pipecat.ai/api-reference/server/utilities/turn-detection/turn-1-mini) | Turn Detection | ✅ works | ✅ works |  |
 | [Typecast](https://docs.pipecat.ai/api-reference/server/services/tts/typecast) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/tts/upliftai) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Vakyam AI](https://docs.pipecat.ai/api-reference/server/services/tts/vakyam) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Voice.ai](https://docs.pipecat.ai/api-reference/server/services/tts/voiceai) | Text-to-Speech | ✅ works | ✅ works |  |
+| [VoxLock](https://docs.pipecat.ai/api-reference/server/services/audio-filters/voxlock) | Audio Filters | ✅ works | ✅ works |  |
 | [XTTS-vLLM](https://docs.pipecat.ai/api-reference/server/services/tts/xtts-vllm) | Text-to-Speech | ✅ works | ✅ works |  |
 
 ## What the statuses mean
