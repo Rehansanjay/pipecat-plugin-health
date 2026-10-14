@@ -1,6 +1,0 @@
-- **Giggy** is new in the docs: pinned
-- **.wave** is new in the docs: ok
-- **DuplexJev Turn Analyzer** is new in the docs: ok
-- **ReadAloud** is new in the docs: ok
-- **turn-1-mini** is new in the docs: ok
-- **VoxLock** is new in the docs: ok
