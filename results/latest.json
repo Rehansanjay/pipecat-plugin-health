@@ -345,8 +345,10 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/deepdub",
       "status": "pinned",
-      "reason": "pins pipecat-ai>=0.0.97,<0.1.0",
-      "seconds": 0.6
+      "reason": "Because all versions of pipecat-deepdub-tts depend on",
+      "pin": "compatible",
+      "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
+      "seconds": 727.8
     },
     {
       "name": "Maya",
@@ -357,7 +359,9 @@
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/maya",
       "status": "pinned",
       "reason": "pins pipecat-ai==1.8.1; pipecat-ai==1.8.1.",
-      "seconds": 0.7
+      "pin": "compatible",
+      "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
+      "seconds": 65.6
     },
     {
       "name": "Memcode",
@@ -368,7 +372,9 @@
       "docs": "https://docs.pipecat.ai/api-reference/server/services/memory/memcode",
       "status": "pinned",
       "reason": "pins pipecat-ai>=1.10,<1.11",
-      "seconds": 0.5
+      "pin": "compatible",
+      "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
+      "seconds": 93.6
     },
     {
       "name": "Oruk",
@@ -379,7 +385,9 @@
       "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/oruk",
       "status": "pinned",
       "reason": "pins pipecat-ai>=1.8.1,<1.9",
-      "seconds": 0.4
+      "pin": "compatible",
+      "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
+      "seconds": 91.9
     },
     {
       "name": "Wavix",
@@ -389,8 +397,10 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/wavix",
       "status": "pinned",
-      "reason": "pins pipecat-ai[deepgram]==0.0.105; pipecat-ai==0.0.105.",
-      "seconds": 0.4
+      "reason": "pins pipecat-ai==0.0.105.",
+      "pin": "compatible",
+      "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
+      "seconds": 90.5
     },
     {
       "name": "Hakim",

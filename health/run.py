@@ -109,6 +109,66 @@ def classify(probe: dict) -> tuple[str, str]:
     return OK, ""
 
 
+def behind_the_pin(plugin: Plugin, pipecat_req: str, uv: str, python: str, venv: Path, out: Path) -> dict:
+    """Would the plugin's code work on this pipecat, if the pin allowed it?
+
+    A pin failure says the plugin will not *resolve*. It does not say the code
+    is broken. Those are different messages for a maintainer -- one is a
+    one-line edit to a version range, the other is a real API break the pin has
+    been hiding -- and reporting them as one row merges them.
+
+    Suggested by Arhan Canli in response to the write-up, as "install it with
+    --no-deps next to the current pipecat". That works, but --no-deps also
+    skips the plugin's *own* SDK, so the import then fails for want of an
+    unrelated package and the answer comes back unknown -- which is what
+    happened to two of the five on the first run.
+
+    uv's ``--overrides`` is the sharper instrument: the plugin resolves with
+    all its real dependencies, and only pipecat-ai is forced to the version
+    under test. That is exactly the question being asked.
+
+    ``_involves_pipecat`` still guards the verdict, so anything failing for a
+    reason this does not recognise leaves the answer "unknown" rather than
+    guessing.
+
+    Returns ``{"pin": compatible|incompatible|unknown, "pin_reason": str}``.
+    """
+    install = [uv, "pip", "install", "--torch-backend", "cpu", "--python", str(_venv_python(venv))]
+    overrides = venv / "pipecat-override.txt"
+    overrides.write_text(pipecat_req + "\n", encoding="utf-8")
+
+    proc = _run([*install, "--overrides", str(overrides), pipecat_req, *plugin.specs], 900)
+    if proc.returncode != 0:
+        # Falling back keeps an answer available when the override cannot
+        # resolve -- a plugin may pin something else that genuinely conflicts.
+        proc = _run([*install, pipecat_req], 900)
+        if proc.returncode != 0:
+            return {"pin": "unknown", "pin_reason": "could not install pipecat on its own"}
+        proc = _run([*install, "--no-deps", *plugin.specs], 900)
+        if proc.returncode != 0:
+            return {"pin": "unknown", "pin_reason": "would not install even with its pipecat pin overridden"}
+
+    try:
+        _run([str(_venv_python(venv)), str(PROBE), str(out), *plugin.specs], 300)
+        probe = json.loads(out.read_text(encoding="utf-8"))
+    except (subprocess.TimeoutExpired, OSError, ValueError) as exc:
+        return {"pin": "unknown", "pin_reason": f"probe produced no result: {exc}"}
+
+    blocking = [e for e in probe["top_level_errors"] if _involves_pipecat(e)]
+    if blocking:
+        e = blocking[0]
+        return {"pin": "incompatible", "pin_reason": f"import {e['module']}: {e['type']}: {e['message']}"}
+    if probe["top_level_errors"]:
+        e = probe["top_level_errors"][0]
+        # Something other than pipecat is missing; not evidence either way.
+        return {"pin": "unknown", "pin_reason": f"could not tell: {e['message']}"}
+    if probe["abstract_services"]:
+        a = probe["abstract_services"][0]
+        missing = ", ".join(a["missing"])
+        return {"pin": "incompatible", "pin_reason": f"{a['class']} cannot be created, missing: {missing}"}
+    return {"pin": "compatible", "pin_reason": "imports and constructs on this pipecat; only the pin blocks it"}
+
+
 def check(plugin: Plugin, pipecat_req: str, uv: str, python: str, workdir: Path) -> dict:
     started = time.monotonic()
     venv = Path(tempfile.mkdtemp(prefix="plugin-", dir=workdir))
@@ -122,6 +182,13 @@ def check(plugin: Plugin, pipecat_req: str, uv: str, python: str, workdir: Path)
         if proc.returncode != 0:
             status, reason = _install_failure(proc.stderr)
             entry.update(status=status, reason=reason)
+            if status == PINNED:
+                # The pin stopped the resolve. Find out whether the code would
+                # have worked anyway -- a tight pin and a real break look
+                # identical from here otherwise.
+                shutil.rmtree(venv, ignore_errors=True)
+                _run([uv, "venv", str(venv), "--python", python, "--quiet", "--allow-existing"], 300)
+                entry.update(behind_the_pin(plugin, pipecat_req, uv, python, venv, out))
             return entry
         try:
             _run([str(_venv_python(venv)), str(PROBE), str(out), *plugin.specs], 300)

@@ -136,6 +136,15 @@ def render() -> str:
         entries = [idx.get(key) for idx in by_run]
         first = next(e for e in entries if e)
         why = next((e["reason"] for e in entries if e and e["reason"]), "")
+        # A pin stops the resolve; it does not say the code is broken. Where we
+        # have forced the plugin in anyway and run the probe, say which it was,
+        # because "loosen your pin" and "your plugin is broken" are different
+        # things to tell a maintainer.
+        pin = next((e.get("pin") for e in entries if e and e.get("pin")), None)
+        if pin == "compatible":
+            why += " — but it imports and constructs on this pipecat; only the pin blocks it"
+        elif pin == "incompatible":
+            why += " — and it still fails with the pin overridden, so the pin is hiding a real break"
         cells = [ICON[e["status"]] if e else "" for e in entries]
         rows.append(
             f"| [{_cell(first['name'])}]({first['docs']}) | {_cell(', '.join(first['categories']))} | "
