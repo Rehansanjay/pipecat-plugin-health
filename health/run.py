@@ -26,7 +26,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-from health.sources import Plugin, fetch_docs, parse
+from health.repos import repo_for_plugin
+from health.sources import Plugin, fetch_docs, github_api, parse
 
 ROOT = Path(__file__).resolve().parent.parent
 RESULTS = ROOT / "results"
@@ -36,7 +37,11 @@ OK, PARTIAL, BROKEN, PINNED, UNINSTALLABLE = "ok", "partial", "broken", "pinned"
 # A plugin whose vendor SDK is licensed rather than published. Not broken --
 # it works for that vendor's customers -- but not verifiable from outside.
 GATED = "gated"
-ORDER = {BROKEN: 0, PINNED: 1, UNINSTALLABLE: 2, PARTIAL: 3, GATED: 4, OK: 5}
+# A plugin whose source is already fixed and whose release is not. The
+# maintainer has nothing left to do in the code; their users are still broken
+# until a release is cut, and that is a different request to make of them.
+UNRELEASED = "unreleased"
+ORDER = {BROKEN: 0, PINNED: 1, UNINSTALLABLE: 2, PARTIAL: 3, UNRELEASED: 4, GATED: 5, OK: 6}
 
 # An absolute path on Windows (C:\...) or POSIX (/...), up to the next whitespace.
 _LOCAL_PATH = re.compile(r"(?:[A-Za-z]:\\|(?<![\w:])/(?:home|tmp|Users|root|var|opt|runner)/)\S*")
@@ -216,6 +221,92 @@ def behind_the_pin(plugin: Plugin, pipecat_req: str, uv: str, python: str, venv:
     return {"pin": "compatible", "pin_reason": "imports and constructs on this pipecat; only the pin blocks it"}
 
 
+def _head_commit(repo: str) -> str | None:
+    """The sha at the tip of a repository's default branch, or None."""
+    slug = repo.removeprefix("https://github.com/")
+    try:
+        return github_api(f"https://api.github.com/repos/{slug}/commits?per_page=1")[0]["sha"]
+    except (urllib.error.URLError, OSError, ValueError, KeyError, IndexError):
+        return None
+
+
+def from_git_head(plugin: Plugin, repo: str, pipecat_req: str, uv: str, python: str, venv: Path, out: Path) -> dict:
+    """Does the plugin's current source work, when its release does not?
+
+    The wheel on PyPI is a snapshot, and a maintainer can fix a plugin without
+    cutting a release. boson-ai/pipecat-boson wrapped the pipecat 1.8 import on
+    2026-09-30 and PyPI still serves 0.1.3 from before it, so installing from
+    PyPI reports a plugin broken whose code has been correct for weeks.
+
+    That is worth separating for two reasons. Telling a maintainer their plugin
+    is broken when they already fixed it is simply wrong. And the useful thing
+    to ask of them is not a patch, it is a release -- which is only visible once
+    the two are measured apart.
+
+    The install is pinned to the commit so the verdict names what it tested.
+    Anything that fails for a reason this cannot read leaves the answer
+    "unknown" rather than guessing in either direction.
+    """
+    sha = _head_commit(repo)
+    install = [uv, "pip", "install", "--torch-backend", "cpu", "--python", str(_venv_python(venv))]
+    found = {"source_repo": repo, "source_commit": sha or ""}
+
+    requirement = f"git+{repo}" + (f"@{sha}" if sha else "")
+    proc = _run([*install, pipecat_req, requirement], 900)
+    if proc.returncode != 0:
+        _, why = _install_failure(proc.stderr)
+        return {**found, "source": "unknown", "source_reason": f"could not install from source: {why}"}
+
+    try:
+        _run([str(_venv_python(venv)), str(PROBE), str(out), *plugin.specs], 300)
+        probe = json.loads(out.read_text(encoding="utf-8"))
+    except (subprocess.TimeoutExpired, OSError, ValueError) as exc:
+        return {**found, "source": "unknown", "source_reason": f"probe produced no result: {exc}"}
+
+    status, why = classify(probe)
+    if status == OK:
+        return {**found, "source": "fixed", "source_reason": "imports and constructs from source"}
+    if status == GATED:
+        # A licensed SDK is missing either way, so the source says nothing here.
+        return {**found, "source": "unknown", "source_reason": why}
+    return {**found, "source": "still_broken", "source_reason": why}
+
+
+def maybe_from_source(
+    plugin: Plugin, status: str, reason: str, pipecat_req: str, uv: str, python: str, workdir: Path
+) -> dict:
+    """Check the source of a plugin whose release failed, and promote it if it is fixed.
+
+    Only failures where the source could change the answer are worth the extra
+    install, and only when a repository can actually be found for the plugin.
+    """
+    if status not in (BROKEN, PARTIAL, UNINSTALLABLE):
+        return {}
+    repo = repo_for_plugin(plugin.specs)
+    if not repo:
+        return {}
+
+    venv = Path(tempfile.mkdtemp(prefix="source-", dir=workdir))
+    try:
+        _run([uv, "venv", str(venv), "--python", python, "--quiet", "--allow-existing"], 300)
+        found = from_git_head(plugin, repo, pipecat_req, uv, python, venv, venv / "probe.json")
+    except subprocess.TimeoutExpired:
+        found = {"source_repo": repo, "source": "unknown", "source_reason": "install from source timed out"}
+    finally:
+        shutil.rmtree(venv, ignore_errors=True)
+
+    if found.get("source") == "fixed":
+        at = (found.get("source_commit") or "")[:9]
+        found["released_reason"] = reason
+        found["status"] = UNRELEASED
+        found["reason"] = (
+            f"fixed in {repo.removeprefix('https://github.com/')}"
+            + (f"@{at}" if at else "")
+            + f", but the release still fails: {reason}"
+        )
+    return found
+
+
 def check(plugin: Plugin, pipecat_req: str, uv: str, python: str, workdir: Path) -> dict:
     started = time.monotonic()
     venv = Path(tempfile.mkdtemp(prefix="plugin-", dir=workdir))
@@ -236,6 +327,11 @@ def check(plugin: Plugin, pipecat_req: str, uv: str, python: str, workdir: Path)
                 shutil.rmtree(venv, ignore_errors=True)
                 _run([uv, "venv", str(venv), "--python", python, "--quiet", "--allow-existing"], 300)
                 entry.update(behind_the_pin(plugin, pipecat_req, uv, python, venv, out))
+            else:
+                # Nothing installed, so the release says nothing about the code.
+                # For a plugin that is not on PyPI at all, the source is the
+                # only place its state can be read.
+                entry.update(maybe_from_source(plugin, status, reason, pipecat_req, uv, python, workdir))
             return entry
         try:
             _run([str(_venv_python(venv)), str(PROBE), str(out), *plugin.specs], 300)
@@ -250,6 +346,7 @@ def check(plugin: Plugin, pipecat_req: str, uv: str, python: str, workdir: Path)
         entry["distributions"] = probe["distributions"]
         status, reason = classify(probe)
         entry.update(status=status, reason=reason)
+        entry.update(maybe_from_source(plugin, status, reason, pipecat_req, uv, python, workdir))
         return entry
     except subprocess.TimeoutExpired:
         entry.update(status=UNINSTALLABLE, reason="install timed out")

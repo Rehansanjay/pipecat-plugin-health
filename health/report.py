@@ -15,6 +15,7 @@ ICON = {
     "pinned": "📌 needs older pipecat",
     "uninstallable": "⛔ can't install",
     "gated": "🔒 needs a licensed SDK",
+    "unreleased": "📦 fixed, not released",
 }
 
 ABOUT = """\
@@ -29,7 +30,11 @@ into a fresh environment, together with:
   that breaks here can be fixed before the release ships.
 
 It then imports the plugin and checks that every Pipecat service class it defines
-can still be created. No API keys are used, so this catches install, import and
+can still be created. When the published version fails, the plugin's **own source**
+is installed from its repository and probed again: a maintainer can fix a plugin
+without cutting a release, and calling that broken blames them for work they have
+already done — and hides the one thing that would help their users, which is a
+release. No API keys are used, so this catches install, import and
 API-shape breakage (renamed or removed Pipecat names, new abstract methods, version
 pins), not problems talking to a provider's servers.
 
@@ -48,6 +53,7 @@ LEGEND = """\
 | 📌 needs older pipecat | Its version pin rules out that Pipecat version, so it can't be installed alongside it |
 | ⛔ can't install | The published install command fails (e.g. the package isn't on PyPI) |
 | 🔒 needs a licensed SDK | Needs a vendor SDK distributed by licence, not published. Not a fault |
+| 📦 fixed, not released | The release fails, but the plugin's own source works. It needs a release, not a patch |
 """
 
 FOOTER = """\
@@ -124,7 +130,7 @@ def render() -> str:
                 names.append(key)
         by_run.append(index)
 
-    order = {"broken": 0, "pinned": 1, "uninstallable": 2, "partial": 3, "gated": 4, "ok": 5}
+    order = {"broken": 0, "pinned": 1, "uninstallable": 2, "partial": 3, "unreleased": 4, "gated": 5, "ok": 6}
 
     def worst(key):
         return min(order[idx[key]["status"]] for idx in by_run if key in idx)
