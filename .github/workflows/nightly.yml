@@ -17,7 +17,10 @@ jobs:
   check:
     name: check (${{ matrix.target }})
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # A failing plugin is now installed twice: once from its release and once
+    # from its source. The slowest single plugin already takes ~12 minutes to
+    # install (Deepdub pulls CPU torch), so the second pass needs headroom.
+    timeout-minutes: 90
     strategy:
       fail-fast: false
       matrix:
