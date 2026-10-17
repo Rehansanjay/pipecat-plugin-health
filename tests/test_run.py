@@ -1,3 +1,5 @@
+import json
+import types
 from pathlib import Path
 
 import pytest
@@ -134,3 +136,62 @@ def test_a_plugin_whose_repository_is_unknown_is_left_alone(monkeypatch):
     plugin = Plugin(name="X", specs=["pipecat-x"], install="uv add pipecat-x")
 
     assert run.maybe_from_source(plugin, BROKEN, "boom", "pipecat-ai==1.12.0", "uv", "python", Path(".")) == {}
+
+
+def test_a_plausible_but_wrong_repository_cannot_promote(monkeypatch, tmp_path):
+    """Supertonic resolves to supertone-inc/supertonic, the vendor's TTS model
+    repo, because the names share a word -- not to the pipecat plugin.
+
+    That one fails to install and answers "unknown" anyway. A wrong repository
+    that happened to be installable and import cleanly would otherwise promote
+    the plugin on the strength of somebody else's code, so the source has to
+    have built the distribution this plugin actually is.
+    """
+    probe = {
+        "top_level_errors": [],
+        "abstract_services": [],
+        "submodule_errors": [],
+        "distributions": ["supertonic==1.4.0"],  # not pipecat-supertonic
+    }
+    out = tmp_path / "probe.json"
+    out.write_text(json.dumps(probe), encoding="utf-8")
+
+    monkeypatch.setattr("health.run._head_commit", lambda repo: "deadbeefcafe")
+    monkeypatch.setattr(
+        "health.run._run",
+        lambda cmd, timeout: types.SimpleNamespace(returncode=0, stderr="", stdout=""),
+    )
+    plugin = Plugin(name="Supertonic", specs=["pipecat-supertonic"], install="uv add pipecat-supertonic")
+
+    found = run.from_git_head(
+        plugin, "https://github.com/supertone-inc/supertonic", "pipecat-ai==1.12.0", "uv", "python", tmp_path, out
+    )
+
+    assert found["source"] == "unknown"
+    assert "does not build pipecat-supertonic" in found["source_reason"]
+
+
+def test_the_plugin_s_own_source_is_accepted(monkeypatch, tmp_path):
+    """The same path, with the distribution the plugin actually publishes."""
+    probe = {
+        "top_level_errors": [],
+        "abstract_services": [],
+        "submodule_errors": [],
+        "distributions": ["pipecat_boson==0.1.3"],  # underscore spelling still matches
+    }
+    out = tmp_path / "probe.json"
+    out.write_text(json.dumps(probe), encoding="utf-8")
+
+    monkeypatch.setattr("health.run._head_commit", lambda repo: "0319e5310aaa")
+    monkeypatch.setattr(
+        "health.run._run",
+        lambda cmd, timeout: types.SimpleNamespace(returncode=0, stderr="", stdout=""),
+    )
+    plugin = Plugin(name="Boson", specs=["pipecat-boson"], install="uv add pipecat-boson")
+
+    found = run.from_git_head(
+        plugin, "https://github.com/boson-ai/pipecat-boson", "pipecat-ai==1.12.0", "uv", "python", tmp_path, out
+    )
+
+    assert found["source"] == "fixed"
+    assert found["source_commit"] == "0319e5310aaa"

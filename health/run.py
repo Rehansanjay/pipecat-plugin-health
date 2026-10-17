@@ -26,7 +26,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-from health.repos import repo_for_plugin
+from health.repos import project_name, repo_for_plugin
 from health.sources import Plugin, fetch_docs, github_api, parse
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -221,6 +221,11 @@ def behind_the_pin(plugin: Plugin, pipecat_req: str, uv: str, python: str, venv:
     return {"pin": "compatible", "pin_reason": "imports and constructs on this pipecat; only the pin blocks it"}
 
 
+def _canonical(name: str) -> str:
+    """PEP 503 normalisation, so pipecat_x and Pipecat-X compare equal."""
+    return re.sub(r"[-_.]+", "-", name).lower()
+
+
 def _head_commit(repo: str) -> str | None:
     """The sha at the tip of a repository's default branch, or None."""
     slug = repo.removeprefix("https://github.com/")
@@ -262,6 +267,22 @@ def from_git_head(plugin: Plugin, repo: str, pipecat_req: str, uv: str, python: 
         probe = json.loads(out.read_text(encoding="utf-8"))
     except (subprocess.TimeoutExpired, OSError, ValueError) as exc:
         return {**found, "source": "unknown", "source_reason": f"probe produced no result: {exc}"}
+
+    # A repository can be resolved plausibly and still be the wrong one: the
+    # Supertonic plugin resolves to supertone-inc/supertonic, the vendor's own
+    # TTS model repo, because the names share a word. That one fails to install
+    # and so answers "unknown" anyway -- but a wrong repository that happened to
+    # be installable and import cleanly would promote the plugin to "fixed" on
+    # the strength of somebody else's code. So the source has to have built the
+    # distribution this plugin actually is.
+    expected = {_canonical(project_name(spec)) for spec in plugin.specs if project_name(spec)}
+    built = {_canonical(dist.split("==")[0]) for dist in probe.get("distributions") or []}
+    if expected and not expected & built:
+        return {
+            **found,
+            "source": "unknown",
+            "source_reason": "that repository does not build " + ", ".join(sorted(expected)),
+        }
 
     status, why = classify(probe)
     if status == OK:

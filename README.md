@@ -9,7 +9,11 @@ into a fresh environment, together with:
   that breaks here can be fixed before the release ships.
 
 It then imports the plugin and checks that every Pipecat service class it defines
-can still be created. No API keys are used, so this catches install, import and
+can still be created. When the published version fails, the plugin's **own source**
+is installed from its repository and probed again: a maintainer can fix a plugin
+without cutting a release, and calling that broken blames them for work they have
+already done — and hides the one thing that would help their users, which is a
+release. No API keys are used, so this catches install, import and
 API-shape breakage (renamed or removed Pipecat names, new abstract methods, version
 pins), not problems talking to a provider's servers.
 
@@ -18,7 +22,7 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.12.0** (2026-10-17): 48 works, 1 partial, 9 broken, 5 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.12.0** (2026-10-17): 48 works, 9 broken, 5 needs older pipecat, 3 can't install, 1 needs a licensed SDK, 1 fixed, not released
 - **pipecat-ai main@8840780de** (2026-10-17): 46 works, 1 partial, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
 
 | Plugin | Category | pipecat 1.12.0 | pipecat main@8840780de | Why |
@@ -39,10 +43,10 @@ automatically.
 | [Memcode](https://docs.pipecat.ai/api-reference/server/services/memory/memcode) | Memory | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.10,<1.11 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Oruk](https://docs.pipecat.ai/api-reference/server/services/stt/oruk) | Speech-to-Text | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.8.1,<1.9 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Wavix](https://docs.pipecat.ai/api-reference/server/services/serializers/wavix) | Serializers | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai==0.0.105. — but it imports and constructs on this pipecat; only the pin blocks it |
-| [Hakim](https://docs.pipecat.ai/api-reference/server/services/stt/hakim) | Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
-| [Simplismart](https://docs.pipecat.ai/api-reference/server/services/llm/simplismart) | Large Language Models, Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable. |
-| [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
-| [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 🟡 partial | 🟡 partial | import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings' |
+| [Hakim](https://docs.pipecat.ai/api-reference/server/services/stt/hakim) | Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | <checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
+| [Simplismart](https://docs.pipecat.ai/api-reference/server/services/llm/simplismart) | Large Language Models, Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | Because pipecat-simplismart was not found in the package registry and |
+| [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | <checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
+| [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 📦 fixed, not released | 🟡 partial | fixed in boson-ai/pipecat-boson@0319e5310, but the release still fails: import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from ' |
 | [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | 🔒 needs a licensed SDK | 🔒 needs a licensed SDK | needs hecttor_sdk, which is not published on PyPI |
 | [.wave](https://docs.pipecat.ai/api-reference/server/services/stt/dotwave) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |
@@ -101,6 +105,7 @@ automatically.
 | 📌 needs older pipecat | Its version pin rules out that Pipecat version, so it can't be installed alongside it |
 | ⛔ can't install | The published install command fails (e.g. the package isn't on PyPI) |
 | 🔒 needs a licensed SDK | Needs a vendor SDK distributed by licence, not published. Not a fault |
+| 📦 fixed, not released | The release fails, but the plugin's own source works. It needs a release, not a patch |
 
 ## Write-ups
 
