@@ -18,15 +18,14 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.12.0** (2026-10-17): 48 works, 1 partial, 10 broken, 5 needs older pipecat, 3 can't install
-- **pipecat-ai main@8840780de** (2026-10-17): 46 works, 1 partial, 10 broken, 7 needs older pipecat, 3 can't install
+- **pipecat-ai 1.12.0** (2026-10-17): 48 works, 1 partial, 9 broken, 5 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@8840780de** (2026-10-17): 46 works, 1 partial, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
 
 | Plugin | Category | pipecat 1.12.0 | pipecat main@8840780de | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
 | [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ❌ broken | ❌ broken | import pipecat_gnani: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
-| [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | ❌ broken | ❌ broken | import pipecat_hecttor: ImportError: Missing module: No module named 'hecttor_sdk' |
 | [Moss](https://docs.pipecat.ai/api-reference/server/services/knowledge-retrieval/moss) | Knowledge Retrieval | ❌ broken | ❌ broken | import pipecat_moss: ImportError: cannot import name 'LLMMessagesFrame' from 'pipecat.frames.frames' |
 | [Replicate](https://docs.pipecat.ai/api-reference/server/services/image-generation/replicate) | Image Generation | ❌ broken | ❌ broken | import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Respeecher](https://docs.pipecat.ai/api-reference/server/services/tts/respeecher) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_respeecher: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
@@ -44,6 +43,7 @@ automatically.
 | [Simplismart](https://docs.pipecat.ai/api-reference/server/services/llm/simplismart) | Large Language Models, Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable. |
 | [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
 | [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 🟡 partial | 🟡 partial | import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings' |
+| [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | 🔒 needs a licensed SDK | 🔒 needs a licensed SDK | needs hecttor_sdk, which is not published on PyPI |
 | [.wave](https://docs.pipecat.ai/api-reference/server/services/stt/dotwave) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |
 | [Anam](https://docs.pipecat.ai/api-reference/server/services/video/anam) | Video | ✅ works | ✅ works |  |
@@ -100,6 +100,7 @@ automatically.
 | ❌ broken | Installs, but importing it fails, or one of its services can't be created |
 | 📌 needs older pipecat | Its version pin rules out that Pipecat version, so it can't be installed alongside it |
 | ⛔ can't install | The published install command fails (e.g. the package isn't on PyPI) |
+| 🔒 needs a licensed SDK | Needs a vendor SDK distributed by licence, not published. Not a fault |
 
 ## Write-ups
 

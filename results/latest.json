@@ -107,39 +107,6 @@
       "seconds": 5.4
     },
     {
-      "name": "Hecttor",
-      "install": "uv add pipecat-hecttor",
-      "categories": [
-        "Audio Filters"
-      ],
-      "docs": "https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor",
-      "probe": {
-        "pipecat": "1.12.0",
-        "distributions": [
-          "pipecat-hecttor==0.3.0"
-        ],
-        "packages": [
-          "pipecat_hecttor"
-        ],
-        "top_level_errors": [
-          {
-            "module": "pipecat_hecttor",
-            "type": "ImportError",
-            "message": "Missing module: No module named 'hecttor_sdk'"
-          }
-        ],
-        "submodule_errors": [],
-        "services": [],
-        "abstract_services": []
-      },
-      "distributions": [
-        "pipecat-hecttor==0.3.0"
-      ],
-      "status": "broken",
-      "reason": "import pipecat_hecttor: ImportError: Missing module: No module named 'hecttor_sdk'",
-      "seconds": 2.8
-    },
-    {
       "name": "Moss",
       "install": "uv add pipecat-moss",
       "categories": [
@@ -470,6 +437,39 @@
       "status": "partial",
       "reason": "import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings'",
       "seconds": 3.7
+    },
+    {
+      "name": "Hecttor",
+      "install": "uv add pipecat-hecttor",
+      "categories": [
+        "Audio Filters"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor",
+      "probe": {
+        "pipecat": "1.12.0",
+        "distributions": [
+          "pipecat-hecttor==0.3.0"
+        ],
+        "packages": [
+          "pipecat_hecttor"
+        ],
+        "top_level_errors": [
+          {
+            "module": "pipecat_hecttor",
+            "type": "ImportError",
+            "message": "Missing module: No module named 'hecttor_sdk'"
+          }
+        ],
+        "submodule_errors": [],
+        "services": [],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-hecttor==0.3.0"
+      ],
+      "status": "gated",
+      "reason": "needs hecttor_sdk, which is not published on PyPI",
+      "seconds": 2.8
     },
     {
       "name": ".wave",

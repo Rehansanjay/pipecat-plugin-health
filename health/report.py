@@ -14,6 +14,7 @@ ICON = {
     "broken": "❌ broken",
     "pinned": "📌 needs older pipecat",
     "uninstallable": "⛔ can't install",
+    "gated": "🔒 needs a licensed SDK",
 }
 
 ABOUT = """\
@@ -46,6 +47,7 @@ LEGEND = """\
 | ❌ broken | Installs, but importing it fails, or one of its services can't be created |
 | 📌 needs older pipecat | Its version pin rules out that Pipecat version, so it can't be installed alongside it |
 | ⛔ can't install | The published install command fails (e.g. the package isn't on PyPI) |
+| 🔒 needs a licensed SDK | Needs a vendor SDK distributed by licence, not published. Not a fault |
 """
 
 FOOTER = """\
@@ -122,7 +124,7 @@ def render() -> str:
                 names.append(key)
         by_run.append(index)
 
-    order = {"broken": 0, "pinned": 1, "uninstallable": 2, "partial": 3, "ok": 4}
+    order = {"broken": 0, "pinned": 1, "uninstallable": 2, "partial": 3, "gated": 4, "ok": 5}
 
     def worst(key):
         return min(order[idx[key]["status"]] for idx in by_run if key in idx)

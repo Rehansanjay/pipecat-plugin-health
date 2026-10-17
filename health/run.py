@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures as cf
 import datetime as dt
+import functools
 import json
 import os
 import re
@@ -21,6 +22,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -31,7 +33,10 @@ RESULTS = ROOT / "results"
 PROBE = Path(__file__).resolve().parent / "probe.py"
 
 OK, PARTIAL, BROKEN, PINNED, UNINSTALLABLE = "ok", "partial", "broken", "pinned", "uninstallable"
-ORDER = {BROKEN: 0, PINNED: 1, UNINSTALLABLE: 2, PARTIAL: 3, OK: 4}
+# A plugin whose vendor SDK is licensed rather than published. Not broken --
+# it works for that vendor's customers -- but not verifiable from outside.
+GATED = "gated"
+ORDER = {BROKEN: 0, PINNED: 1, UNINSTALLABLE: 2, PARTIAL: 3, GATED: 4, OK: 5}
 
 # An absolute path on Windows (C:\...) or POSIX (/...), up to the next whitespace.
 _LOCAL_PATH = re.compile(r"(?:[A-Za-z]:\\|(?<![\w:])/(?:home|tmp|Users|root|var|opt|runner)/)\S*")
@@ -90,10 +95,52 @@ def _involves_pipecat(error: dict) -> bool:
     return re.search(r"'pipecat(?:\.[\w.]+)?'", error["message"]) is not None
 
 
+@functools.lru_cache(maxsize=256)
+def _on_pypi(name: str) -> bool | None:
+    """Is there a PyPI project under this name? None when the question could not be asked.
+
+    Module names and project names are not the same thing, so both the
+    underscore and the dash spelling are tried. A None is deliberately distinct
+    from a False: a network failure must not be read as "this package does not
+    exist", because that would silently reclassify a broken plugin as a gated
+    one.
+    """
+    for candidate in {name, name.replace("_", "-")}:
+        try:
+            with urllib.request.urlopen(f"https://pypi.org/pypi/{candidate}/json", timeout=15):
+                return True
+        except urllib.error.HTTPError as exc:
+            if exc.code != 404:
+                return None
+        except (urllib.error.URLError, OSError):
+            return None
+    return False
+
+
+def _gating_module(message: str) -> str | None:
+    """The private package an import is waiting on, if that is what failed.
+
+    A plugin that needs a vendor SDK distributed by licence rather than by
+    PyPI is not broken -- it works for that vendor's customers, and no public
+    checker can ever see it work. Reporting it as broken is simply wrong, and
+    it is the maintainer who gets the blame for it.
+    """
+    match = re.search(r"No module named '([A-Za-z_][\w]*)'", message)
+    if not match:
+        return None
+    module = match.group(1)
+    if module.startswith("pipecat"):
+        return None
+    return module if _on_pypi(module) is False else None
+
+
 def classify(probe: dict) -> tuple[str, str]:
     """Status and one-line reason for a plugin that installed, from its probe output."""
     if probe["top_level_errors"]:
         e = probe["top_level_errors"][0]
+        gating = _gating_module(e["message"])
+        if gating:
+            return GATED, f"needs {gating}, which is not published on PyPI"
         return BROKEN, f"import {e['module']}: {e['type']}: {e['message']}"
     if probe["abstract_services"]:
         a = probe["abstract_services"][0]
