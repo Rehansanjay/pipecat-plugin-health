@@ -109,6 +109,7 @@ automatically.
 
 ## Write-ups
 
+- [The released wheel is not the truth](reports/2026-10-18-the-released-wheel-is-not-the-truth.md)
 - [I sent the fixes. Three weeks later, none of them have merged.](reports/2026-10-10-what-happened-to-the-fixes.md)
 - [I installed all 56 Pipecat community plugins. 18 of them don't work.](reports/2026-09-24-fifty-six-plugins.md)
 
