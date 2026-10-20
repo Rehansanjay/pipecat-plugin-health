@@ -1,0 +1,2 @@
+- **Giggy**: ok → pinned (pins pipecat-ai==1.12.0)
+- **Giggy**: ok → pinned (pins pipecat-ai==1.12.0)
