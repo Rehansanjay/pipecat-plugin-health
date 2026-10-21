@@ -1,2 +1,1 @@
-- **Giggy**: ok → pinned (pins pipecat-ai==1.12.0)
-- **Giggy**: ok → pinned (pins pipecat-ai==1.12.0)
+- **Boson Higgs Realtime**: unreleased → partial (import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings')

@@ -22,10 +22,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.13.0** (2026-10-20): 46 works, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK, 1 fixed, not released
-- **pipecat-ai main@5558d26dc** (2026-10-20): 46 works, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK, 1 fixed, not released
+- **pipecat-ai 1.13.0** (2026-10-21): 46 works, 1 partial, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@9b0459b47** (2026-10-21): 46 works, 1 partial, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.13.0 | pipecat main@5558d26dc | Why |
+| Plugin | Category | pipecat 1.13.0 | pipecat main@9b0459b47 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -46,7 +46,7 @@ automatically.
 | [Hakim](https://docs.pipecat.ai/api-reference/server/services/stt/hakim) | Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
 | [Simplismart](https://docs.pipecat.ai/api-reference/server/services/llm/simplismart) | Large Language Models, Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable. |
 | [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
-| [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 📦 fixed, not released | 📦 fixed, not released | fixed in boson-ai/pipecat-boson@0aa3e9f65, but the release still fails: import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from ' |
+| [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 🟡 partial | 🟡 partial | import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings' |
 | [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | 🔒 needs a licensed SDK | 🔒 needs a licensed SDK | needs hecttor_sdk, which is not published on PyPI |
 | [.wave](https://docs.pipecat.ai/api-reference/server/services/stt/dotwave) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |
