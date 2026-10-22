@@ -22,10 +22,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.13.0** (2026-10-21): 46 works, 1 partial, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@9b0459b47** (2026-10-21): 46 works, 1 partial, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.13.0** (2026-10-22): 47 works, 1 partial, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@0020f5d2c** (2026-10-22): 47 works, 1 partial, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.13.0 | pipecat main@9b0459b47 | Why |
+| Plugin | Category | pipecat 1.13.0 | pipecat main@0020f5d2c | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -84,6 +84,7 @@ automatically.
 | [SILMA AI](https://docs.pipecat.ai/api-reference/server/services/tts/silma) | Text-to-Speech | ✅ works | ✅ works |  |
 | [SLNG](https://docs.pipecat.ai/api-reference/server/services/stt/slng) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [SmolVLM](https://docs.pipecat.ai/api-reference/server/services/vision/smolvlm) | Vision | ✅ works | ✅ works |  |
+| [Sprag](https://docs.pipecat.ai/api-reference/server/services/llm/sprag) | Large Language Models, Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [Synap](https://docs.pipecat.ai/api-reference/server/services/memory/synap) | Memory | ✅ works | ✅ works |  |
 | [TEN VAD](https://docs.pipecat.ai/api-reference/server/services/vad/ten-vad) | VAD | ✅ works | ✅ works |  |
 | [ThunderPhone](https://docs.pipecat.ai/api-reference/server/services/s2s/thunderphone) | Realtime LLM | ✅ works | ✅ works |  |
