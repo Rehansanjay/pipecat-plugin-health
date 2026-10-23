@@ -1,10 +1,10 @@
 {
   "target": "main",
-  "pipecat": "main@0020f5d2c",
-  "checked_at": "2026-10-22T06:22:41Z",
-  "docs_commit": "3e61bba75e4a11558159e9a119353aa290af8ccb",
+  "pipecat": "main@3dfcd17a1",
+  "checked_at": "2026-10-23T06:16:39Z",
+  "docs_commit": "a5f343387b11fa3dfbffb57408810584109e035b",
   "python": "3.12.15",
-  "seconds": 72,
+  "seconds": 75,
   "plugins": [
     {
       "name": "AwaazAI",
@@ -14,7 +14,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-awaazai==0.1.1"
         ],
@@ -41,7 +41,7 @@
       "source_commit": "a3cdef111dd8b04a74bb91e424bbd187b8d9d593",
       "source": "still_broken",
       "source_reason": "import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames'",
-      "seconds": 10.6
+      "seconds": 11.1
     },
     {
       "name": "FIRE RED VAD",
@@ -51,7 +51,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-firered-vad==0.1.0"
         ],
@@ -78,7 +78,7 @@
       "source_commit": "",
       "source": "unknown",
       "source_reason": "could not install from source: fatal: could not read Username for 'https://github.com': terminal prompts disabled",
-      "seconds": 3.9
+      "seconds": 5.1
     },
     {
       "name": "Gnani",
@@ -89,7 +89,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/gnani",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-gnani==0.5.12"
         ],
@@ -100,7 +100,7 @@
           {
             "module": "pipecat_gnani",
             "type": "ImportError",
-            "message": "cannot import name '_NotGiven' from 'pipecat.services.settings'"
+            "message": "cannot import name 'TIMBRE_V20_VOICES' from 'gnani.tts.client'"
           }
         ],
         "submodule_errors": [],
@@ -111,49 +111,12 @@
         "pipecat-gnani==0.5.12"
       ],
       "status": "broken",
-      "reason": "import pipecat_gnani: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
+      "reason": "import pipecat_gnani: ImportError: cannot import name 'TIMBRE_V20_VOICES' from 'gnani.tts.client'",
       "source_repo": "https://github.com/Gnani-AI-Mintlify/pipecat-gnani",
       "source_commit": "384af680f1720794115158e5ee98267f3166ab50",
       "source": "still_broken",
-      "source_reason": "import pipecat_gnani: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 12.6
-    },
-    {
-      "name": "Moss",
-      "install": "uv add pipecat-moss",
-      "categories": [
-        "Knowledge Retrieval"
-      ],
-      "docs": "https://docs.pipecat.ai/api-reference/server/services/knowledge-retrieval/moss",
-      "probe": {
-        "pipecat": "1.13.1.dev176",
-        "distributions": [
-          "pipecat-moss==0.0.3"
-        ],
-        "packages": [
-          "pipecat_moss"
-        ],
-        "top_level_errors": [
-          {
-            "module": "pipecat_moss",
-            "type": "ImportError",
-            "message": "cannot import name 'LLMMessagesFrame' from 'pipecat.frames.frames'"
-          }
-        ],
-        "submodule_errors": [],
-        "services": [],
-        "abstract_services": []
-      },
-      "distributions": [
-        "pipecat-moss==0.0.3"
-      ],
-      "status": "broken",
-      "reason": "import pipecat_moss: ImportError: cannot import name 'LLMMessagesFrame' from 'pipecat.frames.frames'",
-      "source_repo": "https://github.com/usemoss/pipecat-moss",
-      "source_commit": "1f7bdfc895231210f13cc9972ba4cd6b1601909a",
-      "source": "still_broken",
-      "source_reason": "import pipecat_moss: ImportError: cannot import name 'AddDocumentsOptions' from 'inferedge_moss'",
-      "seconds": 14.8
+      "source_reason": "import pipecat_gnani: ImportError: cannot import name 'TIMBRE_V20_VOICES' from 'gnani.tts.client'",
+      "seconds": 12.4
     },
     {
       "name": "Replicate",
@@ -163,7 +126,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/image-generation/replicate",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-replicate==0.1.0"
         ],
@@ -190,7 +153,7 @@
       "source_commit": "856c9b1055dc1cf75c681637a0714c529e5ddf61",
       "source": "still_broken",
       "source_reason": "import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 12.8
+      "seconds": 13.9
     },
     {
       "name": "Respeecher",
@@ -200,7 +163,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/respeecher",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-respeecher==1.0.2"
         ],
@@ -227,7 +190,7 @@
       "source_commit": "29cc1800648dd812c23c669e80ce1fdf336ca8cb",
       "source": "still_broken",
       "source_reason": "import pipecat_respeecher: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 13.1
+      "seconds": 14.5
     },
     {
       "name": "Rumik AI",
@@ -237,7 +200,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/rumik",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-rumik==0.1.4"
         ],
@@ -264,7 +227,7 @@
       "source_commit": "3c12eb324172cf2df27c2d52f10b83510b0bf498",
       "source": "still_broken",
       "source_reason": "import pipecat_rumik: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 12.2
+      "seconds": 13.9
     },
     {
       "name": "SonexLabs",
@@ -274,7 +237,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/sonex",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-sonex==0.2.7"
         ],
@@ -301,7 +264,7 @@
       "source_commit": "19b49a0cb2ac63493253656e13c15aea91b61b6f",
       "source": "still_broken",
       "source_reason": "import pipecat_sonex: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 13.0
+      "seconds": 12.4
     },
     {
       "name": "Supertonic",
@@ -311,7 +274,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/supertonic",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-supertonic==0.1.1"
         ],
@@ -338,7 +301,7 @@
       "source_commit": "1e9799e964ea4c0dad7cde993b65c3c813a7b373",
       "source": "unknown",
       "source_reason": "could not install from source: `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory",
-      "seconds": 5.8
+      "seconds": 5.6
     },
     {
       "name": "Deepdub",
@@ -351,7 +314,7 @@
       "reason": "pins pipecat-ai>=0.0.97,<0.1.0",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 7.7
+      "seconds": 5.7
     },
     {
       "name": "Giggy",
@@ -364,7 +327,7 @@
       "reason": "pins pipecat-ai==1.12.0",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 5.4
+      "seconds": 6.5
     },
     {
       "name": "Giggy",
@@ -377,7 +340,7 @@
       "reason": "pins pipecat-ai==1.12.0",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 5.5
+      "seconds": 6.8
     },
     {
       "name": "Maya",
@@ -390,7 +353,7 @@
       "reason": "pins pipecat-ai==1.8.1",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 9.4
+      "seconds": 8.9
     },
     {
       "name": "Memcode",
@@ -403,7 +366,7 @@
       "reason": "pins pipecat-ai>=1.10,<1.11",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 5.2
+      "seconds": 4.4
     },
     {
       "name": "Oruk",
@@ -416,7 +379,7 @@
       "reason": "pins pipecat-ai>=1.8.1,<1.9",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 5.5
+      "seconds": 5.4
     },
     {
       "name": "Wavix",
@@ -429,7 +392,7 @@
       "reason": "pins pipecat-ai[deepgram]==0.0.105",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 5.7
+      "seconds": 5.8
     },
     {
       "name": "Hakim",
@@ -445,7 +408,7 @@
       "source_commit": "e93a9beb9c63c3b2f8ab6ee0ea8bad007b12fad6",
       "source": "unknown",
       "source_reason": "could not install from source: `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory",
-      "seconds": 1.4
+      "seconds": 1.3
     },
     {
       "name": "Simplismart",
@@ -462,7 +425,7 @@
       "source_commit": "df9cdd842d12b85ec5b41dce92d1482687745f06",
       "source": "still_broken",
       "source_reason": "import pipecat_simplismart: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 11.6
+      "seconds": 10.3
     },
     {
       "name": "Uplift AI",
@@ -477,7 +440,7 @@
       "source_commit": "2565ca0954617bbfccce43e869da410c92c940c2",
       "source": "unknown",
       "source_reason": "could not install from source: `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory",
-      "seconds": 1.6
+      "seconds": 1.3
     },
     {
       "name": "Boson Higgs Realtime",
@@ -487,7 +450,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/s2s/boson",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-boson==0.1.3"
         ],
@@ -511,10 +474,10 @@
       "status": "partial",
       "reason": "import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings'",
       "source_repo": "https://github.com/boson-ai/pipecat-boson",
-      "source_commit": "7b87de186fdd914f2e3e3e30dc4376271ec43aee",
+      "source_commit": "01fd52c3ae6138d2f071bdd38f8f1956722a756a",
       "source": "unknown",
       "source_reason": "could not install from source: pins pipecat-ai>=1.4.0,<1.13",
-      "seconds": 6.1
+      "seconds": 6.3
     },
     {
       "name": "Hecttor",
@@ -524,7 +487,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-hecttor==0.3.0"
         ],
@@ -547,7 +510,7 @@
       ],
       "status": "gated",
       "reason": "needs hecttor_sdk, which is not published on PyPI",
-      "seconds": 3.7
+      "seconds": 4.5
     },
     {
       "name": ".wave",
@@ -557,7 +520,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/dotwave",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-dotwave==0.1.1"
         ],
@@ -576,7 +539,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.3
+      "seconds": 3.8
     },
     {
       "name": "Acefone",
@@ -586,7 +549,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/acefone",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-acefone==0.1.3"
         ],
@@ -603,7 +566,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.1
+      "seconds": 6.2
     },
     {
       "name": "Anam",
@@ -613,7 +576,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/video/anam",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-anam==0.1.0"
         ],
@@ -638,7 +601,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.7
+      "seconds": 6.5
     },
     {
       "name": "Anannas AI",
@@ -648,7 +611,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/llm/anannas",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-anannas==0.1.0"
         ],
@@ -667,7 +630,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.1
+      "seconds": 7.9
     },
     {
       "name": "Arctan",
@@ -677,7 +640,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/audio-filters/arctan",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "arctan-vi-pipecat==0.8.1",
           "arctan-vi==0.8.1"
@@ -697,7 +660,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 14.9
+      "seconds": 14.5
     },
     {
       "name": "Asterisk",
@@ -707,7 +670,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/asterisk",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-asterisk==0.1.4"
         ],
@@ -729,7 +692,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.4
+      "seconds": 7.6
     },
     {
       "name": "Bandwidth",
@@ -739,7 +702,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/bandwidth",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-bandwidth==0.1.0"
         ],
@@ -756,7 +719,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.4
+      "seconds": 5.7
     },
     {
       "name": "Beyond Presence",
@@ -766,7 +729,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/transport/beyond-presence",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-ai-bey==0.0.1"
         ],
@@ -789,7 +752,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.8
+      "seconds": 4.8
     },
     {
       "name": "bitHuman",
@@ -799,7 +762,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/video/bithuman",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-bithuman==0.2.0"
         ],
@@ -818,7 +781,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.6
+      "seconds": 5.2
     },
     {
       "name": "didlogic",
@@ -828,7 +791,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/serializers/didlogic",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-didlogic==1.0.2"
         ],
@@ -845,7 +808,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.3
+      "seconds": 7.1
     },
     {
       "name": "DuplexJev Turn Analyzer",
@@ -855,7 +818,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/extensions/pipecat-duplexjev",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-duplexjev==0.4.3"
         ],
@@ -874,7 +837,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.0
+      "seconds": 3.4
     },
     {
       "name": "Finchvox",
@@ -884,7 +847,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/finchvox",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "finchvox==0.0.17"
         ],
@@ -909,7 +872,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 18.9
+      "seconds": 19.4
     },
     {
       "name": "Floe",
@@ -921,7 +884,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/llm/floe",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-floe==0.3.0",
           "floe-guard==0.25.2"
@@ -952,7 +915,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.9
+      "seconds": 9.7
     },
     {
       "name": "floe-guard",
@@ -962,7 +925,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/floe",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "floe-guard==0.25.2"
         ],
@@ -987,7 +950,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 15.2
+      "seconds": 14.7
     },
     {
       "name": "Future AGI",
@@ -997,7 +960,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/future-agi",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "traceAI-pipecat==0.1.1"
         ],
@@ -1014,7 +977,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 16.2
+      "seconds": 16.0
     },
     {
       "name": "Gandr",
@@ -1024,7 +987,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/gandr",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-gandr==0.1.4"
         ],
@@ -1043,7 +1006,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.6
+      "seconds": 5.4
     },
     {
       "name": "Lokutor",
@@ -1053,7 +1016,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/lokutor",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-lokutor==0.2.0"
         ],
@@ -1072,7 +1035,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.4
+      "seconds": 5.6
     },
     {
       "name": "MCP",
@@ -1082,7 +1045,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/transport/mcp",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-mcp-transport==0.1.1"
         ],
@@ -1102,7 +1065,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.5
+      "seconds": 8.8
     },
     {
       "name": "MemorySync",
@@ -1112,7 +1075,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/memory/memorysync",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-memorysync==1.2.1"
         ],
@@ -1131,7 +1094,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.4
+      "seconds": 4.3
     },
     {
       "name": "Mirai",
@@ -1141,7 +1104,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/mirai",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-mirai==0.6.0"
         ],
@@ -1163,7 +1126,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.8
+      "seconds": 8.2
     },
     {
       "name": "MLflow",
@@ -1173,7 +1136,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/mlflow",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "mlflow==3.17.2"
         ],
@@ -1190,7 +1153,36 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 28.1
+      "seconds": 27.7
+    },
+    {
+      "name": "Moss",
+      "install": "uv add pipecat-moss",
+      "categories": [
+        "Knowledge Retrieval"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/knowledge-retrieval/moss",
+      "probe": {
+        "pipecat": "1.13.1.dev200",
+        "distributions": [
+          "pipecat-moss==0.1.0"
+        ],
+        "packages": [
+          "pipecat_moss"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_moss.moss_index_processor.MossIndexProcessor"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-moss==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 4.1
     },
     {
       "name": "Murf AI",
@@ -1200,7 +1192,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/murf",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-murf-tts==0.2.6"
         ],
@@ -1219,7 +1211,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.1
+      "seconds": 4.9
     },
     {
       "name": "Noveum Trace",
@@ -1229,7 +1221,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/noveum-trace",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "noveum-trace==1.5.28"
         ],
@@ -1375,7 +1367,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 19.4
+      "seconds": 21.2
     },
     {
       "name": "OpenInference",
@@ -1385,7 +1377,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/openinference",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "openinference-instrumentation-pipecat==2.0.9"
         ],
@@ -1402,7 +1394,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 16.9
+      "seconds": 17.2
     },
     {
       "name": "Pinch",
@@ -1412,7 +1404,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/translation/pinch",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-plugins-pinch==0.1.0"
         ],
@@ -1431,7 +1423,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.8
+      "seconds": 4.7
     },
     {
       "name": "Pipecat Backchannel",
@@ -1441,7 +1433,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/extensions/pipecat-backchannel",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-backchannel==0.3.3"
         ],
@@ -1462,7 +1454,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.6
+      "seconds": 6.8
     },
     {
       "name": "Pipecat TTS Cache",
@@ -1472,7 +1464,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/tts-cache",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-tts-cache==1.0.1"
         ],
@@ -1489,7 +1481,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.6
+      "seconds": 4.2
     },
     {
       "name": "pipecat-effects",
@@ -1499,7 +1491,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/audio-filters/pipecat-effects",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-effects==0.1.1"
         ],
@@ -1516,7 +1508,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 12.0
+      "seconds": 12.1
     },
     {
       "name": "Protoface",
@@ -1526,7 +1518,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/video/protoface",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-protoface==0.1.0"
         ],
@@ -1545,7 +1537,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.9
+      "seconds": 4.5
     },
     {
       "name": "Quickdial",
@@ -1556,7 +1548,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/quickdial",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-quickdial==0.1.0"
         ],
@@ -1586,7 +1578,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/readaloud",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-readaloud==0.1.1"
         ],
@@ -1605,7 +1597,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.6
+      "seconds": 6.5
     },
     {
       "name": "Ringg AI",
@@ -1615,7 +1607,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/ringg",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-ringg==0.1.0"
         ],
@@ -1634,7 +1626,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.4
+      "seconds": 6.7
     },
     {
       "name": "Roark",
@@ -1644,7 +1636,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/analytics/roark",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-roark==0.2.5"
         ],
@@ -1664,6 +1656,35 @@
       "seconds": 15.3
     },
     {
+      "name": "RTZR",
+      "install": "uv add pipecat-rtzr",
+      "categories": [
+        "Speech-to-Text"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/rtzr",
+      "probe": {
+        "pipecat": "1.13.1.dev200",
+        "distributions": [
+          "pipecat-rtzr==0.1.0"
+        ],
+        "packages": [
+          "pipecat_rtzr"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_rtzr.stt.RTZRSTTService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-rtzr==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 4.7
+    },
+    {
       "name": "SILMA AI",
       "install": "uv add pipecat-silma",
       "categories": [
@@ -1671,7 +1692,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/silma",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-silma==0.1.0"
         ],
@@ -1701,7 +1722,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/slng",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-slng==0.7.0"
         ],
@@ -1721,7 +1742,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.0
+      "seconds": 4.9
     },
     {
       "name": "SmolVLM",
@@ -1731,7 +1752,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/vision/smolvlm",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-smolvlm==0.1.0"
         ],
@@ -1746,7 +1767,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.5
+      "seconds": 6.0
     },
     {
       "name": "Sprag",
@@ -1758,7 +1779,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/llm/sprag",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-sprag==0.1.0"
         ],
@@ -1779,7 +1800,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.8
+      "seconds": 8.6
     },
     {
       "name": "Synap",
@@ -1789,9 +1810,9 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/memory/synap",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
-          "maximem-synap-pipecat==0.2.1"
+          "maximem-synap-pipecat==0.2.3"
         ],
         "packages": [
           "synap_pipecat"
@@ -1806,11 +1827,11 @@
         "abstract_services": []
       },
       "distributions": [
-        "maximem-synap-pipecat==0.2.1"
+        "maximem-synap-pipecat==0.2.3"
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.6
+      "seconds": 5.5
     },
     {
       "name": "TEN VAD",
@@ -1820,7 +1841,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/vad/ten-vad",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-ten-vad==0.1.0"
         ],
@@ -1845,7 +1866,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/s2s/thunderphone",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-thunderphone==0.1.1"
         ],
@@ -1864,7 +1885,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.0
+      "seconds": 5.9
     },
     {
       "name": "turn-1-mini",
@@ -1874,7 +1895,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/utilities/turn-detection/turn-1-mini",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-p99lab==0.1.4"
         ],
@@ -1891,7 +1912,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.3
+      "seconds": 6.8
     },
     {
       "name": "Typecast",
@@ -1901,7 +1922,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/typecast",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-ai-typecast==0.3.2"
         ],
@@ -1920,7 +1941,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.7
+      "seconds": 6.7
     },
     {
       "name": "Uplift AI",
@@ -1930,7 +1951,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/upliftai",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-uplift-tts==1.0.0"
         ],
@@ -1950,7 +1971,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.0
+      "seconds": 7.0
     },
     {
       "name": "Vakyam AI",
@@ -1960,7 +1981,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/vakyam",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-vakyam==0.1.0",
           "vakyamai==0.1.8"
@@ -2004,7 +2025,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/voiceai",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-voice-ai==1.0.0"
         ],
@@ -2023,7 +2044,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.3
+      "seconds": 7.6
     },
     {
       "name": "VoxLock",
@@ -2033,7 +2054,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/audio-filters/voxlock",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "voxlock==1.1.1"
         ],
@@ -2050,7 +2071,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.9
+      "seconds": 4.5
     },
     {
       "name": "XTTS-vLLM",
@@ -2060,7 +2081,7 @@
       ],
       "docs": "https://docs.pipecat.ai/api-reference/server/services/tts/xtts-vllm",
       "probe": {
-        "pipecat": "1.13.1.dev176",
+        "pipecat": "1.13.1.dev200",
         "distributions": [
           "pipecat-xtts-vllm==0.1.1"
         ],
@@ -2079,7 +2100,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.8
+      "seconds": 5.2
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
   "target": "latest",
   "pipecat": "1.13.0",
-  "checked_at": "2026-10-22T06:22:33Z",
-  "docs_commit": "3e61bba75e4a11558159e9a119353aa290af8ccb",
+  "checked_at": "2026-10-23T06:16:16Z",
+  "docs_commit": "a5f343387b11fa3dfbffb57408810584109e035b",
   "python": "3.12.15",
-  "seconds": 62,
+  "seconds": 49,
   "plugins": [
     {
       "name": "AwaazAI",
@@ -41,7 +41,7 @@
       "source_commit": "a3cdef111dd8b04a74bb91e424bbd187b8d9d593",
       "source": "still_broken",
       "source_reason": "import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames'",
-      "seconds": 10.8
+      "seconds": 8.2
     },
     {
       "name": "FIRE RED VAD",
@@ -78,7 +78,7 @@
       "source_commit": "",
       "source": "unknown",
       "source_reason": "could not install from source: fatal: could not read Username for 'https://github.com': terminal prompts disabled",
-      "seconds": 5.7
+      "seconds": 2.9
     },
     {
       "name": "Gnani",
@@ -100,7 +100,7 @@
           {
             "module": "pipecat_gnani",
             "type": "ImportError",
-            "message": "cannot import name '_NotGiven' from 'pipecat.services.settings'"
+            "message": "cannot import name 'TIMBRE_V20_VOICES' from 'gnani.tts.client'"
           }
         ],
         "submodule_errors": [],
@@ -111,49 +111,12 @@
         "pipecat-gnani==0.5.12"
       ],
       "status": "broken",
-      "reason": "import pipecat_gnani: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
+      "reason": "import pipecat_gnani: ImportError: cannot import name 'TIMBRE_V20_VOICES' from 'gnani.tts.client'",
       "source_repo": "https://github.com/Gnani-AI-Mintlify/pipecat-gnani",
       "source_commit": "384af680f1720794115158e5ee98267f3166ab50",
       "source": "still_broken",
-      "source_reason": "import pipecat_gnani: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 13.0
-    },
-    {
-      "name": "Moss",
-      "install": "uv add pipecat-moss",
-      "categories": [
-        "Knowledge Retrieval"
-      ],
-      "docs": "https://docs.pipecat.ai/api-reference/server/services/knowledge-retrieval/moss",
-      "probe": {
-        "pipecat": "1.13.0",
-        "distributions": [
-          "pipecat-moss==0.0.3"
-        ],
-        "packages": [
-          "pipecat_moss"
-        ],
-        "top_level_errors": [
-          {
-            "module": "pipecat_moss",
-            "type": "ImportError",
-            "message": "cannot import name 'LLMMessagesFrame' from 'pipecat.frames.frames'"
-          }
-        ],
-        "submodule_errors": [],
-        "services": [],
-        "abstract_services": []
-      },
-      "distributions": [
-        "pipecat-moss==0.0.3"
-      ],
-      "status": "broken",
-      "reason": "import pipecat_moss: ImportError: cannot import name 'LLMMessagesFrame' from 'pipecat.frames.frames'",
-      "source_repo": "https://github.com/usemoss/pipecat-moss",
-      "source_commit": "1f7bdfc895231210f13cc9972ba4cd6b1601909a",
-      "source": "still_broken",
-      "source_reason": "import pipecat_moss: ImportError: cannot import name 'AddDocumentsOptions' from 'inferedge_moss'",
-      "seconds": 15.7
+      "source_reason": "import pipecat_gnani: ImportError: cannot import name 'TIMBRE_V20_VOICES' from 'gnani.tts.client'",
+      "seconds": 7.4
     },
     {
       "name": "Replicate",
@@ -190,7 +153,7 @@
       "source_commit": "856c9b1055dc1cf75c681637a0714c529e5ddf61",
       "source": "still_broken",
       "source_reason": "import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 9.4
+      "seconds": 9.2
     },
     {
       "name": "Respeecher",
@@ -227,7 +190,7 @@
       "source_commit": "29cc1800648dd812c23c669e80ce1fdf336ca8cb",
       "source": "still_broken",
       "source_reason": "import pipecat_respeecher: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 10.3
+      "seconds": 10.6
     },
     {
       "name": "Rumik AI",
@@ -264,7 +227,7 @@
       "source_commit": "3c12eb324172cf2df27c2d52f10b83510b0bf498",
       "source": "still_broken",
       "source_reason": "import pipecat_rumik: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 11.9
+      "seconds": 10.7
     },
     {
       "name": "SonexLabs",
@@ -301,7 +264,7 @@
       "source_commit": "19b49a0cb2ac63493253656e13c15aea91b61b6f",
       "source": "still_broken",
       "source_reason": "import pipecat_sonex: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 12.0
+      "seconds": 10.0
     },
     {
       "name": "Supertonic",
@@ -338,7 +301,7 @@
       "source_commit": "1e9799e964ea4c0dad7cde993b65c3c813a7b373",
       "source": "unknown",
       "source_reason": "could not install from source: `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory",
-      "seconds": 6.1
+      "seconds": 4.6
     },
     {
       "name": "Deepdub",
@@ -351,7 +314,7 @@
       "reason": "pins pipecat-ai>=0.0.97,<0.1.0",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 5.5
+      "seconds": 3.7
     },
     {
       "name": "Giggy",
@@ -364,7 +327,7 @@
       "reason": "pins pipecat-ai==1.12.0",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 4.6
+      "seconds": 3.5
     },
     {
       "name": "Giggy",
@@ -377,7 +340,7 @@
       "reason": "pins pipecat-ai==1.12.0",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 5.9
+      "seconds": 3.4
     },
     {
       "name": "Maya",
@@ -390,7 +353,7 @@
       "reason": "pins pipecat-ai==1.8.1; pipecat-ai==1.8.1.",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 9.0
+      "seconds": 6.8
     },
     {
       "name": "Memcode",
@@ -403,7 +366,7 @@
       "reason": "pins pipecat-ai>=1.10,<1.11",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 3.9
+      "seconds": 3.6
     },
     {
       "name": "Oruk",
@@ -416,7 +379,7 @@
       "reason": "pins pipecat-ai>=1.8.1,<1.9",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 4.5
+      "seconds": 3.2
     },
     {
       "name": "Wavix",
@@ -429,7 +392,7 @@
       "reason": "pins pipecat-ai[deepgram]==0.0.105; pipecat-ai==0.0.105.",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 4.3
+      "seconds": 3.3
     },
     {
       "name": "Hakim",
@@ -445,7 +408,7 @@
       "source_commit": "e93a9beb9c63c3b2f8ab6ee0ea8bad007b12fad6",
       "source": "unknown",
       "source_reason": "could not install from source: `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory",
-      "seconds": 2.0
+      "seconds": 1.3
     },
     {
       "name": "Simplismart",
@@ -462,7 +425,7 @@
       "source_commit": "df9cdd842d12b85ec5b41dce92d1482687745f06",
       "source": "still_broken",
       "source_reason": "import pipecat_simplismart: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 11.2
+      "seconds": 8.1
     },
     {
       "name": "Uplift AI",
@@ -477,7 +440,7 @@
       "source_commit": "2565ca0954617bbfccce43e869da410c92c940c2",
       "source": "unknown",
       "source_reason": "could not install from source: `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory",
-      "seconds": 1.9
+      "seconds": 1.4
     },
     {
       "name": "Boson Higgs Realtime",
@@ -511,10 +474,10 @@
       "status": "partial",
       "reason": "import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings'",
       "source_repo": "https://github.com/boson-ai/pipecat-boson",
-      "source_commit": "7b87de186fdd914f2e3e3e30dc4376271ec43aee",
+      "source_commit": "01fd52c3ae6138d2f071bdd38f8f1956722a756a",
       "source": "unknown",
       "source_reason": "could not install from source: pins pipecat-ai>=1.4.0,<1.13; pipecat-ai>=1.4.0,<1.13.",
-      "seconds": 6.9
+      "seconds": 4.9
     },
     {
       "name": "Hecttor",
@@ -547,7 +510,7 @@
       ],
       "status": "gated",
       "reason": "needs hecttor_sdk, which is not published on PyPI",
-      "seconds": 4.0
+      "seconds": 2.9
     },
     {
       "name": ".wave",
@@ -576,7 +539,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.7
+      "seconds": 2.2
     },
     {
       "name": "Acefone",
@@ -603,7 +566,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.5
+      "seconds": 2.8
     },
     {
       "name": "Anam",
@@ -638,7 +601,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.1
+      "seconds": 3.3
     },
     {
       "name": "Anannas AI",
@@ -667,7 +630,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.9
+      "seconds": 4.3
     },
     {
       "name": "Arctan",
@@ -697,7 +660,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 9.4
+      "seconds": 8.9
     },
     {
       "name": "Asterisk",
@@ -729,7 +692,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.1
+      "seconds": 4.4
     },
     {
       "name": "Bandwidth",
@@ -756,7 +719,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.4
+      "seconds": 3.4
     },
     {
       "name": "Beyond Presence",
@@ -789,7 +752,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.7
+      "seconds": 3.6
     },
     {
       "name": "bitHuman",
@@ -818,7 +781,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.8
+      "seconds": 3.0
     },
     {
       "name": "didlogic",
@@ -845,7 +808,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.9
+      "seconds": 3.3
     },
     {
       "name": "DuplexJev Turn Analyzer",
@@ -874,7 +837,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.7
+      "seconds": 3.0
     },
     {
       "name": "Finchvox",
@@ -909,7 +872,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 13.0
+      "seconds": 11.0
     },
     {
       "name": "Floe",
@@ -952,7 +915,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.3
+      "seconds": 4.3
     },
     {
       "name": "floe-guard",
@@ -987,7 +950,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 9.6
+      "seconds": 9.2
     },
     {
       "name": "Future AGI",
@@ -1014,7 +977,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 10.9
+      "seconds": 10.7
     },
     {
       "name": "Gandr",
@@ -1043,7 +1006,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.8
+      "seconds": 2.3
     },
     {
       "name": "Lokutor",
@@ -1072,7 +1035,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.4
+      "seconds": 2.9
     },
     {
       "name": "MCP",
@@ -1102,7 +1065,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.7
+      "seconds": 5.4
     },
     {
       "name": "MemorySync",
@@ -1131,7 +1094,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.5
+      "seconds": 3.2
     },
     {
       "name": "Mirai",
@@ -1190,7 +1153,36 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 21.5
+      "seconds": 18.9
+    },
+    {
+      "name": "Moss",
+      "install": "uv add pipecat-moss",
+      "categories": [
+        "Knowledge Retrieval"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/knowledge-retrieval/moss",
+      "probe": {
+        "pipecat": "1.13.0",
+        "distributions": [
+          "pipecat-moss==0.1.0"
+        ],
+        "packages": [
+          "pipecat_moss"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_moss.moss_index_processor.MossIndexProcessor"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-moss==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 3.8
     },
     {
       "name": "Murf AI",
@@ -1219,7 +1211,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.6
+      "seconds": 4.0
     },
     {
       "name": "Noveum Trace",
@@ -1375,7 +1367,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 13.8
+      "seconds": 12.5
     },
     {
       "name": "OpenInference",
@@ -1402,7 +1394,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 11.6
+      "seconds": 10.3
     },
     {
       "name": "Pinch",
@@ -1431,7 +1423,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.7
+      "seconds": 3.5
     },
     {
       "name": "Pipecat Backchannel",
@@ -1462,7 +1454,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.3
+      "seconds": 4.9
     },
     {
       "name": "Pipecat TTS Cache",
@@ -1489,7 +1481,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.8
+      "seconds": 2.6
     },
     {
       "name": "pipecat-effects",
@@ -1516,7 +1508,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 10.9
+      "seconds": 7.5
     },
     {
       "name": "Protoface",
@@ -1545,7 +1537,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.2
+      "seconds": 2.5
     },
     {
       "name": "Quickdial",
@@ -1576,7 +1568,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.4
+      "seconds": 3.5
     },
     {
       "name": "ReadAloud",
@@ -1605,7 +1597,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.1
+      "seconds": 4.0
     },
     {
       "name": "Ringg AI",
@@ -1634,7 +1626,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.8
+      "seconds": 3.7
     },
     {
       "name": "Roark",
@@ -1661,7 +1653,36 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 9.7
+      "seconds": 9.1
+    },
+    {
+      "name": "RTZR",
+      "install": "uv add pipecat-rtzr",
+      "categories": [
+        "Speech-to-Text"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/rtzr",
+      "probe": {
+        "pipecat": "1.13.0",
+        "distributions": [
+          "pipecat-rtzr==0.1.0"
+        ],
+        "packages": [
+          "pipecat_rtzr"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_rtzr.stt.RTZRSTTService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-rtzr==0.1.0"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 3.1
     },
     {
       "name": "SILMA AI",
@@ -1690,7 +1711,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.9
+      "seconds": 2.8
     },
     {
       "name": "SLNG",
@@ -1721,7 +1742,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.1
+      "seconds": 3.0
     },
     {
       "name": "SmolVLM",
@@ -1746,7 +1767,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.1
+      "seconds": 4.2
     },
     {
       "name": "Sprag",
@@ -1779,7 +1800,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.9
+      "seconds": 6.7
     },
     {
       "name": "Synap",
@@ -1791,7 +1812,7 @@
       "probe": {
         "pipecat": "1.13.0",
         "distributions": [
-          "maximem-synap-pipecat==0.2.1"
+          "maximem-synap-pipecat==0.2.3"
         ],
         "packages": [
           "synap_pipecat"
@@ -1806,11 +1827,11 @@
         "abstract_services": []
       },
       "distributions": [
-        "maximem-synap-pipecat==0.2.1"
+        "maximem-synap-pipecat==0.2.3"
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.1
+      "seconds": 3.8
     },
     {
       "name": "TEN VAD",
@@ -1835,7 +1856,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.6
+      "seconds": 2.5
     },
     {
       "name": "ThunderPhone",
@@ -1864,7 +1885,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.5
+      "seconds": 4.2
     },
     {
       "name": "turn-1-mini",
@@ -1891,7 +1912,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.9
+      "seconds": 4.1
     },
     {
       "name": "Typecast",
@@ -1920,7 +1941,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.0
+      "seconds": 3.0
     },
     {
       "name": "Uplift AI",
@@ -1950,7 +1971,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.6
+      "seconds": 3.4
     },
     {
       "name": "Vakyam AI",
@@ -1994,7 +2015,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.8
+      "seconds": 2.5
     },
     {
       "name": "Voice.ai",
@@ -2023,7 +2044,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.8
+      "seconds": 3.5
     },
     {
       "name": "VoxLock",
@@ -2050,7 +2071,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.2
+      "seconds": 2.7
     },
     {
       "name": "XTTS-vLLM",
@@ -2079,7 +2100,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.9
+      "seconds": 4.2
     }
   ]
 }

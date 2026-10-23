@@ -1,1 +1,2 @@
-- **Sprag** is new in the docs: ok
+- **Moss**: broken → ok
+- **RTZR** is new in the docs: ok

@@ -22,15 +22,14 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.13.0** (2026-10-22): 47 works, 1 partial, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@0020f5d2c** (2026-10-22): 47 works, 1 partial, 9 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.13.0** (2026-10-23): 49 works, 1 partial, 8 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@3dfcd17a1** (2026-10-23): 49 works, 1 partial, 8 broken, 7 needs older pipecat, 3 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.13.0 | pipecat main@0020f5d2c | Why |
+| Plugin | Category | pipecat 1.13.0 | pipecat main@3dfcd17a1 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
-| [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ❌ broken | ❌ broken | import pipecat_gnani: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
-| [Moss](https://docs.pipecat.ai/api-reference/server/services/knowledge-retrieval/moss) | Knowledge Retrieval | ❌ broken | ❌ broken | import pipecat_moss: ImportError: cannot import name 'LLMMessagesFrame' from 'pipecat.frames.frames' |
+| [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ❌ broken | ❌ broken | import pipecat_gnani: ImportError: cannot import name 'TIMBRE_V20_VOICES' from 'gnani.tts.client' |
 | [Replicate](https://docs.pipecat.ai/api-reference/server/services/image-generation/replicate) | Image Generation | ❌ broken | ❌ broken | import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Respeecher](https://docs.pipecat.ai/api-reference/server/services/tts/respeecher) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_respeecher: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Rumik AI](https://docs.pipecat.ai/api-reference/server/services/tts/rumik) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_rumik: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
@@ -69,6 +68,7 @@ automatically.
 | [MemorySync](https://docs.pipecat.ai/api-reference/server/services/memory/memorysync) | Memory | ✅ works | ✅ works |  |
 | [Mirai](https://docs.pipecat.ai/api-reference/server/services/tts/mirai) | Text-to-Speech | ✅ works | ✅ works |  |
 | [MLflow](https://docs.pipecat.ai/api-reference/server/services/analytics/mlflow) | Analytics & Monitoring | ✅ works | ✅ works |  |
+| [Moss](https://docs.pipecat.ai/api-reference/server/services/knowledge-retrieval/moss) | Knowledge Retrieval | ✅ works | ✅ works |  |
 | [Murf AI](https://docs.pipecat.ai/api-reference/server/services/tts/murf) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Noveum Trace](https://docs.pipecat.ai/api-reference/server/services/analytics/noveum-trace) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [OpenInference](https://docs.pipecat.ai/api-reference/server/services/analytics/openinference) | Analytics & Monitoring | ✅ works | ✅ works |  |
@@ -81,6 +81,7 @@ automatically.
 | [ReadAloud](https://docs.pipecat.ai/api-reference/server/services/tts/readaloud) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Ringg AI](https://docs.pipecat.ai/api-reference/server/services/stt/ringg) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Roark](https://docs.pipecat.ai/api-reference/server/services/analytics/roark) | Analytics & Monitoring | ✅ works | ✅ works |  |
+| [RTZR](https://docs.pipecat.ai/api-reference/server/services/stt/rtzr) | Speech-to-Text | ✅ works | ✅ works |  |
 | [SILMA AI](https://docs.pipecat.ai/api-reference/server/services/tts/silma) | Text-to-Speech | ✅ works | ✅ works |  |
 | [SLNG](https://docs.pipecat.ai/api-reference/server/services/stt/slng) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [SmolVLM](https://docs.pipecat.ai/api-reference/server/services/vision/smolvlm) | Vision | ✅ works | ✅ works |  |
