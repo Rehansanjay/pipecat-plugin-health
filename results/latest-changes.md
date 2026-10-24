@@ -1,2 +1,1 @@
-- **Moss**: broken → ok
-- **RTZR** is new in the docs: ok
+- **Kalpa** is new in the docs: pinned
