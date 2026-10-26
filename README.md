@@ -22,10 +22,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.14.0** (2026-10-25): 49 works, 1 partial, 8 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@60999e29f** (2026-10-25): 49 works, 1 partial, 8 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.14.0** (2026-10-26): 49 works, 1 partial, 8 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@9d03e5b42** (2026-10-26): 49 works, 1 partial, 8 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.14.0 | pipecat main@60999e29f | Why |
+| Plugin | Category | pipecat 1.14.0 | pipecat main@9d03e5b42 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -38,7 +38,7 @@ automatically.
 | [Deepdub](https://docs.pipecat.ai/api-reference/server/services/tts/deepdub) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=0.0.97,<0.1.0 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Giggy](https://docs.pipecat.ai/api-reference/server/services/stt/giggy) | Speech-to-Text | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai[silero]==1.12.0; pipecat-ai==1.12.0; pipecat-ai==1.12.0. — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Giggy](https://docs.pipecat.ai/api-reference/server/services/tts/giggy) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai[silero]==1.12.0; pipecat-ai==1.12.0; pipecat-ai==1.12.0. — but it imports and constructs on this pipecat; only the pin blocks it |
-| [Kalpa](https://docs.pipecat.ai/api-reference/server/services/tts/kalpa) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.13.0,<1.14.0; pipecat-ai>=1.13.0,<1.14.0. — but it imports and constructs on this pipecat; only the pin blocks it |
+| [Kalpa](https://docs.pipecat.ai/api-reference/server/services/tts/kalpa) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.13.0,<1.14.0 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Maya](https://docs.pipecat.ai/api-reference/server/services/tts/maya) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai==1.8.1; pipecat-ai==1.8.1. — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Memcode](https://docs.pipecat.ai/api-reference/server/services/memory/memcode) | Memory | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.10,<1.11 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Oruk](https://docs.pipecat.ai/api-reference/server/services/stt/oruk) | Speech-to-Text | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.8.1,<1.9 — but it imports and constructs on this pipecat; only the pin blocks it |
