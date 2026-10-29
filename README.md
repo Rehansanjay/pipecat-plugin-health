@@ -22,14 +22,13 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.14.0** (2026-10-28): 49 works, 1 partial, 8 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@3e1ddbdac** (2026-10-28): 49 works, 1 partial, 8 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.15.0** (2026-10-29): 49 works, 1 partial, 7 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK, 1 fixed, not released
+- **pipecat-ai main@fda1d5e0c** (2026-10-29): 49 works, 1 partial, 7 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK, 1 fixed, not released
 
-| Plugin | Category | pipecat 1.14.0 | pipecat main@3e1ddbdac | Why |
+| Plugin | Category | pipecat 1.15.0 | pipecat main@fda1d5e0c | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
-| [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ❌ broken | ❌ broken | import pipecat_gnani: ImportError: cannot import name 'TIMBRE_V20_VOICES' from 'gnani.tts.client' |
 | [Replicate](https://docs.pipecat.ai/api-reference/server/services/image-generation/replicate) | Image Generation | ❌ broken | ❌ broken | import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Respeecher](https://docs.pipecat.ai/api-reference/server/services/tts/respeecher) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_respeecher: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Rumik AI](https://docs.pipecat.ai/api-reference/server/services/tts/rumik) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_rumik: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
@@ -47,6 +46,7 @@ automatically.
 | [Simplismart](https://docs.pipecat.ai/api-reference/server/services/llm/simplismart) | Large Language Models, Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable. |
 | [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
 | [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 🟡 partial | 🟡 partial | import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings' |
+| [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | 📦 fixed, not released | 📦 fixed, not released | fixed in Gnani-AI-Mintlify/pipecat-gnani@71c564f1c, but the release still fails: import pipecat_gnani: ImportError: cannot import name 'TIMBRE_V20_VOICES' from  |
 | [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | 🔒 needs a licensed SDK | 🔒 needs a licensed SDK | needs hecttor_sdk, which is not published on PyPI |
 | [.wave](https://docs.pipecat.ai/api-reference/server/services/stt/dotwave) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |

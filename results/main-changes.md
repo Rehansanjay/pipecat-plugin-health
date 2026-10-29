@@ -1,0 +1,1 @@
+- **Gnani**: broken → unreleased (fixed in Gnani-AI-Mintlify/pipecat-gnani@71c564f1c, but the release still fails: import pipecat_gnani: ImportError: cannot import name 'TIMBRE_V20_VOICES' from 'gnani.tts.client')
