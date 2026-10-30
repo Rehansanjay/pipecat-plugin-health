@@ -153,6 +153,12 @@ def render() -> str:
             why += " — but it imports and constructs on this pipecat; only the pin blocks it"
         elif pin == "incompatible":
             why += " — and it still fails with the pin overridden, so the pin is hiding a real break"
+        # Two plugins ship a working module with no pyproject.toml at all, so
+        # the published "uv add" line can never work. That is a packaging
+        # request, not a bug report, and it belongs in the Why column rather
+        # than buried in the JSON.
+        if any(e and e.get("source") == "unpackaged" for e in entries):
+            why += " — its repository has no pyproject.toml or setup.py, so the published install command cannot work"
         cells = [ICON[e["status"]] if e else "" for e in entries]
         rows.append(
             f"| [{_cell(first['name'])}]({first['docs']}) | {_cell(', '.join(first['categories']))} | "

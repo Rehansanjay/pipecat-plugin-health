@@ -157,6 +157,7 @@ def test_a_plausible_but_wrong_repository_cannot_promote(monkeypatch, tmp_path):
     out.write_text(json.dumps(probe), encoding="utf-8")
 
     monkeypatch.setattr("health.run._head_commit", lambda repo: "deadbeefcafe")
+    monkeypatch.setattr("health.run._package_layout", lambda repo, sha: ("ok", "py"))
     monkeypatch.setattr(
         "health.run._run",
         lambda cmd, timeout: types.SimpleNamespace(returncode=0, stderr="", stdout=""),
@@ -183,6 +184,7 @@ def test_the_plugin_s_own_source_is_accepted(monkeypatch, tmp_path):
     out.write_text(json.dumps(probe), encoding="utf-8")
 
     monkeypatch.setattr("health.run._head_commit", lambda repo: "0319e5310aaa")
+    monkeypatch.setattr("health.run._package_layout", lambda repo, sha: ("ok", ""))
     monkeypatch.setattr(
         "health.run._run",
         lambda cmd, timeout: types.SimpleNamespace(returncode=0, stderr="", stdout=""),
@@ -195,3 +197,65 @@ def test_the_plugin_s_own_source_is_accepted(monkeypatch, tmp_path):
 
     assert found["source"] == "fixed"
     assert found["source_commit"] == "0319e5310aaa"
+
+
+# --- reading the repository before trying to install from it ------------------
+
+
+def _layout(monkeypatch, tmp_path, layout, sha="deadbeefcafe"):
+    """Drive from_git_head with the tree read stubbed and the install recorded."""
+    calls = []
+    monkeypatch.setattr("health.run._head_commit", lambda repo: sha)
+    monkeypatch.setattr("health.run._package_layout", lambda repo, s_: layout)
+
+    def record(cmd, timeout):
+        calls.append(cmd)
+        return types.SimpleNamespace(returncode=0, stderr="", stdout="")
+
+    monkeypatch.setattr("health.run._run", record)
+    probe = {"top_level_errors": [], "abstract_services": [], "submodule_errors": [], "distributions": ["pipecat_x==1.0"]}
+    out = tmp_path / "probe.json"
+    out.write_text(json.dumps(probe), encoding="utf-8")
+    plugin = Plugin(name="X", specs=["pipecat-x"], install="uv add pipecat-x")
+    found = run.from_git_head(plugin, "https://github.com/vendor/pipecat-x", "pipecat-ai==1.12.0", "uv", "python", tmp_path, out)
+    return found, calls
+
+
+def test_a_package_in_a_subdirectory_is_installed_from_it(monkeypatch, tmp_path):
+    """supertone-inc/supertonic keeps its package in py/, and a plain
+    git+<url> answers 'does not appear to be a Python project'."""
+    found, calls = _layout(monkeypatch, tmp_path, ("ok", "py"))
+
+    requirement = next(arg for cmd in calls for arg in cmd if str(arg).startswith("git+"))
+    assert requirement.endswith("#subdirectory=py")
+    assert found["source"] == "fixed"
+
+
+def test_a_repository_with_no_packaging_metadata_is_unpackaged_not_unknown(monkeypatch, tmp_path):
+    """hakim-pipecat and pipecat-upliftai-stt ship a working module and no
+    pyproject.toml, while Pipecat's docs publish 'uv add' for both. That is a
+    fact about the repository, and the only thing worth reporting."""
+    found, calls = _layout(monkeypatch, tmp_path, ("unpackaged", ""))
+
+    assert found["source"] == "unpackaged"
+    assert "nothing to install" in found["source_reason"]
+    assert calls == [], "a repository with no package must not be installed from"
+
+
+def test_a_repository_that_cannot_be_read_is_never_cloned(monkeypatch, tmp_path):
+    """pipecat-firered-vad resolves to your-username/pipecat-firered-vad, a
+    placeholder in its README. Cloning a 404 makes git ask for credentials and
+    burns the install timeout every night."""
+    found, calls = _layout(monkeypatch, tmp_path, ("ok", ""), sha=None)
+
+    assert found["source"] == "unknown"
+    assert "missing, private or renamed" in found["source_reason"]
+    assert calls == []
+
+
+def test_an_unlistable_tree_is_unknown_rather_than_a_verdict(monkeypatch, tmp_path):
+    """A rate-limited or flaky API call must not be read as evidence."""
+    found, calls = _layout(monkeypatch, tmp_path, ("unreadable", ""))
+
+    assert found["source"] == "unknown"
+    assert calls == []

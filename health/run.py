@@ -43,6 +43,14 @@ GATED = "gated"
 UNRELEASED = "unreleased"
 ORDER = {BROKEN: 0, PINNED: 1, UNINSTALLABLE: 2, PARTIAL: 3, UNRELEASED: 4, GATED: 5, OK: 6}
 
+# Source verdicts. "unpackaged" is its own answer rather than a flavour of
+# unknown: tryHakimAI/hakim-pipecat and havkerboi123/pipecat-upliftai-stt both
+# hold a working plugin and neither has a pyproject.toml or a setup.py, so
+# there is nothing for pip to install even though Pipecat's docs publish an
+# ``uv add`` line for each. That is a fact about the repository, not a gap in
+# this checker, and it is the one thing worth telling those maintainers.
+FIXED, STILL_BROKEN, UNPACKAGED, SOURCE_UNKNOWN = "fixed", "still_broken", "unpackaged", "unknown"
+
 # An absolute path on Windows (C:\...) or POSIX (/...), up to the next whitespace.
 _LOCAL_PATH = re.compile(r"(?:[A-Za-z]:\\|(?<![\w:])/(?:home|tmp|Users|root|var|opt|runner)/)\S*")
 
@@ -235,6 +243,41 @@ def _head_commit(repo: str) -> str | None:
         return None
 
 
+@functools.lru_cache(maxsize=256)
+def _package_layout(repo: str, sha: str) -> tuple[str, str]:
+    """Where the installable package sits in a repository, if it has one.
+
+    Returns ``("ok", subdirectory)`` -- the subdirectory being "" at the root --
+    or ``("unpackaged", "")`` when the tree carries no packaging metadata at
+    all, or ``("unreadable", "")`` when the tree cannot be listed.
+
+    This exists because ``uv pip install git+<url>`` has three very different
+    failures that all arrive as one opaque message. The package can be in a
+    subdirectory (supertone-inc/supertonic keeps it in ``py/``), there can be
+    no package (two plugins ship a bare module and a requirements.txt), or the
+    repository can simply not be there -- pipecat-firered-vad resolves to
+    ``your-username/pipecat-firered-vad``, a placeholder left in its README,
+    and git answers a 404 clone by prompting for credentials.
+    """
+    slug = repo.removeprefix("https://github.com/")
+    try:
+        tree = github_api(f"https://api.github.com/repos/{slug}/git/trees/{sha}?recursive=1")["tree"]
+    except (urllib.error.URLError, OSError, ValueError, KeyError):
+        return "unreadable", ""
+
+    manifests = [
+        entry["path"]
+        for entry in tree
+        if entry.get("type") == "blob" and entry["path"].rsplit("/", 1)[-1] in ("pyproject.toml", "setup.py")
+    ]
+    if not manifests:
+        return "unpackaged", ""
+    # The shallowest manifest is the distribution; anything deeper belongs to a
+    # vendored copy or an example that happens to package itself.
+    shallowest = min(manifests, key=lambda path: (path.count("/"), len(path)))
+    return "ok", shallowest.rpartition("/")[0]
+
+
 def from_git_head(plugin: Plugin, repo: str, pipecat_req: str, uv: str, python: str, venv: Path, out: Path) -> dict:
     """Does the plugin's current source work, when its release does not?
 
@@ -256,17 +299,38 @@ def from_git_head(plugin: Plugin, repo: str, pipecat_req: str, uv: str, python: 
     install = [uv, "pip", "install", "--torch-backend", "cpu", "--python", str(_venv_python(venv))]
     found = {"source_repo": repo, "source_commit": sha or ""}
 
-    requirement = f"git+{repo}" + (f"@{sha}" if sha else "")
+    # Without a commit there is no repository to read, and attempting the clone
+    # anyway is how a placeholder URL burns the install timeout every night
+    # waiting on a credential prompt that nobody will answer.
+    if not sha:
+        slug = repo.removeprefix("https://github.com/")
+        return {
+            **found,
+            "source": SOURCE_UNKNOWN,
+            "source_reason": f"{slug} could not be read: it is missing, private or renamed",
+        }
+
+    layout, subdirectory = _package_layout(repo, sha)
+    if layout == "unpackaged":
+        return {
+            **found,
+            "source": UNPACKAGED,
+            "source_reason": "the repository has no pyproject.toml or setup.py, so there is nothing to install",
+        }
+    if layout == "unreadable":
+        return {**found, "source": SOURCE_UNKNOWN, "source_reason": "the repository tree could not be listed"}
+
+    requirement = f"git+{repo}@{sha}" + (f"#subdirectory={subdirectory}" if subdirectory else "")
     proc = _run([*install, pipecat_req, requirement], 900)
     if proc.returncode != 0:
         _, why = _install_failure(proc.stderr)
-        return {**found, "source": "unknown", "source_reason": f"could not install from source: {why}"}
+        return {**found, "source": SOURCE_UNKNOWN, "source_reason": f"could not install from source: {why}"}
 
     try:
         _run([str(_venv_python(venv)), str(PROBE), str(out), *plugin.specs], 300)
         probe = json.loads(out.read_text(encoding="utf-8"))
     except (subprocess.TimeoutExpired, OSError, ValueError) as exc:
-        return {**found, "source": "unknown", "source_reason": f"probe produced no result: {exc}"}
+        return {**found, "source": SOURCE_UNKNOWN, "source_reason": f"probe produced no result: {exc}"}
 
     # A repository can be resolved plausibly and still be the wrong one: the
     # Supertonic plugin resolves to supertone-inc/supertonic, the vendor's own
@@ -280,17 +344,17 @@ def from_git_head(plugin: Plugin, repo: str, pipecat_req: str, uv: str, python: 
     if expected and not expected & built:
         return {
             **found,
-            "source": "unknown",
+            "source": SOURCE_UNKNOWN,
             "source_reason": "that repository does not build " + ", ".join(sorted(expected)),
         }
 
     status, why = classify(probe)
     if status == OK:
-        return {**found, "source": "fixed", "source_reason": "imports and constructs from source"}
+        return {**found, "source": FIXED, "source_reason": "imports and constructs from source"}
     if status == GATED:
         # A licensed SDK is missing either way, so the source says nothing here.
-        return {**found, "source": "unknown", "source_reason": why}
-    return {**found, "source": "still_broken", "source_reason": why}
+        return {**found, "source": SOURCE_UNKNOWN, "source_reason": why}
+    return {**found, "source": STILL_BROKEN, "source_reason": why}
 
 
 def maybe_from_source(
@@ -312,11 +376,11 @@ def maybe_from_source(
         _run([uv, "venv", str(venv), "--python", python, "--quiet", "--allow-existing"], 300)
         found = from_git_head(plugin, repo, pipecat_req, uv, python, venv, venv / "probe.json")
     except subprocess.TimeoutExpired:
-        found = {"source_repo": repo, "source": "unknown", "source_reason": "install from source timed out"}
+        found = {"source_repo": repo, "source": SOURCE_UNKNOWN, "source_reason": "install from source timed out"}
     finally:
         shutil.rmtree(venv, ignore_errors=True)
 
-    if found.get("source") == "fixed":
+    if found.get("source") == FIXED:
         at = (found.get("source_commit") or "")[:9]
         found["released_reason"] = reason
         found["status"] = UNRELEASED
