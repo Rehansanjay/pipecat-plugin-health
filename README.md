@@ -22,15 +22,14 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.15.0** (2026-10-30): 49 works, 1 partial, 7 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK, 1 fixed, not released
-- **pipecat-ai main@1c67a8788** (2026-10-30): 49 works, 1 partial, 7 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK, 1 fixed, not released
+- **pipecat-ai 1.15.0** (2026-10-31): 54 works, 1 partial, 6 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@6f777a0ef** (2026-10-31): 54 works, 1 partial, 6 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.15.0 | pipecat main@1c67a8788 | Why |
+| Plugin | Category | pipecat 1.15.0 | pipecat main@6f777a0ef | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
 | [Replicate](https://docs.pipecat.ai/api-reference/server/services/image-generation/replicate) | Image Generation | ❌ broken | ❌ broken | import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
-| [Respeecher](https://docs.pipecat.ai/api-reference/server/services/tts/respeecher) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_respeecher: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Rumik AI](https://docs.pipecat.ai/api-reference/server/services/tts/rumik) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_rumik: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [SonexLabs](https://docs.pipecat.ai/api-reference/server/services/tts/sonex) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_sonex: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Supertonic](https://docs.pipecat.ai/api-reference/server/services/tts/supertonic) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_supertonic: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
@@ -42,18 +41,19 @@ automatically.
 | [Memcode](https://docs.pipecat.ai/api-reference/server/services/memory/memcode) | Memory | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.10,<1.11 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Oruk](https://docs.pipecat.ai/api-reference/server/services/stt/oruk) | Speech-to-Text | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.8.1,<1.9 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Wavix](https://docs.pipecat.ai/api-reference/server/services/serializers/wavix) | Serializers | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai[deepgram]==0.0.105; pipecat-ai==0.0.105. — but it imports and constructs on this pipecat; only the pin blocks it |
-| [Hakim](https://docs.pipecat.ai/api-reference/server/services/stt/hakim) | Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
+| [Hakim](https://docs.pipecat.ai/api-reference/server/services/stt/hakim) | Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory — its repository has no pyproject.to |
 | [Simplismart](https://docs.pipecat.ai/api-reference/server/services/llm/simplismart) | Large Language Models, Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable. |
-| [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory |
+| [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory — its repository has no pyproject.to |
 | [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 🟡 partial | 🟡 partial | import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings' |
-| [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | 📦 fixed, not released | 📦 fixed, not released | fixed in Gnani-AI-Mintlify/pipecat-gnani@71c564f1c, but the release still fails: import pipecat_gnani: ImportError: cannot import name 'TIMBRE_V20_VOICES' from  |
 | [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | 🔒 needs a licensed SDK | 🔒 needs a licensed SDK | needs hecttor_sdk, which is not published on PyPI |
 | [.wave](https://docs.pipecat.ai/api-reference/server/services/stt/dotwave) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |
+| [Alkove](https://docs.pipecat.ai/api-reference/server/services/audio-filters/alkove) | Audio Filters, VAD | ✅ works | ✅ works |  |
 | [Anam](https://docs.pipecat.ai/api-reference/server/services/video/anam) | Video | ✅ works | ✅ works |  |
 | [Anannas AI](https://docs.pipecat.ai/api-reference/server/services/llm/anannas) | Large Language Models | ✅ works | ✅ works |  |
 | [Arctan](https://docs.pipecat.ai/api-reference/server/services/audio-filters/arctan) | Audio Filters | ✅ works | ✅ works |  |
 | [Asterisk](https://docs.pipecat.ai/api-reference/server/services/serializers/asterisk) | Serializers | ✅ works | ✅ works |  |
+| [Audrey (p99lab)](https://docs.pipecat.ai/api-reference/server/services/stt/p99lab) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Bandwidth](https://docs.pipecat.ai/api-reference/server/services/serializers/bandwidth) | Serializers | ✅ works | ✅ works |  |
 | [Beyond Presence](https://docs.pipecat.ai/api-reference/server/services/transport/beyond-presence) | Transports | ✅ works | ✅ works |  |
 | [bitHuman](https://docs.pipecat.ai/api-reference/server/services/video/bithuman) | Video | ✅ works | ✅ works |  |
@@ -62,8 +62,10 @@ automatically.
 | [Finchvox](https://docs.pipecat.ai/api-reference/server/services/analytics/finchvox) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Floe](https://docs.pipecat.ai/api-reference/server/services/llm/floe) | Large Language Models, Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [floe-guard](https://docs.pipecat.ai/api-reference/server/services/analytics/floe) | Analytics & Monitoring | ✅ works | ✅ works |  |
+| [FreeSWITCH](https://docs.pipecat.ai/api-reference/server/services/serializers/freeswitch) | Serializers | ✅ works | ✅ works |  |
 | [Future AGI](https://docs.pipecat.ai/api-reference/server/services/analytics/future-agi) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Gandr](https://docs.pipecat.ai/api-reference/server/services/tts/gandr) | Text-to-Speech | ✅ works | ✅ works |  |
+| [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [Lokutor](https://docs.pipecat.ai/api-reference/server/services/tts/lokutor) | Text-to-Speech | ✅ works | ✅ works |  |
 | [MCP](https://docs.pipecat.ai/api-reference/server/services/transport/mcp) | Transports | ✅ works | ✅ works |  |
 | [MemorySync](https://docs.pipecat.ai/api-reference/server/services/memory/memorysync) | Memory | ✅ works | ✅ works |  |
@@ -80,6 +82,7 @@ automatically.
 | [Protoface](https://docs.pipecat.ai/api-reference/server/services/video/protoface) | Video | ✅ works | ✅ works |  |
 | [Quickdial](https://docs.pipecat.ai/api-reference/server/services/stt/quickdial) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [ReadAloud](https://docs.pipecat.ai/api-reference/server/services/tts/readaloud) | Text-to-Speech | ✅ works | ✅ works |  |
+| [Respeecher](https://docs.pipecat.ai/api-reference/server/services/tts/respeecher) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Ringg AI](https://docs.pipecat.ai/api-reference/server/services/stt/ringg) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Roark](https://docs.pipecat.ai/api-reference/server/services/analytics/roark) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [RTZR](https://docs.pipecat.ai/api-reference/server/services/stt/rtzr) | Speech-to-Text | ✅ works | ✅ works |  |
