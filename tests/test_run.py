@@ -213,11 +213,18 @@ def _layout(monkeypatch, tmp_path, layout, sha="deadbeefcafe"):
         return types.SimpleNamespace(returncode=0, stderr="", stdout="")
 
     monkeypatch.setattr("health.run._run", record)
-    probe = {"top_level_errors": [], "abstract_services": [], "submodule_errors": [], "distributions": ["pipecat_x==1.0"]}
+    probe = {
+        "top_level_errors": [],
+        "abstract_services": [],
+        "submodule_errors": [],
+        "distributions": ["pipecat_x==1.0"],
+    }
     out = tmp_path / "probe.json"
     out.write_text(json.dumps(probe), encoding="utf-8")
     plugin = Plugin(name="X", specs=["pipecat-x"], install="uv add pipecat-x")
-    found = run.from_git_head(plugin, "https://github.com/vendor/pipecat-x", "pipecat-ai==1.12.0", "uv", "python", tmp_path, out)
+    found = run.from_git_head(
+        plugin, "https://github.com/vendor/pipecat-x", "pipecat-ai==1.12.0", "uv", "python", tmp_path, out
+    )
     return found, calls
 
 
