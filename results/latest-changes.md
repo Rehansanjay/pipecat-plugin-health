@@ -1,5 +1,0 @@
-- **Alkove** is new in the docs: ok
-- **Audrey (p99lab)** is new in the docs: ok
-- **FreeSWITCH** is new in the docs: ok
-- **Gnani**: unreleased → ok
-- **Respeecher**: broken → ok

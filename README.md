@@ -22,8 +22,8 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.15.0** (2026-10-31): 54 works, 1 partial, 6 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@6f777a0ef** (2026-10-31): 54 works, 1 partial, 6 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.15.0** (2026-11-01): 54 works, 1 partial, 6 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@6f777a0ef** (2026-11-01): 54 works, 1 partial, 6 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
 
 | Plugin | Category | pipecat 1.15.0 | pipecat main@6f777a0ef | Why |
 |---|---|---|---|---|
@@ -48,7 +48,7 @@ automatically.
 | [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | 🔒 needs a licensed SDK | 🔒 needs a licensed SDK | needs hecttor_sdk, which is not published on PyPI |
 | [.wave](https://docs.pipecat.ai/api-reference/server/services/stt/dotwave) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |
-| [Alkove](https://docs.pipecat.ai/api-reference/server/services/audio-filters/alkove) | Audio Filters, VAD | ✅ works | ✅ works |  |
+| [Alkove](https://docs.pipecat.ai/api-reference/server/services/audio-filters/alkove) | Audio Filters, Turn Detection, VAD | ✅ works | ✅ works |  |
 | [Anam](https://docs.pipecat.ai/api-reference/server/services/video/anam) | Video | ✅ works | ✅ works |  |
 | [Anannas AI](https://docs.pipecat.ai/api-reference/server/services/llm/anannas) | Large Language Models | ✅ works | ✅ works |  |
 | [Arctan](https://docs.pipecat.ai/api-reference/server/services/audio-filters/arctan) | Audio Filters | ✅ works | ✅ works |  |
