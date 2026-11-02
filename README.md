@@ -22,8 +22,8 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.15.0** (2026-11-01): 54 works, 1 partial, 6 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@6f777a0ef** (2026-11-01): 54 works, 1 partial, 6 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.15.0** (2026-11-02): 54 works, 1 partial, 6 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@6f777a0ef** (2026-11-02): 54 works, 1 partial, 6 broken, 8 needs older pipecat, 3 can't install, 1 needs a licensed SDK
 
 | Plugin | Category | pipecat 1.15.0 | pipecat main@6f777a0ef | Why |
 |---|---|---|---|---|
