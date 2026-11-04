@@ -1,1 +1,0 @@
-- **Boson Higgs Realtime**: partial → unreleased (fixed in boson-ai/pipecat-boson@8c5dd759d, but the release still fails: import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings')
