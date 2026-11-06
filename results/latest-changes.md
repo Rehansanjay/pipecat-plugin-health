@@ -1,2 +1,0 @@
-- **Chariot** is new in the docs: ok
-- **Vobiz** is new in the docs: ok
