@@ -1,0 +1,1 @@
+- **FreeSWITCH**: ok → broken (import pipecat_freeswitch: ImportError: Missing module: No module named 'soxr')
