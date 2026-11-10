@@ -1,1 +1,3 @@
-- **FreeSWITCH**: ok → broken (import pipecat_freeswitch: ImportError: Missing module: No module named 'soxr')
+- **Sophon-Realtime** is new in the docs: uninstallable
+- **Saidwire** is new in the docs: ok
+- **Vartaloop** is new in the docs: ok
