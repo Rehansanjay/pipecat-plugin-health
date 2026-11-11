@@ -1,3 +1,1 @@
-- **Sophon-Realtime** is new in the docs: uninstallable
-- **Saidwire** is new in the docs: ok
-- **Vartaloop** is new in the docs: ok
+- **SpatialReal** is new in the docs: ok

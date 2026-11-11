@@ -22,10 +22,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.15.0** (2026-11-10): 58 works, 6 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK, 1 fixed, not released
-- **pipecat-ai main@bcf727058** (2026-11-10): 57 works, 7 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK, 1 fixed, not released
+- **pipecat-ai 1.15.0** (2026-11-11): 59 works, 6 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK, 1 fixed, not released
+- **pipecat-ai main@9a3096c8e** (2026-11-11): 58 works, 7 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK, 1 fixed, not released
 
-| Plugin | Category | pipecat 1.15.0 | pipecat main@bcf727058 | Why |
+| Plugin | Category | pipecat 1.15.0 | pipecat main@9a3096c8e | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -92,6 +92,7 @@ automatically.
 | [SILMA AI](https://docs.pipecat.ai/api-reference/server/services/tts/silma) | Text-to-Speech | ✅ works | ✅ works |  |
 | [SLNG](https://docs.pipecat.ai/api-reference/server/services/stt/slng) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [SmolVLM](https://docs.pipecat.ai/api-reference/server/services/vision/smolvlm) | Vision | ✅ works | ✅ works |  |
+| [SpatialReal](https://docs.pipecat.ai/api-reference/server/services/video/spatialreal) | Video | ✅ works | ✅ works |  |
 | [Sprag](https://docs.pipecat.ai/api-reference/server/services/llm/sprag) | Large Language Models, Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [Synap](https://docs.pipecat.ai/api-reference/server/services/memory/synap) | Memory | ✅ works | ✅ works |  |
 | [TEN VAD](https://docs.pipecat.ai/api-reference/server/services/vad/ten-vad) | VAD | ✅ works | ✅ works |  |
