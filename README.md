@@ -22,14 +22,14 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.15.0** (2026-11-11): 59 works, 6 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK, 1 fixed, not released
-- **pipecat-ai main@9a3096c8e** (2026-11-11): 58 works, 7 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK, 1 fixed, not released
+- **pipecat-ai 1.16.0** (2026-11-12): 58 works, 1 partial, 7 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@7cf75afc3** (2026-11-12): 58 works, 1 partial, 7 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.15.0 | pipecat main@9a3096c8e | Why |
+| Plugin | Category | pipecat 1.16.0 | pipecat main@7cf75afc3 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
-| [FreeSWITCH](https://docs.pipecat.ai/api-reference/server/services/serializers/freeswitch) | Serializers | ✅ works | ❌ broken | import pipecat_freeswitch: ImportError: Missing module: No module named 'soxr' |
+| [FreeSWITCH](https://docs.pipecat.ai/api-reference/server/services/serializers/freeswitch) | Serializers | ❌ broken | ❌ broken | import pipecat_freeswitch: ImportError: Missing module: No module named 'soxr' |
 | [Replicate](https://docs.pipecat.ai/api-reference/server/services/image-generation/replicate) | Image Generation | ❌ broken | ❌ broken | import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Rumik AI](https://docs.pipecat.ai/api-reference/server/services/tts/rumik) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_rumik: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [SonexLabs](https://docs.pipecat.ai/api-reference/server/services/tts/sonex) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_sonex: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
@@ -46,7 +46,7 @@ automatically.
 | [Simplismart](https://docs.pipecat.ai/api-reference/server/services/llm/simplismart) | Large Language Models, Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable. |
 | [Sophon-Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/sophon-realtime) | Realtime LLM | ⛔ can't install | ⛔ can't install | installed, but no package depending on pipecat-ai was found |
 | [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory — its repository has no pyproject.to |
-| [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 📦 fixed, not released | 📦 fixed, not released | fixed in boson-ai/pipecat-boson@48860a535, but the release still fails: import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from ' |
+| [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 🟡 partial | 🟡 partial | import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings' |
 | [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | 🔒 needs a licensed SDK | 🔒 needs a licensed SDK | needs hecttor_sdk, which is not published on PyPI |
 | [.wave](https://docs.pipecat.ai/api-reference/server/services/stt/dotwave) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |

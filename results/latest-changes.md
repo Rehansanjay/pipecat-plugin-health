@@ -1,1 +1,2 @@
-- **SpatialReal** is new in the docs: ok
+- **FreeSWITCH**: ok → broken (import pipecat_freeswitch: ImportError: Missing module: No module named 'soxr')
+- **Boson Higgs Realtime**: unreleased → partial (import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings')

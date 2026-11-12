@@ -1,1 +1,1 @@
-- **SpatialReal** is new in the docs: ok
+- **Boson Higgs Realtime**: unreleased → partial (import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings')
