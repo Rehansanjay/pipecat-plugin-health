@@ -22,14 +22,13 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.16.0** (2026-11-12): 58 works, 1 partial, 7 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@7cf75afc3** (2026-11-12): 58 works, 1 partial, 7 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.16.0** (2026-11-13): 59 works, 1 partial, 6 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@f8808cf80** (2026-11-13): 59 works, 1 partial, 6 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.16.0 | pipecat main@7cf75afc3 | Why |
+| Plugin | Category | pipecat 1.16.0 | pipecat main@f8808cf80 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
-| [FreeSWITCH](https://docs.pipecat.ai/api-reference/server/services/serializers/freeswitch) | Serializers | ❌ broken | ❌ broken | import pipecat_freeswitch: ImportError: Missing module: No module named 'soxr' |
 | [Replicate](https://docs.pipecat.ai/api-reference/server/services/image-generation/replicate) | Image Generation | ❌ broken | ❌ broken | import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Rumik AI](https://docs.pipecat.ai/api-reference/server/services/tts/rumik) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_rumik: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [SonexLabs](https://docs.pipecat.ai/api-reference/server/services/tts/sonex) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_sonex: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
@@ -65,6 +64,7 @@ automatically.
 | [Finchvox](https://docs.pipecat.ai/api-reference/server/services/analytics/finchvox) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Floe](https://docs.pipecat.ai/api-reference/server/services/llm/floe) | Large Language Models, Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [floe-guard](https://docs.pipecat.ai/api-reference/server/services/analytics/floe) | Analytics & Monitoring | ✅ works | ✅ works |  |
+| [FreeSWITCH](https://docs.pipecat.ai/api-reference/server/services/serializers/freeswitch) | Serializers | ✅ works | ✅ works |  |
 | [Future AGI](https://docs.pipecat.ai/api-reference/server/services/analytics/future-agi) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Gandr](https://docs.pipecat.ai/api-reference/server/services/tts/gandr) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
