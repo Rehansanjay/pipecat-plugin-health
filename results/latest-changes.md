@@ -1,1 +1,3 @@
-- **FreeSWITCH**: broken → ok
+- **Akapulu Labs** is new in the docs: ok
+- **Kalpa**: pinned → ok
+- **Turn Blend** is new in the docs: ok

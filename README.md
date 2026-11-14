@@ -22,10 +22,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.16.0** (2026-11-13): 59 works, 1 partial, 6 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@f8808cf80** (2026-11-13): 59 works, 1 partial, 6 broken, 8 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.16.0** (2026-11-14): 62 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@0602125e1** (2026-11-14): 62 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.16.0 | pipecat main@f8808cf80 | Why |
+| Plugin | Category | pipecat 1.16.0 | pipecat main@0602125e1 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -36,7 +36,6 @@ automatically.
 | [Deepdub](https://docs.pipecat.ai/api-reference/server/services/tts/deepdub) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=0.0.97,<0.1.0 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Giggy](https://docs.pipecat.ai/api-reference/server/services/stt/giggy) | Speech-to-Text | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai[silero]==1.12.0; pipecat-ai==1.12.0; pipecat-ai==1.12.0. — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Giggy](https://docs.pipecat.ai/api-reference/server/services/tts/giggy) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai[silero]==1.12.0; pipecat-ai==1.12.0; pipecat-ai==1.12.0. — but it imports and constructs on this pipecat; only the pin blocks it |
-| [Kalpa](https://docs.pipecat.ai/api-reference/server/services/tts/kalpa) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.13.0,<1.14.0 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Maya](https://docs.pipecat.ai/api-reference/server/services/tts/maya) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai==1.8.1; pipecat-ai==1.8.1. — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Memcode](https://docs.pipecat.ai/api-reference/server/services/memory/memcode) | Memory | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.10,<1.11 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Oruk](https://docs.pipecat.ai/api-reference/server/services/stt/oruk) | Speech-to-Text | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.8.1,<1.9 — but it imports and constructs on this pipecat; only the pin blocks it |
@@ -49,6 +48,7 @@ automatically.
 | [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | 🔒 needs a licensed SDK | 🔒 needs a licensed SDK | needs hecttor_sdk, which is not published on PyPI |
 | [.wave](https://docs.pipecat.ai/api-reference/server/services/stt/dotwave) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |
+| [Akapulu Labs](https://docs.pipecat.ai/api-reference/server/services/video/akapulu) | Video | ✅ works | ✅ works |  |
 | [Alkove](https://docs.pipecat.ai/api-reference/server/services/audio-filters/alkove) | Audio Filters, Turn Detection, VAD | ✅ works | ✅ works |  |
 | [Anam](https://docs.pipecat.ai/api-reference/server/services/video/anam) | Video | ✅ works | ✅ works |  |
 | [Anannas AI](https://docs.pipecat.ai/api-reference/server/services/llm/anannas) | Large Language Models | ✅ works | ✅ works |  |
@@ -68,6 +68,7 @@ automatically.
 | [Future AGI](https://docs.pipecat.ai/api-reference/server/services/analytics/future-agi) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Gandr](https://docs.pipecat.ai/api-reference/server/services/tts/gandr) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
+| [Kalpa](https://docs.pipecat.ai/api-reference/server/services/tts/kalpa) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Lokutor](https://docs.pipecat.ai/api-reference/server/services/stt/lokutor) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [MCP](https://docs.pipecat.ai/api-reference/server/services/transport/mcp) | Transports | ✅ works | ✅ works |  |
 | [MemorySync](https://docs.pipecat.ai/api-reference/server/services/memory/memorysync) | Memory | ✅ works | ✅ works |  |
@@ -97,6 +98,7 @@ automatically.
 | [Synap](https://docs.pipecat.ai/api-reference/server/services/memory/synap) | Memory | ✅ works | ✅ works |  |
 | [TEN VAD](https://docs.pipecat.ai/api-reference/server/services/vad/ten-vad) | VAD | ✅ works | ✅ works |  |
 | [ThunderPhone](https://docs.pipecat.ai/api-reference/server/services/s2s/thunderphone) | Realtime LLM | ✅ works | ✅ works |  |
+| [Turn Blend](https://docs.pipecat.ai/api-reference/server/extensions/pipecat-turn-blend) | Extensions | ✅ works | ✅ works |  |
 | [turn-1-mini](https://docs.pipecat.ai/api-reference/server/utilities/turn-detection/turn-1-mini) | Turn Detection | ✅ works | ✅ works |  |
 | [Typecast](https://docs.pipecat.ai/api-reference/server/services/tts/typecast) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/tts/upliftai) | Text-to-Speech | ✅ works | ✅ works |  |
