@@ -66,7 +66,9 @@ def resolve_target(target: str) -> tuple[str, str]:
         version = _get_json("https://pypi.org/pypi/pipecat-ai/json")["info"]["version"]
         return version, f"pipecat-ai=={version}"
     if target == "main":
-        sha = _get_json("https://api.github.com/repos/pipecat-ai/pipecat/commits/main")["sha"]
+        # Through github_api so it carries the token: unauthenticated, this was
+        # the call that hit the shared-IP rate limit on 2026-11-15.
+        sha = github_api("https://api.github.com/repos/pipecat-ai/pipecat/commits/main")["sha"]
         return f"main@{sha[:9]}", f"pipecat-ai @ git+https://github.com/pipecat-ai/pipecat@{sha}"
     raise ValueError(target)
 
