@@ -1,1 +1,1 @@
-- **PyAI Hear** is new in the docs: ok
+- **GMI Cloud** is new in the docs: ok

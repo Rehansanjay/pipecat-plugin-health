@@ -22,10 +22,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.16.0** (2026-11-17): 63 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@6203e0806** (2026-11-17): 63 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.16.0** (2026-11-18): 64 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@257129f93** (2026-11-18): 64 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.16.0 | pipecat main@6203e0806 | Why |
+| Plugin | Category | pipecat 1.16.0 | pipecat main@257129f93 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -67,6 +67,7 @@ automatically.
 | [FreeSWITCH](https://docs.pipecat.ai/api-reference/server/services/serializers/freeswitch) | Serializers | ✅ works | ✅ works |  |
 | [Future AGI](https://docs.pipecat.ai/api-reference/server/services/analytics/future-agi) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Gandr](https://docs.pipecat.ai/api-reference/server/services/tts/gandr) | Text-to-Speech | ✅ works | ✅ works |  |
+| [GMI Cloud](https://docs.pipecat.ai/api-reference/server/services/tts/gmicloud) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [Kalpa](https://docs.pipecat.ai/api-reference/server/services/tts/kalpa) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Lokutor](https://docs.pipecat.ai/api-reference/server/services/stt/lokutor) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
