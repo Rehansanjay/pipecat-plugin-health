@@ -1,10 +1,10 @@
 {
   "target": "latest",
   "pipecat": "1.16.0",
-  "checked_at": "2026-11-18T08:51:31Z",
-  "docs_commit": "47bdb44581afb01214656e55424527cfa12251d0",
+  "checked_at": "2026-11-19T09:06:43Z",
+  "docs_commit": "0ba667ab71ede7eec0121c0eae4f0e844a6fcf38",
   "python": "3.12.16",
-  "seconds": 73,
+  "seconds": 55,
   "plugins": [
     {
       "name": "AwaazAI",
@@ -41,7 +41,7 @@
       "source_commit": "a3cdef111dd8b04a74bb91e424bbd187b8d9d593",
       "source": "still_broken",
       "source_reason": "import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames'",
-      "seconds": 12.0
+      "seconds": 8.3
     },
     {
       "name": "FIRE RED VAD",
@@ -78,7 +78,7 @@
       "source_commit": "",
       "source": "unknown",
       "source_reason": "your-username/pipecat-firered-vad could not be read: it is missing, private or renamed",
-      "seconds": 4.5
+      "seconds": 2.6
     },
     {
       "name": "Replicate",
@@ -115,7 +115,7 @@
       "source_commit": "856c9b1055dc1cf75c681637a0714c529e5ddf61",
       "source": "still_broken",
       "source_reason": "import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 12.4
+      "seconds": 9.2
     },
     {
       "name": "Rumik AI",
@@ -152,7 +152,7 @@
       "source_commit": "3c12eb324172cf2df27c2d52f10b83510b0bf498",
       "source": "still_broken",
       "source_reason": "import pipecat_rumik: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 14.3
+      "seconds": 10.9
     },
     {
       "name": "SonexLabs",
@@ -189,7 +189,7 @@
       "source_commit": "19b49a0cb2ac63493253656e13c15aea91b61b6f",
       "source": "still_broken",
       "source_reason": "import pipecat_sonex: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 11.4
+      "seconds": 8.1
     },
     {
       "name": "Supertonic",
@@ -226,7 +226,7 @@
       "source_commit": "1e9799e964ea4c0dad7cde993b65c3c813a7b373",
       "source": "unknown",
       "source_reason": "could not install from source: Because pipecat-ai>=1.16.0 depends on onnxruntime>=1.24.3,<2 and tts-onnx==1.0.0 depends on onnxruntime==1.23.1, we can conclude that pipecat-ai>=1.16.0 and tts-onnx==1.0.0 are incompatible.",
-      "seconds": 7.5
+      "seconds": 5.3
     },
     {
       "name": "Deepdub",
@@ -239,7 +239,7 @@
       "reason": "pins pipecat-ai>=0.0.97,<0.1.0",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 5.4
+      "seconds": 3.3
     },
     {
       "name": "Giggy",
@@ -252,7 +252,7 @@
       "reason": "pins pipecat-ai[silero]==1.12.0; pipecat-ai==1.12.0; pipecat-ai==1.12.0.",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 5.6
+      "seconds": 4.2
     },
     {
       "name": "Giggy",
@@ -265,7 +265,7 @@
       "reason": "pins pipecat-ai[silero]==1.12.0; pipecat-ai==1.12.0; pipecat-ai==1.12.0.",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 5.0
+      "seconds": 3.4
     },
     {
       "name": "Maya",
@@ -278,7 +278,7 @@
       "reason": "pins pipecat-ai==1.8.1; pipecat-ai==1.8.1.",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 9.9
+      "seconds": 7.3
     },
     {
       "name": "Memcode",
@@ -291,7 +291,7 @@
       "reason": "pins pipecat-ai>=1.10,<1.11",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 4.4
+      "seconds": 4.7
     },
     {
       "name": "Oruk",
@@ -304,7 +304,7 @@
       "reason": "pins pipecat-ai>=1.8.1,<1.9",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 4.6
+      "seconds": 3.0
     },
     {
       "name": "Wavix",
@@ -317,7 +317,7 @@
       "reason": "pins pipecat-ai[deepgram]==0.0.105; pipecat-ai==0.0.105.",
       "pin": "compatible",
       "pin_reason": "imports and constructs on this pipecat; only the pin blocks it",
-      "seconds": 4.6
+      "seconds": 4.0
     },
     {
       "name": "Hakim",
@@ -333,7 +333,7 @@
       "source_commit": "e93a9beb9c63c3b2f8ab6ee0ea8bad007b12fad6",
       "source": "unpackaged",
       "source_reason": "the repository has no pyproject.toml or setup.py, so there is nothing to install",
-      "seconds": 2.9
+      "seconds": 2.3
     },
     {
       "name": "Simplismart",
@@ -350,7 +350,7 @@
       "source_commit": "df9cdd842d12b85ec5b41dce92d1482687745f06",
       "source": "still_broken",
       "source_reason": "import pipecat_simplismart: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings'",
-      "seconds": 10.7
+      "seconds": 9.0
     },
     {
       "name": "Sophon-Realtime",
@@ -371,7 +371,7 @@
       "distributions": [],
       "status": "uninstallable",
       "reason": "installed, but no package depending on pipecat-ai was found",
-      "seconds": 3.6
+      "seconds": 2.8
     },
     {
       "name": "Uplift AI",
@@ -386,7 +386,7 @@
       "source_commit": "2565ca0954617bbfccce43e869da410c92c940c2",
       "source": "unpackaged",
       "source_reason": "the repository has no pyproject.toml or setup.py, so there is nothing to install",
-      "seconds": 2.6
+      "seconds": 1.9
     },
     {
       "name": "Boson Higgs Realtime",
@@ -423,7 +423,7 @@
       "source_commit": "88001383efadd6122e1dc41771f436c2420af4e9",
       "source": "unknown",
       "source_reason": "could not install from source: pins pipecat-ai>=1.4.0,<1.16; pipecat-ai>=1.4.0,<1.16.",
-      "seconds": 6.8
+      "seconds": 5.9
     },
     {
       "name": "Hecttor",
@@ -456,7 +456,7 @@
       ],
       "status": "gated",
       "reason": "needs hecttor_sdk, which is not published on PyPI",
-      "seconds": 3.3
+      "seconds": 3.0
     },
     {
       "name": ".wave",
@@ -485,7 +485,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.4
+      "seconds": 2.3
     },
     {
       "name": "Acefone",
@@ -512,7 +512,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.9
+      "seconds": 3.9
     },
     {
       "name": "Akapulu Labs",
@@ -541,7 +541,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.2
+      "seconds": 4.0
     },
     {
       "name": "Alkove",
@@ -570,7 +570,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.6
+      "seconds": 6.6
     },
     {
       "name": "Anam",
@@ -605,7 +605,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.2
+      "seconds": 4.1
     },
     {
       "name": "Anannas AI",
@@ -634,7 +634,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.7
+      "seconds": 4.4
     },
     {
       "name": "Arctan",
@@ -664,7 +664,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.7
+      "seconds": 2.6
     },
     {
       "name": "Asterisk",
@@ -696,7 +696,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.7
+      "seconds": 3.5
     },
     {
       "name": "Audrey (p99lab)",
@@ -725,7 +725,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.1
+      "seconds": 6.5
     },
     {
       "name": "Bandwidth",
@@ -752,7 +752,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.5
+      "seconds": 3.3
     },
     {
       "name": "Beyond Presence",
@@ -785,7 +785,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.7
+      "seconds": 3.4
     },
     {
       "name": "bitHuman",
@@ -814,7 +814,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.1
+      "seconds": 3.9
     },
     {
       "name": "Chariot",
@@ -845,6 +845,37 @@
       ],
       "status": "ok",
       "reason": "",
+      "seconds": 3.0
+    },
+    {
+      "name": "ConvoZen",
+      "install": "uv add pipecat-convozen",
+      "categories": [
+        "Speech-to-Text",
+        "Text-to-Speech"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/services/stt/convozen",
+      "probe": {
+        "pipecat": "1.16.0",
+        "distributions": [
+          "pipecat-convozen==0.2.1"
+        ],
+        "packages": [
+          "pipecat_convozen"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_convozen.stt.ConvozenSTTService",
+          "pipecat_convozen.tts.ConvozenHttpTTSService"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-convozen==0.2.1"
+      ],
+      "status": "ok",
+      "reason": "",
       "seconds": 4.5
     },
     {
@@ -872,7 +903,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.9
+      "seconds": 3.7
     },
     {
       "name": "DuplexJev Turn Analyzer",
@@ -901,7 +932,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.2
+      "seconds": 3.3
     },
     {
       "name": "Finchvox",
@@ -936,7 +967,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 10.6
+      "seconds": 8.7
     },
     {
       "name": "Floe",
@@ -950,12 +981,12 @@
       "probe": {
         "pipecat": "1.16.0",
         "distributions": [
-          "floe-guard==0.25.2",
-          "pipecat-floe==0.3.0"
+          "pipecat-floe==0.3.0",
+          "floe-guard==0.25.2"
         ],
         "packages": [
-          "floe_guard",
-          "pipecat_floe"
+          "pipecat_floe",
+          "floe_guard"
         ],
         "top_level_errors": [],
         "submodule_errors": [
@@ -966,20 +997,20 @@
           }
         ],
         "services": [
-          "floe_guard.integrations.pipecat.FloeBudgetGuardProcessor",
           "pipecat_floe.llm.FloeLLMService",
           "pipecat_floe.stt.FloeSTTService",
-          "pipecat_floe.tts.FloeTTSService"
+          "pipecat_floe.tts.FloeTTSService",
+          "floe_guard.integrations.pipecat.FloeBudgetGuardProcessor"
         ],
         "abstract_services": []
       },
       "distributions": [
-        "floe-guard==0.25.2",
-        "pipecat-floe==0.3.0"
+        "pipecat-floe==0.3.0",
+        "floe-guard==0.25.2"
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 9.7
+      "seconds": 6.2
     },
     {
       "name": "floe-guard",
@@ -1014,7 +1045,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.9
+      "seconds": 6.6
     },
     {
       "name": "FreeSWITCH",
@@ -1043,7 +1074,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.9
+      "seconds": 3.5
     },
     {
       "name": "Future AGI",
@@ -1070,7 +1101,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 9.4
+      "seconds": 7.7
     },
     {
       "name": "Gandr",
@@ -1099,7 +1130,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.2
+      "seconds": 4.0
     },
     {
       "name": "GMI Cloud",
@@ -1128,7 +1159,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.4
+      "seconds": 3.7
     },
     {
       "name": "Gnani",
@@ -1141,7 +1172,7 @@
       "probe": {
         "pipecat": "1.16.0",
         "distributions": [
-          "pipecat-gnani==0.6.0"
+          "pipecat-gnani==0.6.1"
         ],
         "packages": [
           "pipecat_gnani"
@@ -1158,11 +1189,11 @@
         "abstract_services": []
       },
       "distributions": [
-        "pipecat-gnani==0.6.0"
+        "pipecat-gnani==0.6.1"
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.3
+      "seconds": 3.8
     },
     {
       "name": "Kalpa",
@@ -1192,7 +1223,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.6
+      "seconds": 3.9
     },
     {
       "name": "Lokutor",
@@ -1223,7 +1254,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.1
+      "seconds": 3.3
     },
     {
       "name": "MCP",
@@ -1253,7 +1284,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.3
+      "seconds": 6.7
     },
     {
       "name": "MemorySync",
@@ -1282,7 +1313,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.5
+      "seconds": 4.1
     },
     {
       "name": "Mirai",
@@ -1314,7 +1345,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.0
+      "seconds": 3.8
     },
     {
       "name": "MLflow",
@@ -1341,7 +1372,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 20.2
+      "seconds": 15.7
     },
     {
       "name": "Moss",
@@ -1370,7 +1401,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.5
+      "seconds": 3.4
     },
     {
       "name": "Murf AI",
@@ -1399,7 +1430,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.4
+      "seconds": 3.7
     },
     {
       "name": "Noveum Trace",
@@ -1555,7 +1586,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 13.8
+      "seconds": 10.1
     },
     {
       "name": "OpenInference",
@@ -1567,7 +1598,7 @@
       "probe": {
         "pipecat": "1.16.0",
         "distributions": [
-          "openinference-instrumentation-pipecat==2.0.13"
+          "openinference-instrumentation-pipecat==2.0.14"
         ],
         "packages": [
           "openinference"
@@ -1578,11 +1609,11 @@
         "abstract_services": []
       },
       "distributions": [
-        "openinference-instrumentation-pipecat==2.0.13"
+        "openinference-instrumentation-pipecat==2.0.14"
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 10.3
+      "seconds": 7.9
     },
     {
       "name": "Pinch",
@@ -1611,7 +1642,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.1
+      "seconds": 3.7
     },
     {
       "name": "Pipecat Backchannel",
@@ -1642,7 +1673,36 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.4
+      "seconds": 3.8
+    },
+    {
+      "name": "Pipecat Guardrails",
+      "install": "uv add pipecat-guardrails",
+      "categories": [
+        "Extensions"
+      ],
+      "docs": "https://docs.pipecat.ai/api-reference/server/extensions/pipecat-guardrails",
+      "probe": {
+        "pipecat": "1.16.0",
+        "distributions": [
+          "pipecat-guardrails==0.3.1"
+        ],
+        "packages": [
+          "pipecat_guardrails"
+        ],
+        "top_level_errors": [],
+        "submodule_errors": [],
+        "services": [
+          "pipecat_guardrails.pipecat.processor.OutputGuardProcessor"
+        ],
+        "abstract_services": []
+      },
+      "distributions": [
+        "pipecat-guardrails==0.3.1"
+      ],
+      "status": "ok",
+      "reason": "",
+      "seconds": 3.7
     },
     {
       "name": "Pipecat TTS Cache",
@@ -1669,7 +1729,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.6
+      "seconds": 3.3
     },
     {
       "name": "pipecat-effects",
@@ -1696,7 +1756,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 10.4
+      "seconds": 7.2
     },
     {
       "name": "Protoface",
@@ -1725,7 +1785,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.6
+      "seconds": 2.8
     },
     {
       "name": "PyAI Hear",
@@ -1756,7 +1816,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.2
+      "seconds": 3.0
     },
     {
       "name": "Quickdial",
@@ -1787,7 +1847,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.4
+      "seconds": 2.9
     },
     {
       "name": "ReadAloud",
@@ -1816,7 +1876,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.2
+      "seconds": 3.3
     },
     {
       "name": "Respeecher",
@@ -1845,7 +1905,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.0
+      "seconds": 4.0
     },
     {
       "name": "Ringg AI",
@@ -1874,7 +1934,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.9
+      "seconds": 5.1
     },
     {
       "name": "Roark",
@@ -1901,7 +1961,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 8.0
+      "seconds": 6.8
     },
     {
       "name": "RTZR",
@@ -1930,7 +1990,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.0
+      "seconds": 2.5
     },
     {
       "name": "Saidwire",
@@ -1959,7 +2019,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.5
+      "seconds": 2.6
     },
     {
       "name": "SILMA AI",
@@ -1988,7 +2048,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.3
+      "seconds": 3.6
     },
     {
       "name": "SLNG",
@@ -2019,7 +2079,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.4
+      "seconds": 3.4
     },
     {
       "name": "SmolVLM",
@@ -2044,7 +2104,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.5
+      "seconds": 4.4
     },
     {
       "name": "SpatialReal",
@@ -2073,7 +2133,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.2
+      "seconds": 2.9
     },
     {
       "name": "Sprag",
@@ -2106,7 +2166,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 8.3
+      "seconds": 6.0
     },
     {
       "name": "Synap",
@@ -2137,7 +2197,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.5
+      "seconds": 3.6
     },
     {
       "name": "TEN VAD",
@@ -2162,7 +2222,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.4
+      "seconds": 2.2
     },
     {
       "name": "ThunderPhone",
@@ -2191,7 +2251,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.9
+      "seconds": 3.4
     },
     {
       "name": "Turn Blend",
@@ -2218,7 +2278,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 8.2
+      "seconds": 5.5
     },
     {
       "name": "turn-1-mini",
@@ -2247,7 +2307,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.5
+      "seconds": 3.3
     },
     {
       "name": "Typecast",
@@ -2276,7 +2336,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.1
+      "seconds": 3.5
     },
     {
       "name": "Uplift AI",
@@ -2306,7 +2366,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.0
+      "seconds": 4.3
     },
     {
       "name": "Vakyam AI",
@@ -2318,12 +2378,12 @@
       "probe": {
         "pipecat": "1.16.0",
         "distributions": [
-          "pipecat-vakyam==0.1.0",
-          "vakyamai==0.1.8"
+          "vakyamai==0.1.8",
+          "pipecat-vakyam==0.1.0"
         ],
         "packages": [
-          "pipecat_vakyam",
-          "vakyamai"
+          "vakyamai",
+          "pipecat_vakyam"
         ],
         "top_level_errors": [],
         "submodule_errors": [
@@ -2339,18 +2399,18 @@
           }
         ],
         "services": [
-          "pipecat_vakyam.tts.VakyamTTSService",
-          "vakyamai.pipecat.tts.VakyamTTSService"
+          "vakyamai.pipecat.tts.VakyamTTSService",
+          "pipecat_vakyam.tts.VakyamTTSService"
         ],
         "abstract_services": []
       },
       "distributions": [
-        "pipecat-vakyam==0.1.0",
-        "vakyamai==0.1.8"
+        "vakyamai==0.1.8",
+        "pipecat-vakyam==0.1.0"
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 3.3
+      "seconds": 2.6
     },
     {
       "name": "Vartaloop",
@@ -2380,7 +2440,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 8.0
+      "seconds": 6.1
     },
     {
       "name": "Vobiz",
@@ -2408,7 +2468,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 5.5
+      "seconds": 3.7
     },
     {
       "name": "Voice.ai",
@@ -2437,7 +2497,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 7.0
+      "seconds": 5.5
     },
     {
       "name": "VoxLock",
@@ -2470,7 +2530,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 4.7
+      "seconds": 3.4
     },
     {
       "name": "XTTS-vLLM",
@@ -2499,7 +2559,7 @@
       ],
       "status": "ok",
       "reason": "",
-      "seconds": 6.0
+      "seconds": 3.7
     }
   ]
 }

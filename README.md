@@ -22,10 +22,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.16.0** (2026-11-18): 64 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@257129f93** (2026-11-18): 64 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.16.0** (2026-11-19): 66 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@c8231f3ac** (2026-11-19): 66 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.16.0 | pipecat main@257129f93 | Why |
+| Plugin | Category | pipecat 1.16.0 | pipecat main@c8231f3ac | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -59,6 +59,7 @@ automatically.
 | [Beyond Presence](https://docs.pipecat.ai/api-reference/server/services/transport/beyond-presence) | Transports | ✅ works | ✅ works |  |
 | [bitHuman](https://docs.pipecat.ai/api-reference/server/services/video/bithuman) | Video | ✅ works | ✅ works |  |
 | [Chariot](https://docs.pipecat.ai/api-reference/server/services/stt/chariot) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
+| [ConvoZen](https://docs.pipecat.ai/api-reference/server/services/stt/convozen) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [didlogic](https://docs.pipecat.ai/api-reference/server/services/serializers/didlogic) | Serializers | ✅ works | ✅ works |  |
 | [DuplexJev Turn Analyzer](https://docs.pipecat.ai/api-reference/server/extensions/pipecat-duplexjev) | Extensions | ✅ works | ✅ works |  |
 | [Finchvox](https://docs.pipecat.ai/api-reference/server/services/analytics/finchvox) | Analytics & Monitoring | ✅ works | ✅ works |  |
@@ -81,6 +82,7 @@ automatically.
 | [OpenInference](https://docs.pipecat.ai/api-reference/server/services/analytics/openinference) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Pinch](https://docs.pipecat.ai/api-reference/server/services/translation/pinch) | Translation | ✅ works | ✅ works |  |
 | [Pipecat Backchannel](https://docs.pipecat.ai/api-reference/server/extensions/pipecat-backchannel) | Extensions | ✅ works | ✅ works |  |
+| [Pipecat Guardrails](https://docs.pipecat.ai/api-reference/server/extensions/pipecat-guardrails) | Extensions | ✅ works | ✅ works |  |
 | [Pipecat TTS Cache](https://docs.pipecat.ai/api-reference/server/services/tts/tts-cache) | Text-to-Speech | ✅ works | ✅ works |  |
 | [pipecat-effects](https://docs.pipecat.ai/api-reference/server/services/audio-filters/pipecat-effects) | Audio Filters | ✅ works | ✅ works |  |
 | [Protoface](https://docs.pipecat.ai/api-reference/server/services/video/protoface) | Video | ✅ works | ✅ works |  |
