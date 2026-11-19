@@ -67,6 +67,17 @@ jobs:
       - name: Rebuild README
         run: python -m health.report
 
+      - name: Build status page
+        # The token lists open fix PRs on each failing plugin's repository.
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          STATUS_CONTACT_EMAIL: ${{ vars.STATUS_CONTACT_EMAIL }}
+        run: python -m health.site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
@@ -93,3 +104,16 @@ jobs:
           if [ -n "$body" ]; then
             gh issue create --title "Plugin status changes $(date -u +%Y-%m-%d)" --body "$body"
           fi
+
+  pages:
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
