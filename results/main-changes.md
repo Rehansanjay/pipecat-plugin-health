@@ -1,2 +1,0 @@
-- **ConvoZen** is new in the docs: ok
-- **Pipecat Guardrails** is new in the docs: ok
