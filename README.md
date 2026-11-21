@@ -22,10 +22,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.16.0** (2026-11-20): 66 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@b49b5771c** (2026-11-20): 66 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.16.0** (2026-11-21): 68 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@e752543ee** (2026-11-21): 68 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.16.0 | pipecat main@b49b5771c | Why |
+| Plugin | Category | pipecat 1.16.0 | pipecat main@e752543ee | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -48,6 +48,7 @@ automatically.
 | [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | 🔒 needs a licensed SDK | 🔒 needs a licensed SDK | needs hecttor_sdk, which is not published on PyPI |
 | [.wave](https://docs.pipecat.ai/api-reference/server/services/stt/dotwave) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |
+| [AirCaps AI](https://docs.pipecat.ai/api-reference/server/services/stt/aircaps) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Akapulu Labs](https://docs.pipecat.ai/api-reference/server/services/video/akapulu) | Video | ✅ works | ✅ works |  |
 | [Alkove](https://docs.pipecat.ai/api-reference/server/services/audio-filters/alkove) | Audio Filters, Turn Detection, VAD | ✅ works | ✅ works |  |
 | [Anam](https://docs.pipecat.ai/api-reference/server/services/video/anam) | Video | ✅ works | ✅ works |  |
@@ -72,6 +73,7 @@ automatically.
 | [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [Kalpa](https://docs.pipecat.ai/api-reference/server/services/tts/kalpa) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Lokutor](https://docs.pipecat.ai/api-reference/server/services/stt/lokutor) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
+| [Marimba](https://docs.pipecat.ai/api-reference/server/utilities/turn-detection/marimba-turn) | Turn Detection | ✅ works | ✅ works |  |
 | [MCP](https://docs.pipecat.ai/api-reference/server/services/transport/mcp) | Transports | ✅ works | ✅ works |  |
 | [MemorySync](https://docs.pipecat.ai/api-reference/server/services/memory/memorysync) | Memory | ✅ works | ✅ works |  |
 | [Mirai](https://docs.pipecat.ai/api-reference/server/services/tts/mirai) | Text-to-Speech | ✅ works | ✅ works |  |

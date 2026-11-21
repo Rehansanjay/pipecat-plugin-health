@@ -1,0 +1,2 @@
+- **AirCaps AI** is new in the docs: ok
+- **Marimba** is new in the docs: ok
