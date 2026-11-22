@@ -1,2 +1,2 @@
-- **AirCaps AI** is new in the docs: ok
-- **Marimba** is new in the docs: ok
+- **Akapulu Labs**: ok → broken (import pipecat_akapulu: ImportError: Missing module: No module named 'daily')
+- **ChatFX Avatar** is new in the docs: ok
