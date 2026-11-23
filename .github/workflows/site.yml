@@ -1,0 +1,46 @@
+name: site
+
+# Rebuilds and redeploys the status site from the committed results, without
+# rerunning the plugin checks (those take up to an hour in the nightly run).
+on:
+  push:
+    branches: [main]
+    paths: ["health/site.py", "static/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: plugin-health-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build status page
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          STATUS_CONTACT_EMAIL: ${{ vars.STATUS_CONTACT_EMAIL }}
+        run: python -m health.site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

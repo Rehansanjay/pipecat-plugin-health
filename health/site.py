@@ -495,6 +495,10 @@ def build(latest: dict, main: dict | None, offline: bool, out: Path = OUT) -> li
         (out / "badge").mkdir(exist_ok=True)
         (out / "badge" / f"{r['slug']}.json").write_text(json.dumps(badge_json(r, latest["pipecat"])), encoding="utf-8")
     (out / "sitemap.xml").write_text(sitemap(rs, latest["checked_at"][:10]), encoding="utf-8")
+    # Files served as-is at the site root, such as the Search Console verification file.
+    for f in (ROOT / "static").glob("*"):
+        if f.is_file():
+            (out / f.name).write_bytes(f.read_bytes())
     (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
     return rs
 
