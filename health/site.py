@@ -186,7 +186,7 @@ def rows(latest: dict, main: dict | None, offline: bool) -> list[dict]:
         out.append(row)
     # A name can appear twice (separate STT and TTS packages): tell them apart by category.
     names = [slugify(r["name"]) for r in out]
-    for r, base in zip(out, names):
+    for r, base in zip(out, names, strict=True):
         r["dup"] = names.count(base) > 1
         r["slug"] = f"{base}-{slugify(r['categories'])}" if r["dup"] else base
     seen: dict[str, int] = {}
@@ -220,8 +220,7 @@ def badge_json(row: dict, version: str) -> dict:
 
 def badge_markdown(row: dict) -> str:
     endpoint = urllib.parse.quote(f"{SITE_URL}/badge/{row['slug']}.json", safe="")
-    return (f"[![Pipecat status](https://img.shields.io/endpoint?url={endpoint})]"
-            f"({SITE_URL}/i/{row['slug']}/)")
+    return f"[![Pipecat status](https://img.shields.io/endpoint?url={endpoint})]({SITE_URL}/i/{row['slug']}/)"
 
 
 CSS = """
@@ -289,8 +288,10 @@ def _contact() -> str:
 
 def _footer() -> str:
     merged = " and ".join(f'<a href="{u}">{n}</a>' for n, u in MERGED.items())
-    return (f'<footer><p>Maintained by <a href="{AUTHOR_URL}">{AUTHOR}</a>, with fixes merged into {merged}. '
-            "An independent project, not affiliated with Daily, Deepgram or the Pipecat team.</p></footer>")
+    return (
+        f'<footer><p>Maintained by <a href="{AUTHOR_URL}">{AUTHOR}</a>, with fixes merged into {merged}. '
+        "An independent project, not affiliated with Daily, Deepgram or the Pipecat team.</p></footer>"
+    )
 
 
 def _head(title: str, description: str, canonical: str) -> str:
@@ -319,9 +320,9 @@ def _row(r: dict, main_label: str) -> str:
         extra.append(f'<div class="prs"><span>Fix proposed, waiting for the maintainer:</span><ul>{links}</ul></div>')
     main_cell = _badge(r["main_status"]) if r["main_status"] != r["status"] else '<span class="muted">same</span>'
     return f"""
-      <tr data-name="{_e(r['name'].lower())} {_e(r['categories'].lower())}" data-ok="{'1' if r['status'] == 'ok' else '0'}">
-        <td><a class="name" href="i/{_e(r['slug'])}/">{_e(r['name'])}</a><div class="cat">{_e(r['categories'])}</div>{''.join(extra)}</td>
-        <td>{_badge(r['status'])}</td>
+      <tr data-name="{_e(r["name"].lower())} {_e(r["categories"].lower())}" data-ok="{"1" if r["status"] == "ok" else "0"}">
+        <td><a class="name" href="i/{_e(r["slug"])}/">{_e(r["name"])}</a><div class="cat">{_e(r["categories"])}</div>{"".join(extra)}</td>
+        <td>{_badge(r["status"])}</td>
         <td class="next" data-label="{_e(main_label)}">{main_cell}</td>
       </tr>"""
 
@@ -337,9 +338,11 @@ def render(latest: dict, main: dict | None, offline: bool = False, rs: list[dict
     contact = _contact()
     body_rows = "".join(_row(r, main_label) for r in rs)
     title = f"Pipecat integration status: which plugins work with Pipecat {version}"
-    description = (f"Checked every night: {total} community Pipecat integrations (speech-to-text, text-to-speech, "
-                   f"LLMs, telephony) against Pipecat {version} and the next release. "
-                   f"{working} work, {attention} need attention.")
+    description = (
+        f"Checked every night: {total} community Pipecat integrations (speech-to-text, text-to-speech, "
+        f"LLMs, telephony) against Pipecat {version} and the next release. "
+        f"{working} work, {attention} need attention."
+    )
     return f"""{_head(title, description, SITE_URL + "/")}
 <body>
 <main>
@@ -407,48 +410,53 @@ def render_plugin(r: dict, latest: dict, main: dict | None) -> str:
     name = f"{r['name']} ({r['categories']})" if r.get("dup") else r["name"]
     if r["status"] == "ok":
         title = f"{name} on Pipecat {version}: works"
-        description = (f"{r['name']} ({r['categories']}) installs, loads and starts with Pipecat {version}. "
-                       f"Checked every night against the latest release and {next_version}.")
+        description = (
+            f"{r['name']} ({r['categories']}) installs, loads and starts with Pipecat {version}. "
+            f"Checked every night against the latest release and {next_version}."
+        )
     else:
         detail = title_detail(r)
         title = f"{name} on Pipecat {version}: {label}" + (f" ({detail})" if detail else "")
-        description = (f"{r['explain'] or label} Checked {date} against Pipecat {version}; "
-                       "full error, open fixes and what to do.")
+        description = (
+            f"{r['explain'] or label} Checked {date} against Pipecat {version}; full error, open fixes and what to do."
+        )
     canonical = f"{SITE_URL}/i/{r['slug']}/"
 
-    parts = [f'<p>{_md_code(r["explain"])}</p>' if r["explain"] else ""]
+    parts = [f"<p>{_md_code(r['explain'])}</p>" if r["explain"] else ""]
     if r["status"] != "ok" and r["reason"]:
-        parts.append(f'<h2>Error from the check</h2><pre><code>{_e(r["reason"])}</code></pre>')
+        parts.append(f"<h2>Error from the check</h2><pre><code>{_e(r['reason'])}</code></pre>")
     if r["main_status"] and r["main_status"] != r["status"] and r["main_reason"]:
-        parts.append(f'<h2>Error on the next release</h2><pre><code>{_e(r["main_reason"])}</code></pre>')
+        parts.append(f"<h2>Error on the next release</h2><pre><code>{_e(r['main_reason'])}</code></pre>")
     if r["prs"]:
         links = "".join(f'<li><a href="{_e(p["url"])}">#{p["number"]} {_e(p["title"])}</a></li>' for p in r["prs"][:5])
-        parts.append(f'<h2>Fixes waiting for the maintainer</h2><ul>{links}</ul>')
+        parts.append(f"<h2>Fixes waiting for the maintainer</h2><ul>{links}</ul>")
 
     links = [f'<a href="{_e(r["docs"])}">Pipecat docs page</a>']
     if r["repo"]:
         links.append(f'<a href="{_e(r["repo"])}">Source repository</a>')
     badge_md = badge_markdown(r)
-    badge_img = f"https://img.shields.io/endpoint?url={urllib.parse.quote(SITE_URL + '/badge/' + r['slug'] + '.json', safe='')}"
+    badge_img = (
+        f"https://img.shields.io/endpoint?url={urllib.parse.quote(SITE_URL + '/badge/' + r['slug'] + '.json', safe='')}"
+    )
 
     return f"""{_head(title, description, canonical)}
 <body>
 <main>
   <a class="crumb" href="../../">&larr; All Pipecat integrations</a>
-  <h1>{_e(r['name'])} and Pipecat {_e(version)}</h1>
-  <p class="lede">{_e(r['categories'])}. Checked {_e(date)}.</p>
+  <h1>{_e(r["name"])} and Pipecat {_e(version)}</h1>
+  <p class="lede">{_e(r["categories"])}. Checked {_e(date)}.</p>
 
   <div class="facts">
-    <div class="fact"><span>Pipecat {_e(version)}</span>{_badge(r['status'])}</div>
-    <div class="fact"><span>Next release (Pipecat main)</span>{_badge(r['main_status'])}</div>
-    <div class="fact"><span>Install command</span><code>{_e(r['install'])}</code></div>
+    <div class="fact"><span>Pipecat {_e(version)}</span>{_badge(r["status"])}</div>
+    <div class="fact"><span>Next release (Pipecat main)</span>{_badge(r["main_status"])}</div>
+    <div class="fact"><span>Install command</span><code>{_e(r["install"])}</code></div>
   </div>
 
-  {''.join(parts)}
-  <p>{' &middot; '.join(links)}</p>
+  {"".join(parts)}
+  <p>{" &middot; ".join(links)}</p>
 
   <h2>Status badge for your README</h2>
-  <p><img src="{_e(badge_img)}" alt="Pipecat status for {_e(r['name'])}"></p>
+  <p><img src="{_e(badge_img)}" alt="Pipecat status for {_e(r["name"])}"></p>
   <p>It updates every night with this check. Paste this into the README:</p>
   <pre><code>{_e(badge_md)}</code></pre>
 
@@ -457,7 +465,7 @@ def render_plugin(r: dict, latest: dict, main: dict | None) -> str:
 
   <div class="cards">
     <div class="card">
-      <h3>Maintain {_e(r['name'])}?</h3>
+      <h3>Maintain {_e(r["name"])}?</h3>
       <p>I fix and maintain Pipecat and LiveKit integrations: bring one up to date, add tests, and keep it working as each release lands.</p>
       {_contact()}
     </div>
