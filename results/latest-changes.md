@@ -1,0 +1,1 @@
+- **Wavix**: pinned → ok
