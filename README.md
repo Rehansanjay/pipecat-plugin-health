@@ -22,10 +22,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.17.0** (2026-11-23): 69 works, 1 partial, 7 broken, 6 needs older pipecat, 4 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@218a7f836** (2026-11-23): 69 works, 1 partial, 7 broken, 6 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.17.0** (2026-11-24): 70 works, 1 partial, 7 broken, 6 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@8c78a5403** (2026-11-24): 69 works, 1 partial, 7 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.17.0 | pipecat main@218a7f836 | Why |
+| Plugin | Category | pipecat 1.17.0 | pipecat main@8c78a5403 | Why |
 |---|---|---|---|---|
 | [Akapulu Labs](https://docs.pipecat.ai/api-reference/server/services/video/akapulu) | Video | ❌ broken | ❌ broken | import pipecat_akapulu: ImportError: Missing module: No module named 'daily' |
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
@@ -40,9 +40,10 @@ automatically.
 | [Maya](https://docs.pipecat.ai/api-reference/server/services/tts/maya) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai==1.8.1; pipecat-ai==1.8.1. — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Memcode](https://docs.pipecat.ai/api-reference/server/services/memory/memcode) | Memory | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.10,<1.11 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Oruk](https://docs.pipecat.ai/api-reference/server/services/stt/oruk) | Speech-to-Text | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=1.8.1,<1.9 — but it imports and constructs on this pipecat; only the pin blocks it |
+| [Wavix](https://docs.pipecat.ai/api-reference/server/services/serializers/wavix) | Serializers | ✅ works | 📌 needs older pipecat | pins pipecat-ai[deepgram]==0.0.105; pipecat-ai==0.0.105.; pipecat-ai[deepgram]==1.17.0 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Hakim](https://docs.pipecat.ai/api-reference/server/services/stt/hakim) | Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory — its repository has no pyproject.to |
+| [PolyAI Dialog-RSN-1](https://docs.pipecat.ai/api-reference/server/services/s2s/polyai) | Realtime LLM | ⛔ can't install | ⛔ can't install | installed, but no package depending on pipecat-ai was found |
 | [Simplismart](https://docs.pipecat.ai/api-reference/server/services/llm/simplismart) | Large Language Models, Speech-to-Text, Text-to-Speech | ⛔ can't install | ⛔ can't install | Because pipecat-simplismart was not found in the package registry and you require pipecat-simplismart, we can conclude that your requirements are unsatisfiable. |
-| [Sophon-Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/sophon-realtime) | Realtime LLM | ⛔ can't install | ⛔ can't install | installed, but no package depending on pipecat-ai was found |
 | [Uplift AI](https://docs.pipecat.ai/api-reference/server/services/stt/upliftai) | Speech-to-Text | ⛔ can't install | ⛔ can't install | `<checkout> does not appear to be a Python project, as neither `pyproject.toml` nor `setup.py` are present in the directory — its repository has no pyproject.to |
 | [Boson Higgs Realtime](https://docs.pipecat.ai/api-reference/server/services/s2s/boson) | Realtime LLM | 🟡 partial | 🟡 partial | import pipecat_boson.realtime.llm: ImportError: cannot import name 'assert_given' from 'pipecat.services.settings' |
 | [Hecttor](https://docs.pipecat.ai/api-reference/server/services/audio-filters/hecttor) | Audio Filters | 🔒 needs a licensed SDK | 🔒 needs a licensed SDK | needs hecttor_sdk, which is not published on PyPI |
@@ -90,6 +91,7 @@ automatically.
 | [Protoface](https://docs.pipecat.ai/api-reference/server/services/video/protoface) | Video | ✅ works | ✅ works |  |
 | [PyAI Hear](https://docs.pipecat.ai/api-reference/server/services/stt/pyai) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [Quickdial](https://docs.pipecat.ai/api-reference/server/services/stt/quickdial) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
+| [Rabel Bell](https://docs.pipecat.ai/api-reference/server/extensions/pipecat-rabel) | Extensions | ✅ works | ✅ works |  |
 | [ReadAloud](https://docs.pipecat.ai/api-reference/server/services/tts/readaloud) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Respeecher](https://docs.pipecat.ai/api-reference/server/services/tts/respeecher) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Ringg AI](https://docs.pipecat.ai/api-reference/server/services/stt/ringg) | Speech-to-Text | ✅ works | ✅ works |  |
@@ -113,7 +115,6 @@ automatically.
 | [Vobiz](https://docs.pipecat.ai/api-reference/server/services/serializers/vobiz) | Serializers | ✅ works | ✅ works |  |
 | [Voice.ai](https://docs.pipecat.ai/api-reference/server/services/tts/voiceai) | Text-to-Speech | ✅ works | ✅ works |  |
 | [VoxLock](https://docs.pipecat.ai/api-reference/server/services/audio-filters/voxlock) | Audio Filters | ✅ works | ✅ works |  |
-| [Wavix](https://docs.pipecat.ai/api-reference/server/services/serializers/wavix) | Serializers | ✅ works | ✅ works |  |
 | [XTTS-vLLM](https://docs.pipecat.ai/api-reference/server/services/tts/xtts-vllm) | Text-to-Speech | ✅ works | ✅ works |  |
 
 ## What the statuses mean

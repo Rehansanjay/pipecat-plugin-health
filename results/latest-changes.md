@@ -1,1 +1,2 @@
-- **Wavix**: pinned → ok
+- **PolyAI Dialog-RSN-1** is new in the docs: uninstallable
+- **Rabel Bell** is new in the docs: ok

@@ -1,1 +1,3 @@
-- **Wavix**: pinned → ok
+- **Wavix**: ok → pinned (pins pipecat-ai[deepgram]==0.0.105; pipecat-ai==0.0.105.; pipecat-ai[deepgram]==1.17.0)
+- **PolyAI Dialog-RSN-1** is new in the docs: uninstallable
+- **Rabel Bell** is new in the docs: ok
