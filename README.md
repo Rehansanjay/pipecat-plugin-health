@@ -22,12 +22,11 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.17.0** (2026-11-24): 70 works, 1 partial, 7 broken, 6 needs older pipecat, 4 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@8c78a5403** (2026-11-24): 69 works, 1 partial, 7 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.17.0** (2026-11-25): 71 works, 1 partial, 6 broken, 6 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@b1256409c** (2026-11-25): 70 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.17.0 | pipecat main@8c78a5403 | Why |
+| Plugin | Category | pipecat 1.17.0 | pipecat main@b1256409c | Why |
 |---|---|---|---|---|
-| [Akapulu Labs](https://docs.pipecat.ai/api-reference/server/services/video/akapulu) | Video | ❌ broken | ❌ broken | import pipecat_akapulu: ImportError: Missing module: No module named 'daily' |
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
 | [Replicate](https://docs.pipecat.ai/api-reference/server/services/image-generation/replicate) | Image Generation | ❌ broken | ❌ broken | import pipecat_replicate: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
@@ -50,6 +49,7 @@ automatically.
 | [.wave](https://docs.pipecat.ai/api-reference/server/services/stt/dotwave) | Speech-to-Text | ✅ works | ✅ works |  |
 | [Acefone](https://docs.pipecat.ai/api-reference/server/services/serializers/acefone) | Serializers | ✅ works | ✅ works |  |
 | [AirCaps AI](https://docs.pipecat.ai/api-reference/server/services/stt/aircaps) | Speech-to-Text | ✅ works | ✅ works |  |
+| [Akapulu Labs](https://docs.pipecat.ai/api-reference/server/services/video/akapulu) | Video | ✅ works | ✅ works |  |
 | [Alkove](https://docs.pipecat.ai/api-reference/server/services/audio-filters/alkove) | Audio Filters, Turn Detection, VAD | ✅ works | ✅ works |  |
 | [Anam](https://docs.pipecat.ai/api-reference/server/services/video/anam) | Video | ✅ works | ✅ works |  |
 | [Anannas AI](https://docs.pipecat.ai/api-reference/server/services/llm/anannas) | Large Language Models | ✅ works | ✅ works |  |
