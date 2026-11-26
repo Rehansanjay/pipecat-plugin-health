@@ -22,10 +22,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.17.0** (2026-11-25): 71 works, 1 partial, 6 broken, 6 needs older pipecat, 4 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@b1256409c** (2026-11-25): 70 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.17.0** (2026-11-26): 71 works, 1 partial, 6 broken, 6 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@261d8debd** (2026-11-26): 70 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.17.0 | pipecat main@b1256409c | Why |
+| Plugin | Category | pipecat 1.17.0 | pipecat main@261d8debd | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
