@@ -22,10 +22,10 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.17.0** (2026-11-26): 71 works, 1 partial, 6 broken, 6 needs older pipecat, 4 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@261d8debd** (2026-11-26): 70 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.17.0** (2026-11-27): 73 works, 1 partial, 6 broken, 6 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@fed424ba8** (2026-11-27): 72 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
 
-| Plugin | Category | pipecat 1.17.0 | pipecat main@261d8debd | Why |
+| Plugin | Category | pipecat 1.17.0 | pipecat main@fed424ba8 | Why |
 |---|---|---|---|---|
 | [AwaazAI](https://docs.pipecat.ai/api-reference/server/services/serializers/awaazai) | Serializers | ❌ broken | ❌ broken | import pipecat_awaazai: ImportError: cannot import name 'StartInterruptionFrame' from 'pipecat.frames.frames' |
 | [FIRE RED VAD](https://docs.pipecat.ai/api-reference/server/services/vad/fire-vad) | VAD | ❌ broken | ❌ broken | import pipecat_firered_vad: ModuleNotFoundError: FireRedVAD is not installed. |
@@ -70,6 +70,7 @@ automatically.
 | [FreeSWITCH](https://docs.pipecat.ai/api-reference/server/services/serializers/freeswitch) | Serializers | ✅ works | ✅ works |  |
 | [Future AGI](https://docs.pipecat.ai/api-reference/server/services/analytics/future-agi) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Gandr](https://docs.pipecat.ai/api-reference/server/services/tts/gandr) | Text-to-Speech | ✅ works | ✅ works |  |
+| [GMI Cloud](https://docs.pipecat.ai/api-reference/server/services/llm/gmicloud) | Large Language Models | ✅ works | ✅ works |  |
 | [GMI Cloud](https://docs.pipecat.ai/api-reference/server/services/tts/gmicloud) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [Kalpa](https://docs.pipecat.ai/api-reference/server/services/tts/kalpa) | Text-to-Speech | ✅ works | ✅ works |  |
@@ -82,6 +83,7 @@ automatically.
 | [Moss](https://docs.pipecat.ai/api-reference/server/services/knowledge-retrieval/moss) | Knowledge Retrieval | ✅ works | ✅ works |  |
 | [Murf AI](https://docs.pipecat.ai/api-reference/server/services/tts/murf) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Noveum Trace](https://docs.pipecat.ai/api-reference/server/services/analytics/noveum-trace) | Analytics & Monitoring | ✅ works | ✅ works |  |
+| [Ojin](https://docs.pipecat.ai/api-reference/server/services/video/ojin) | Video | ✅ works | ✅ works |  |
 | [OpenInference](https://docs.pipecat.ai/api-reference/server/services/analytics/openinference) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Pinch](https://docs.pipecat.ai/api-reference/server/services/translation/pinch) | Translation | ✅ works | ✅ works |  |
 | [Pipecat Backchannel](https://docs.pipecat.ai/api-reference/server/extensions/pipecat-backchannel) | Extensions | ✅ works | ✅ works |  |

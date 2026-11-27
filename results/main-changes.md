@@ -1,0 +1,2 @@
+- **GMI Cloud** is new in the docs: ok
+- **Ojin** is new in the docs: ok
