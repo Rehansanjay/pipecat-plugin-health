@@ -1,2 +1,4 @@
-- **GMI Cloud** is new in the docs: ok
-- **Ojin** is new in the docs: ok
+- **Deepdub** is new in the docs: ok
+- **Harny** is new in the docs: ok
+- **MeshLite** is new in the docs: ok
+- **Ormem** is new in the docs: ok

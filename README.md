@@ -22,8 +22,8 @@ automatically.
 
 ## Status
 
-- **pipecat-ai 1.17.0** (2026-11-27): 73 works, 1 partial, 6 broken, 6 needs older pipecat, 4 can't install, 1 needs a licensed SDK
-- **pipecat-ai main@fed424ba8** (2026-11-27): 72 works, 1 partial, 6 broken, 7 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai 1.17.0** (2026-11-28): 77 works, 1 partial, 6 broken, 5 needs older pipecat, 4 can't install, 1 needs a licensed SDK
+- **pipecat-ai main@fed424ba8** (2026-11-28): 76 works, 1 partial, 6 broken, 6 needs older pipecat, 4 can't install, 1 needs a licensed SDK
 
 | Plugin | Category | pipecat 1.17.0 | pipecat main@fed424ba8 | Why |
 |---|---|---|---|---|
@@ -33,7 +33,6 @@ automatically.
 | [Rumik AI](https://docs.pipecat.ai/api-reference/server/services/tts/rumik) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_rumik: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [SonexLabs](https://docs.pipecat.ai/api-reference/server/services/tts/sonex) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_sonex: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
 | [Supertonic](https://docs.pipecat.ai/api-reference/server/services/tts/supertonic) | Text-to-Speech | ❌ broken | ❌ broken | import pipecat_supertonic: ImportError: cannot import name '_NotGiven' from 'pipecat.services.settings' |
-| [Deepdub](https://docs.pipecat.ai/api-reference/server/services/tts/deepdub) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai>=0.0.97,<0.1.0 — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Giggy](https://docs.pipecat.ai/api-reference/server/services/stt/giggy) | Speech-to-Text | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai[silero]==1.12.0; pipecat-ai==1.12.0; pipecat-ai==1.12.0. — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Giggy](https://docs.pipecat.ai/api-reference/server/services/tts/giggy) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai[silero]==1.12.0; pipecat-ai==1.12.0; pipecat-ai==1.12.0. — but it imports and constructs on this pipecat; only the pin blocks it |
 | [Maya](https://docs.pipecat.ai/api-reference/server/services/tts/maya) | Text-to-Speech | 📌 needs older pipecat | 📌 needs older pipecat | pins pipecat-ai==1.8.1; pipecat-ai==1.8.1. — but it imports and constructs on this pipecat; only the pin blocks it |
@@ -62,6 +61,7 @@ automatically.
 | [Chariot](https://docs.pipecat.ai/api-reference/server/services/stt/chariot) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [ChatFX Avatar](https://docs.pipecat.ai/api-reference/server/services/video/chatfx) | Video | ✅ works | ✅ works |  |
 | [ConvoZen](https://docs.pipecat.ai/api-reference/server/services/stt/convozen) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
+| [Deepdub](https://docs.pipecat.ai/api-reference/server/services/stt/deepdub) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [didlogic](https://docs.pipecat.ai/api-reference/server/services/serializers/didlogic) | Serializers | ✅ works | ✅ works |  |
 | [DuplexJev Turn Analyzer](https://docs.pipecat.ai/api-reference/server/extensions/pipecat-duplexjev) | Extensions | ✅ works | ✅ works |  |
 | [Finchvox](https://docs.pipecat.ai/api-reference/server/services/analytics/finchvox) | Analytics & Monitoring | ✅ works | ✅ works |  |
@@ -73,11 +73,13 @@ automatically.
 | [GMI Cloud](https://docs.pipecat.ai/api-reference/server/services/llm/gmicloud) | Large Language Models | ✅ works | ✅ works |  |
 | [GMI Cloud](https://docs.pipecat.ai/api-reference/server/services/tts/gmicloud) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Gnani](https://docs.pipecat.ai/api-reference/server/services/stt/gnani) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
+| [Harny](https://docs.pipecat.ai/api-reference/server/services/memory/harny) | Memory | ✅ works | ✅ works |  |
 | [Kalpa](https://docs.pipecat.ai/api-reference/server/services/tts/kalpa) | Text-to-Speech | ✅ works | ✅ works |  |
 | [Lokutor](https://docs.pipecat.ai/api-reference/server/services/stt/lokutor) | Speech-to-Text, Text-to-Speech | ✅ works | ✅ works |  |
 | [Marimba](https://docs.pipecat.ai/api-reference/server/utilities/turn-detection/marimba-turn) | Turn Detection | ✅ works | ✅ works |  |
 | [MCP](https://docs.pipecat.ai/api-reference/server/services/transport/mcp) | Transports | ✅ works | ✅ works |  |
 | [MemorySync](https://docs.pipecat.ai/api-reference/server/services/memory/memorysync) | Memory | ✅ works | ✅ works |  |
+| [MeshLite](https://docs.pipecat.ai/api-reference/server/services/video/meshlite) | Video | ✅ works | ✅ works |  |
 | [Mirai](https://docs.pipecat.ai/api-reference/server/services/tts/mirai) | Text-to-Speech | ✅ works | ✅ works |  |
 | [MLflow](https://docs.pipecat.ai/api-reference/server/services/analytics/mlflow) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Moss](https://docs.pipecat.ai/api-reference/server/services/knowledge-retrieval/moss) | Knowledge Retrieval | ✅ works | ✅ works |  |
@@ -85,6 +87,7 @@ automatically.
 | [Noveum Trace](https://docs.pipecat.ai/api-reference/server/services/analytics/noveum-trace) | Analytics & Monitoring | ✅ works | ✅ works |  |
 | [Ojin](https://docs.pipecat.ai/api-reference/server/services/video/ojin) | Video | ✅ works | ✅ works |  |
 | [OpenInference](https://docs.pipecat.ai/api-reference/server/services/analytics/openinference) | Analytics & Monitoring | ✅ works | ✅ works |  |
+| [Ormem](https://docs.pipecat.ai/api-reference/server/services/memory/ormem) | Memory | ✅ works | ✅ works |  |
 | [Pinch](https://docs.pipecat.ai/api-reference/server/services/translation/pinch) | Translation | ✅ works | ✅ works |  |
 | [Pipecat Backchannel](https://docs.pipecat.ai/api-reference/server/extensions/pipecat-backchannel) | Extensions | ✅ works | ✅ works |  |
 | [Pipecat Guardrails](https://docs.pipecat.ai/api-reference/server/extensions/pipecat-guardrails) | Extensions | ✅ works | ✅ works |  |
